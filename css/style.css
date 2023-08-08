@@ -83,7 +83,7 @@ header nav .menu {
 }
 
 header nav .menu li {
-    margin: 0% 1% 0% 0%;
+    margin: 3% 1%;
 }
 
 
@@ -182,6 +182,7 @@ header label span:nth-child(3) {
         display: block;
     }
     nav ul.open{
+        top: 115px;
         display: flex;
         justify-content: space-evenly;
     }
@@ -196,20 +197,16 @@ header label span:nth-child(3) {
         flex-direction: column;
     }
 
-    .dropdown-content {
-        width: 101%;
-    }
-
     header nav ul {
         position: absolute;
-        top: 90px;
+        top: 115px;
         left: -100%;
         background-color: var(--white-color);
-        height: 16rem;
+        height: auto;
         width: 100%;
         text-align: center;
         display: block;
-        transition: 0.3s;
+        transition: 0.1s;
         z-index: 2;
     }
 
