@@ -18,8 +18,8 @@
 
 <body>
 
-  <header class="header container">
-    <a href="#"><img src="img/logo.png" alt="Logo da Encantosfera" class="logo"></a>
+  <header>
+    <!-- <a href="#"><img src="img/logo.png" alt="Logo da Encantosfera" class="logo"></a>
 
     <nav>
       <button class="hamburger">
@@ -34,6 +34,26 @@
         <li class="navbar_link"><a href="#contact" class="link">Contato</a></li>
         <li class="navbar_link"><a href="#catalogo" class="link">Catalogo</a></li>
       </ul>
+    </nav> -->
+
+    <nav>
+      <a href=""><img class="logo" src="img/logo.png" alt=""></a>
+
+      <div class="menu-btn">
+        <input type="checkbox" id="checkbox-menu" class="menuHamburguer">
+        <label for="checkbox-menu" onclick="menuShow()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <ul class="menu">
+        <li><a href="#home" class="home">Home</a></li>
+        <li><a href="#services" class="home">Serviços</a></li>
+        <li><a href="#depos" class="home">Depoimentos</a></li>
+        <li><a href="#contact" class="home">Contato</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -41,8 +61,8 @@
     <div class="overlay"></div>
     <div class="home_content">
       <h1 class="home_text">Sejam bem-vindos a</h1>
-      <h1 class="home_title">Encantosfera!</h1>
-      <p1 class="home_text">Um salão de beleza especializado em crianças</p1>
+      <h1 class="home_title">Balokinho!</h1>
+      <p1 class="home_text">Uma loja dedicada ao conforto da sua Criança</p1>
     </div>
   </section>
   <section id="about">

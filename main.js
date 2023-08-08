@@ -1,10 +1,13 @@
-let hamburger = document.querySelector('.hamburger');
-let navbar = document.querySelector('.navbar');
+var ul = document.querySelector('nav ul');
+var menuBtn = document.querySelector('.menuHamburguer');
 
-hamburger.addEventListener('click', function(){
-  navbar.classList.toggle('responsive');
-  hamburger.classList.toggle('open');
-});
+function menuShow() {
+    if (ul.classList.contains('open')) {
+        ul.classList.remove('open');
+    }else{
+        ul.classList.add('open');
+    }
+}
 
 
 //rolagem horizontal

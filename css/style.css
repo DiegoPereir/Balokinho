@@ -54,132 +54,205 @@ body {
     border-radius: 8px;
     padding: 1rem 2rem;
 }
-
-/* --------------------------------------- CABEÇALHO */
-
-.header {
-    background-color: var(--white-color);
+/* --------------------------------------- CABEÇALHO 2.0*/
+header nav {
     height: 115px;
-    border-radius: 0 0 30% 30%;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--white-color);
+    align-items: center;
+    padding: 20px 50px 20px 50px;
+    flex-wrap: wrap;
+    font-family: 'Inter', sans-serif;
+}
+
+header nav .logo,
+footer .logo{
+    width: 5rem;
+    height: 5rem;
+}
+
+header nav .menu {
+    position: absolute;
     display: flex;
     align-items: center;
-    margin: 0 auto;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 2;
+    font-family: 'Inter', sans-serif;
+    right: 15%;
 }
 
-.logo {
-    width: 80px;
+header nav .menu li {
+    margin: 0% 1% 0% 0%;
 }
 
-.hamburger {
-    display: none;
-    width: 30px;
-    border: none;
-    height: 24px;
-    background-color: transparent;
-    position: relative;
+
+header nav .menu li button,
+header nav .menu li .home{
+    color: var(--black-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    white-space: nowrap
+}
+header nav .menu li a:hover{
+    font-size: 17px;
+    border-radius: 10px;
     cursor: pointer;
+    text-decoration: underline;
+}
+header nav .menu li .dropdown-content a{
+    border-radius: 0%;
+}
+header nav .menu .dropdown-content a{
+    background-color: var(--cor-hover);
+
+}
+header nav .menu li a{   
+    color: var(--black-color);
+    font-family: arial;
+    padding: 8px 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    white-space: nowrap
 }
 
-.hamburger .line {
-    display: block;
-    background: #333;
-    height: 3px;
-    border-radius: 10%;
-    width: 100%;
+/* menu hamburguer */
+
+header .menu-btn {
     position: absolute;
-    transition: all 0.3s ease-in-out;
+    right: 20%;
+    display: none;
 }
 
-.hamburger .line:nth-child(1) {
-    top: 0;
-}
-
-.hamburger .line:nth-child(2) {
-    top: 10px;
-}
-
-.hamburger .line:nth-child(3) {
-    top: 20px;
-}
-
-.hamburger.open .line:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger.open .line:nth-child(2) {
+header .menuHamburguer {
+    position: absolute;
     opacity: 0;
 }
 
-.hamburger.open .line:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--white-color);
-}
-
-.navbar_link {
-    float: left;
-}
-
-.link {
+header label {
+    cursor: pointer;
+    position: relative;
     display: block;
-    color: var(--black-color);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-.link:hover{
-    text-decoration: underline;
-
+    height: 22px;
+    width: 30px;
 }
 
-@media screen and (max-width: 768px) {
-    .navbar_link {
-      float: none;
-      display: none;
+header label span {
+    position: absolute;
+    display: block;
+    height: 3.5px;
+    width: 100%;
+    border-radius: 30px;
+    background: var(--black-color);
+    transition: 0.25s;
+}
+
+/* Barrinhas do menu */
+header label span:nth-child(1) {
+    top: 0;
+}
+
+header label span:nth-child(2) {
+    top: 8px;
+}
+
+header label span:nth-child(3) {
+    top: 16px;
+}
+
+/* Animação X */
+.menuHamburguer:checked+label span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+.menuHamburguer:checked+label span:nth-child(2) {
+    opacity: 0;
+}
+
+.menuHamburguer:checked+label span:nth-child(3) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+@media (max-width: 920px) {
+    nav .menu-btn {
+        display: block;
+    }
+    nav ul.open{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    header nav .menu li a:hover,
+    header nav .menu li button:hover
+    {
+        font-size: 25px;
     }
 
-    .hamburger {
-      display: block;
+    .menu {
+        display: flex;
+        flex-direction: column;
     }
 
-    .navbar.responsive {
-      position: absolute;
-      margin-top: 25px;
-      margin-left: -310px;
-      animation: 3s;
-      width: 100%;
+    .dropdown-content {
+        width: 101%;
     }
 
-    .navbar.responsive .navbar_link {
-      display: block;
-      float: none;
+    header nav ul {
+        position: absolute;
+        top: 90px;
+        left: -100%;
+        background-color: var(--white-color);
+        height: 16rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: 0.3s;
+        z-index: 2;
     }
-    .navbar.responsive .navbar_link .cor {
-        background-color: var(--baby-blue-color);
-      }
-      .navbar_link:nth-child(even) {
-        background-color: var(--white-color); /* Substitua #color1 pela sua primeira cor */
-      }
-      
-      .navbar_link:nth-child(odd) {
-        background-color: var(--sky-color); /* Substitua #color2 pela sua segunda cor */
-      }
-      .navbar_link {
-        float: left;
-        border: 1px solid rgb(214, 214, 214);
+
+    nav ul.open {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    nav ul li a,
+    nav .dropbtn {
+        font-size: 22px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: var(--cor-primaria);
+    }
+    .dropdown-content {
+        background-image: var(--gradiente);
+    }
+    .dropdown:hover .dropbtn {
+        color: var(--cor-primaria);
+        background: transparent;
+        font-size: 22px;
+    }
+   
+}
+@media (max-width: 590px) {
+    nav .menu-btn{
+        right: 25%;
     }
 }
+@media (max-width: 350px) {
+    nav .menu-btn{
+    right: 30%;
+    }
+}
+
 
   
   
@@ -199,6 +272,7 @@ body {
 
 
 #home {
+    top: 115px;
     background-image: url(../img/kids.jpg);
     padding: 5rem;
     -webkit-background-size: cover;
@@ -577,19 +651,18 @@ body {
     padding: 1rem 15%;
 }
 
-.whatsapp_button {
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.5em;
-    letter-spacing: 4px;
-    color: var(--white-color);
-    background-color: var(--green-color);
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.3);
-    padding: 16px 2;
-    position: relative;
-    transition: 0.3s;
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #25D366;
 }
 
 .whatsapp_button:hover {
