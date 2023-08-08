@@ -1,3 +1,148 @@
-body{
-    background-color: rgba(144, 144, 144, 0.471) !important;
+:root {
+
+    --pink-color: #df8499;
+
+    --baby-pink-color: #f1b6c7;
+
+    --blue-color: #8aa7d0;
+
+    --baby-blue-color: #b3bdcb;
+
+    --sky-color: #c7ede6;
+
+    --ligth-sky-color: #ebf0ef;
+
+    --lilac-color: #be97ca;
+
+    --purple-color: #9179be;
+
+    --brown-color: #877373;
+
+    --gray-color: #c2c6bd;
+
+    --black-color: #000000;
+
+    --white-color: #FFFFFF;
+
+    --green-color: rgb(63, 166, 47);
+
+    --baby-green-color: rgb(89, 187, 73);
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(144, 144, 144, 0.471) !important; /* a cor na verdade é white, está cinza apenas para teste*/
+}
+
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    max-width: 352px;
+    border: 1px solid var(--white-color);
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+}
+
+/* --------------------------------------- CABEÇALHO */
+
+.header {
+    background-color: var(--white-color);
+    height: 115px;
+    border-radius: 0 0 30% 30%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.logo {
+    width: 80px;
+}
+
+
+.navbar {
+    background-color: var(--ligth-sky-color);
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 0 12px;
+}
+
+.navbar_link {
+    float: left;
+}
+.navbar_link a::before {
+    content: '|'; /* Conteúdo do pseudo-elemento (a barra vertical) */
+    position: absolute;
+    left: 10px; /* Posicionamento da barra vertical em relação ao link */
+}
+.link {
+    display: block;
+    color: var(--black-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative; /* Adicione esta propriedade para posicionar o pseudo-elemento */
+}
+.link:hover{
+    text-decoration: underline;
+
+}
+
+@media screen and (max-width: 768px) {
+    .navbar_link {
+      float: none;
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .navbar.responsive {
+      position: absolute;
+      margin-top: 25px;
+      margin-left: -310px;
+      animation: 3s;
+      width: 100%;
+    }
+
+    .navbar.responsive .navbar_link {
+      display: block;
+      float: none;
+    }
+    .navbar.responsive .navbar_link .cor {
+        background-color: var(--baby-blue-color);
+      }
+      .navbar_link:nth-child(even) {
+        background-color: var(--white-color); /* Substitua #color1 pela sua primeira cor */
+      }
+      
+      .navbar_link:nth-child(odd) {
+        background-color: var(--sky-color); /* Substitua #color2 pela sua segunda cor */
+      }
+      .navbar_link {
+        float: left;
+        border: 1px solid rgb(214, 214, 214);
+    }
 }

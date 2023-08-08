@@ -673,15 +673,6 @@ body {
     background-color: #25D366; /* cor de fundo verde do WhatsApp */
 }
 
-.whatsapp-button::after {
-    content: "";
-    position: absolute;
-    bottom: -7px; /* Ajuste conforme necessário */
-    right: 33px; /* Ajuste conforme necessário */
-    border-width: 10px;
-    border-style: solid;
-    border-color: #25D366 transparent transparent #25D366;
-}
 
 .whatsapp-button img {
     filter: invert(1);
