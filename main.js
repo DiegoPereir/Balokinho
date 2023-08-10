@@ -72,29 +72,37 @@ function fullscreen(element) {
 }
 
 
-
+//mudar cor de fundo dos elementos do catalogo
 function updateBackground() {
   const subSessoes = document.querySelectorAll('.sub_sessao');
 
   subSessoes.forEach(subSessao => {
-      const h1Element = subSessao.querySelector('h1');
-      if (h1Element) {
-          const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
-          const corDeFundo = h1Element.textContent.trim() === 'Masculinas:' ? 'rgba(206, 234, 240, 1)' :
-                             h1Element.textContent.trim() === 'Masculinas:' ? 'rgba(206, 234, 240, 1)' : 
-                             h1Element.textContent.trim() === 'Femininas:' ? 'rgba(250, 225 ,224, 1)' : '';
-          
-          conteudosCatalogo.forEach(conteudoCatalogo => {
-              conteudoCatalogo.style.backgroundColor = corDeFundo;
-          });
+    const h1Element = subSessao.querySelector('h1');
+    const conteudoTitulo = subSessao.querySelector('.conteudo_titulo');
+
+    if (h1Element) {
+      const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
+      const corDeFundo = h1Element.textContent.trim() === 'Masculinas:' ? 'rgba(206, 234, 240, 1)' :
+                         h1Element.textContent.trim() === 'Unissex:' ? 'rgba(239, 221, 168, 1)' : 
+                         h1Element.textContent.trim() === 'Femininas:' ? 'rgba(250, 225, 224, 1)' :
+                         'rgba(239, 221, 168, 1)'; // Cor padrão para conteúdo não especificado
+
+      conteudosCatalogo.forEach(conteudoCatalogo => {
+        conteudoCatalogo.style.backgroundColor = corDeFundo;
+      });
+
+      if (conteudoTitulo) {
+        conteudoTitulo.style.backgroundColor = corDeFundo;
       }
+    }
   });
 }
 
-// Chame a função para atualizar o background quando a página carregar
 window.onload = function() {
   updateBackground();
 };
+
+
 
 
 

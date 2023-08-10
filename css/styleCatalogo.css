@@ -75,7 +75,7 @@ header nav .menu {
   align-items: center;
   font-family: 'Inter', sans-serif;
   right: 15%;
-  width: 70%;
+  width: 50%;
   overflow: hidden;
 }
 
@@ -184,7 +184,7 @@ header label span:nth-child(3) {
   }
   nav ul.open{
       top: 90px;
-      width: 80%;
+      width: 90%;
       display: flex;
       justify-content: space-evenly;
   }
@@ -406,6 +406,11 @@ header label span:nth-child(3) {
 nav .controles {
   display: flex;
   align-items: center;
-  margin-left: 70px;
+  margin-left: 25vw;
   margin-bottom: 10px;
+}
+@media (max-width:1300px){
+  nav .controles{
+  margin-left: 20vw;
+}
 }
