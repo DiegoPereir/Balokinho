@@ -1,41 +1,410 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Encantosfera / Catalogo</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,400;1,500&family=Montserrat:wght@400;500&family=Oswald:wght@300;400&display=swap"
-        rel="stylesheet">
-      <link href="css/reset.css" rel="stylesheet">
-      <link href="css/styleCatalogo.css" rel="stylesheet">
 
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encantosfera / Catalogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,400;1,500&family=Montserrat:wght@400;500&family=Oswald:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link href="css/reset.css" rel="stylesheet">
+  <link href="css/styleCatalogo.css" rel="stylesheet">
+
+</head>
+
 <body>
-  <header class="header container">
-    <a href="#"><img src="img/logo.png" alt="Logo da Encantosfera" class="logo"></a>
-
+  <header>
     <nav>
-      <ul class="navbar">
-        <li class="navbar_link"><p>filtros:</p></li>
-        <li class="navbar_link"><a href="#" class="link">Pijamas</a></li>
-        <li class="navbar_link"><a href="#" class="link">Acessorios</a></li>
-        <li class="navbar_link"><a href="#" class="link">Calcinha</a></li>
-        <li class="navbar_link"><a href="#" class="link">Cuecas</a></li>
-        <li class="navbar_link"><a href="#" class="link">body</a></li>
+      <a href="index.html"><img class="logo" src="img/logo.png" alt=""></a>
+
+      <div class="menu-btn">
+        <input type="checkbox" id="checkbox-menu" class="menuHamburguer">
+        <label for="checkbox-menu" onclick="menuShow()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+
+      <div class="controles">
+        <button class="seta-esquerda">&lt;</button>
+        <button class="seta-direita">&gt;</button>
+      </div>
+      <ul class="menu">
+
+        <li><a href="#p1" class="home">Pijamas/Baby Doll</a></li>
+        <li><a href="#p2" class="home">Conjuntos</a></li>
+        <li><a href="#p3" class="home">Kit's</a></li>
+        <li><a href="#p4" class="home">Bodies</a></li>
+        <li><a href="#p5" class="home">Macacôes</a></li>
+        <li><a href="#p6" class="home">Camisetas</a></li>
+        <li><a href="#p7" class="home">Mijões/Shorts</a></li>
+        <li><a href="#p8" class="home">Cuecas/Calcinhas</a></li>
+        <li><a href="#p9" class="home">Vestidos</a></li>
+        <li><a href="#p10" class="home">Tanga Enxuta</a></li>
+        <li><a href="#p11" class="home">Saida Maternidade</a></li>
+        <li><a href="#p12" class="home">Acessorios</a></li>
+        <li><a href="#p13" class="home">Bonés e Chapéu</a></li>
+
       </ul>
+
     </nav>
   </header>
 
-  <div class="catalogo">
-
+  <div class="sessao_catalogo" id="p1">
+    <div class="conteudo_titulo">
+      <h1 class="titulo_catalogo">Pijamas/Baby Doll:</h1>
+    </div>
+    <div class="sub_sessao">
+      <div class="catalogo">
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+      </div>
+      <div class="controles">
+        <button class="seta-esquerda">&lt;</button>
+        <button class="seta-direita">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <div class="sessao_catalogo" id="p2">
+    <div class="conteudo_titulo">
+      <h1 class="titulo_catalogo">Conjuntos:</h1>
+    </div>
+    <div class="sub_sessao">
+      <div class="alinhar_titulo">
+        <div class="conteudo_titulo">
+          <h1 class="titulo_catalogo">Masculinas:</h1>
+        </div>
+      </div>
+      <div class="catalogo">
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+      </div>
+      <div class="controles">
+        <button class="seta-esquerda">&lt;</button>
+        <button class="seta-direita">&gt;</button>
+      </div>
+    </div>
+    <div class="sub_sessao">
+      <div class="alinhar_titulo">
+        <div class="conteudo_titulo">
+          <h1 class="titulo_catalogo">Femininas:</h1>
+        </div>
+      </div>
+      <div class="catalogo">
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+      </div>
+      <div class="controles">
+        <button class="seta-esquerda">&lt;</button>
+        <button class="seta-direita">&gt;</button>
+      </div>
+    </div>
+    <div class="sub_sessao">
+      <div class="alinhar_titulo">
+        <div class="conteudo_titulo">
+          <h1 class="titulo_catalogo">Unissex:</h1>
+        </div>
+      </div>
+      <div class="catalogo">
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+        <div class="conteudo_catalogo">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </div>
+      </div>
+      <div class="controles">
+        <button class="seta-esquerda">&lt;</button>
+        <button class="seta-direita">&gt;</button>
+      </div>
+    </div>
   </div>
 
 
 
-    <script src="main.js"></script>
+
+  <script src="main.js"></script>
 </body>
+
 </html>

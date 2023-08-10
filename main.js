@@ -1,10 +1,12 @@
+//menu hamburguer
+
 var ul = document.querySelector('nav ul');
 var menuBtn = document.querySelector('.menuHamburguer');
 
 function menuShow() {
     if (ul.classList.contains('open')) {
         ul.classList.remove('open');
-    }else{
+    } else {
         ul.classList.add('open');
     }
 }
@@ -13,73 +15,102 @@ function menuShow() {
 //rolagem horizontal
 
 
-var servicesList = document.querySelector('.services_list');
-var seta_esquerda = document.getElementById('seta_esquerda');
-var seta_direita = document.getElementById('seta_direita');
-var scrollAmount = 200; // quantos pixels para rolar
+const setasEsquerda = document.querySelectorAll('.seta-esquerda');
+const setasDireita = document.querySelectorAll('.seta-direita');
 
-// Função para verificar se o elemento de rolagem atingiu o fim
-function isScrollEnd(el) {
-    // A posição de rolagem mais a largura do contêiner é igual ou maior do que a largura do conteúdo
-    return el.scrollLeft + el.offsetWidth >= el.scrollWidth;
-}
+setasEsquerda.forEach(setaEsquerda => {
+  setaEsquerda.addEventListener('click', () => {
+    const catalogo = setaEsquerda.closest('.sub_sessao').querySelector('.catalogo');
+    const larguraItem = catalogo.firstElementChild.offsetWidth;
 
-// Função para verificar se o elemento de rolagem atingiu o início
-function isScrollStart(el) {
-    // A posição de rolagem é 0
-    return el.scrollLeft === 0;
-}
-
-// Função para mover um elemento para o fim da lista
-function moveToEnd(el) {
-    // Remover o elemento do início da lista
-    el.parentNode.removeChild(el);
-    // Adicionar o elemento ao fim da lista
-    servicesList.appendChild(el);
-}
-
-// Função para mover um elemento para o início da lista
-function moveToStart(el) {
-    // Remover o elemento do fim da lista
-    el.parentNode.removeChild(el);
-    // Adicionar o elemento ao início da lista
-    servicesList.insertBefore(el, servicesList.firstChild);
-}
-
-// Adicionar eventListeners para os botões
-seta_esquerda.addEventListener('click', function() {
-    servicesList.scrollLeft -= scrollAmount;
-    if (isScrollStart(servicesList)) {
-        // Mover o último elemento para o início da lista
-        moveToStart(servicesList.lastElementChild);
-        // Resetar a posição de rolagem
-        servicesList.scrollLeft = scrollAmount;
-    }
+    catalogo.scrollBy({
+      left: -larguraItem,
+      behavior: 'smooth'
+    });
+  });
 });
 
-seta_direita.addEventListener('click', function() {
-    servicesList.scrollLeft += scrollAmount;
-    if (isScrollEnd(servicesList)) {
-        // Mover o primeiro elemento para o fim da lista
-        moveToEnd(servicesList.firstElementChild);
-        // Resetar a posição de rolagem
-        servicesList.scrollLeft -= scrollAmount;
-    }
+setasDireita.forEach(setaDireita => {
+  setaDireita.addEventListener('click', () => {
+    const catalogo = setaDireita.closest('.sub_sessao').querySelector('.catalogo');
+    const larguraItem = catalogo.firstElementChild.offsetWidth;
+
+    catalogo.scrollBy({
+      left: larguraItem,
+      behavior: 'smooth'
+    });
+  });
 });
 
+//rolagem horizontal do menu catalogo
+const setaEsquerda = document.querySelector('.seta-esquerda');
+const setaDireita = document.querySelector('.seta-direita');
 
-
-document.getElementById('scrollLeft').addEventListener('click', function() {
-  document.querySelector('.services_list').scrollBy({
-    left: -200, // Ajuste a quantidade de rolagem aqui
+setaEsquerda.addEventListener('click', () => {
+  const menu = document.querySelector('.menu');
+  menu.scrollBy({
+    left: -150,
     behavior: 'smooth'
   });
 });
 
-document.getElementById('scrollRight').addEventListener('click', function() {
-  document.querySelector('.services_list').scrollBy({
-    left: 200, // Ajuste a quantidade de rolagem aqui
+setaDireita.addEventListener('click', () => {
+  const menu = document.querySelector('.menu');
+  menu.scrollBy({
+    left: 150,
     behavior: 'smooth'
   });
 });
 
+
+
+
+  
+//tela cheia catalogo
+function fullscreen(element) {
+    element.classList.toggle('fullscreen');
+}
+
+
+
+function updateBackground() {
+  const subSessoes = document.querySelectorAll('.sub_sessao');
+
+  subSessoes.forEach(subSessao => {
+      const h1Element = subSessao.querySelector('h1');
+      if (h1Element) {
+          const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
+          const corDeFundo = h1Element.textContent.trim() === 'Masculinas:' ? 'rgba(206, 234, 240, 1)' :
+                             h1Element.textContent.trim() === 'Masculinas:' ? 'rgba(206, 234, 240, 1)' : 
+                             h1Element.textContent.trim() === 'Femininas:' ? 'rgba(250, 225 ,224, 1)' : '';
+          
+          conteudosCatalogo.forEach(conteudoCatalogo => {
+              conteudoCatalogo.style.backgroundColor = corDeFundo;
+          });
+      }
+  });
+}
+
+// Chame a função para atualizar o background quando a página carregar
+window.onload = function() {
+  updateBackground();
+};
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.home').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const targetId = link.getAttribute('href'); // Usar o href como ID do alvo
+      const target = document.querySelector(targetId);
+      if (target) {
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 90,
+          behavior: 'smooth'
+        });
+        menuShow();
+      }
+    });
+  });
+});
