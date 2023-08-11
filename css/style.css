@@ -215,7 +215,7 @@ header label span:nth-child(3) {
     }
 
     nav ul.open {
-        left: 0;
+        left: -55px;
         top: 90px;
 
     }

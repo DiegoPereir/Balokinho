@@ -1,15 +1,11 @@
 //menu hamburguer
 
 var ul = document.querySelector('nav ul');
-var menuBtn = document.querySelector('.menuHamburguer');
 
 function menuShow() {
-    if (ul.classList.contains('open')) {
-        ul.classList.remove('open');
-    } else {
-        ul.classList.add('open');
-    }
+    ul.classList.toggle('open');
 }
+
 
 
 //rolagem horizontal
@@ -104,24 +100,29 @@ window.onload = function() {
 
 
 
-
+//Fechar menu navbar apos clicar em algum href
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.home').forEach(link => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      const targetId = link.getAttribute('href'); // Usar o href como ID do alvo
-      const target = document.querySelector(targetId);
-      if (target) {
-        window.scrollTo({
-          top: target.getBoundingClientRect().top + window.scrollY - 90,
-          behavior: 'smooth'
-        });
-        menuShow();
-      }
-    });
+    link.addEventListener('click', scrollToTarget);
   });
 });
+
+function scrollToTarget(event) {
+  event.preventDefault();
+  const targetId = this.getAttribute('href');
+  const target = document.querySelector(targetId);
+  if (target) {
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - 90,
+      behavior: 'smooth'
+    });
+    menuShow();
+  }
+}
+
+
+
 
 
 
