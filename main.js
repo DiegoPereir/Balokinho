@@ -122,3 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
+function subirPage() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+

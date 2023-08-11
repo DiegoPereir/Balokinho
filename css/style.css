@@ -68,8 +68,8 @@ header nav {
     font-family: 'Inter', sans-serif;
 }
 header nav a{
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 50px;
 }
 header nav .logo,
 footer .logo{
@@ -183,6 +183,7 @@ header label span:nth-child(3) {
 @media (max-width: 920px) {
     nav .menu-btn {
         display: block;
+        right: 15%;
     }
     nav ul.open{
         top: 115px;
@@ -245,13 +246,19 @@ header label span:nth-child(3) {
    
 }
 @media (max-width: 590px) {
+    .about_content{
+        flex-direction: column !important;
+    }
+    .about_content .about_text{
+        width: 100% !important;
+        }
     nav .menu-btn{
-        right: 25%;
+        right: 35%;
     }
 }
 @media (max-width: 350px) {
     nav .menu-btn{
-    right: 30%;
+    right: 40%;
     }
 }
 
@@ -633,6 +640,13 @@ header label span:nth-child(3) {
     text-align: center;
     justify-content: center;
 }
+.media li{
+    height: 90px;
+}
+.media li img{
+    height: 100%;
+    width:  100%;
+}
 
 .contact_title2 {
     font-family: 'Oswald', sans-serif;
@@ -716,13 +730,7 @@ header label span:nth-child(3) {
     background-color: white;
     margin: 0 5px;
     cursor: pointer;
-    transition: background-color 0.6s ease;
   }
-  
-  .dot.active {
-    background-color: darkgrey;
-  }
-  
 
 
   /* --------------------------------------- whatsapp estatico */
@@ -759,20 +767,22 @@ header label span:nth-child(3) {
   .subirPage {
     position: fixed;
     bottom: 50px;
-    right: 30px;
+    left: 45px;
     z-index: 100;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: #6f6f6f;
+    color: white;
+    cursor: pointer;
 }
 
 .subirPage:hover {
+    transition: 0.1s;
     background-color: #5b5b5b;
-    letter-spacing: 5px;
-    border: 2px solid #ffffff;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
