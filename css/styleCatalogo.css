@@ -360,7 +360,7 @@ header label span:nth-child(3) {
 }
 
 .sub_sessao .catalogo img {
-  width: 200px;
+  width: 200px; /* erro fulscreen , para funcionar o fullscreen deve se deixar 100% */
   display: block;
 }
 
@@ -405,12 +405,18 @@ header label span:nth-child(3) {
 
 .produto_content img {
   transition: .4s;
-  width: 100%;
+  width: 200px;
   height: 100%;
   object-fit: cover;
 
 }
-
+.produto_content.fullscreen img {
+  width: 100% !important;
+  transition: 0s;
+}
+.produto_content.fullscreen img:hover {
+  transition: 0s !important;
+}
 .produto_content img:hover {
   transform: scale(1.1);
   cursor: pointer;

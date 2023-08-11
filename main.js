@@ -132,4 +132,3 @@ function subirPage() {
     behavior: 'smooth'
   });
 }
-
