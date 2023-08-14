@@ -102,30 +102,36 @@ window.onload = function() {
 
 //Fechar menu navbar apos clicar em algum href
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
+  // Iterar sobre todos os links com a classe "home"
   document.querySelectorAll('.home').forEach(link => {
-    link.addEventListener('click', scrollToTarget);
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      
+      if (target) {
+        window.scrollTo({
+          top: target.getBoundingClientRect().top + window.scrollY - 90,
+          behavior: 'smooth'
+        });
+        menuShow();
+        
+        // Ativar ou desativar o checkbox com base no seu estado atual
+        const checkbox = document.getElementById('checkbox-menu');
+        checkbox.checked = !checkbox.checked; // Inverter o estado do checkbox
+      }
+    });
   });
 });
 
-function scrollToTarget(event) {
-  event.preventDefault();
-  const targetId = this.getAttribute('href');
-  const target = document.querySelector(targetId);
-  if (target) {
-    window.scrollTo({
-      top: target.getBoundingClientRect().top + window.scrollY - 90,
-      behavior: 'smooth'
-    });
-    menuShow();
-  }
-}
 
 
 
 
-
-
+//Botão Subir Pagina
 function subirPage() {
   window.scrollTo({
     top: 0,
