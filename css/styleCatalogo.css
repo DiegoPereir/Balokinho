@@ -87,7 +87,6 @@ header nav .menu {
   overflow: hidden;
 }
 header nav .menu.open{
-  height: 100%;
   overflow-y: scroll;
 }
 header nav .menu li {
