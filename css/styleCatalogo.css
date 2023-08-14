@@ -2,6 +2,8 @@
 
 :root {
 
+  --menu-hover: rgb(198,229,177);
+
   --pink-color: #df8499;
 
   --baby-pink-color: #f1b6c7;
@@ -97,7 +99,7 @@ header nav .menu.open{
   overflow-y: scroll;
 }
 header nav .menu li {
-  margin: 2% 5px;
+  margin: 11.5px 5px;
 }
 
 
@@ -111,21 +113,19 @@ header nav .menu li .home {
   white-space: nowrap
 }
 
-header nav .menu li a:hover {
+header nav .menu li a:hover{
+  background-color: var(--menu-hover);
+  color: white;
   font-size: 17px;
-  border-radius: 10px;
   cursor: pointer;
-  text-decoration: underline;
+  filter: none;
 }
 
 header nav .menu li .dropdown-content a {
   border-radius: 0%;
 }
 
-header nav .menu .dropdown-content a {
-  background-color: var(--cor-hover);
 
-}
 
 header nav .menu li a {
   color: var(--black-color);
@@ -196,18 +196,13 @@ header label span:nth-child(3) {
 }
 
 
-@media (max-width:1450px) {
+@media (max-width:1400px) {
   nav .controles {
-    margin-left: 2vw !important;
-  }
-}
-@media (max-width:1250px) {
-  nav .controles {
-    margin-left: 0vw !important;
+    margin-left: 1vw !important;
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1300px) {
   .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
     font-size: 15px !important;
   }
@@ -481,7 +476,7 @@ header label span:nth-child(3) {
 nav .controles {
   display: flex;
   align-items: center;
-  margin-left: 5vw;
+  margin-left: 2vw;
 }
 
 

@@ -1,5 +1,7 @@
 :root {
 
+    --menu-hover: rgb(198,229,177);
+ 
     --pink-color: #df8499;
 
     --baby-pink-color: #f1b6c7;
@@ -99,19 +101,21 @@ header nav .menu li .home{
     transition: 0.3s;
     white-space: nowrap
 }
+
+/* sprint 2 */
 header nav .menu li a:hover{
+    background-color: var(--menu-hover);
+    color: white;
     font-size: 17px;
-    border-radius: 10px;
     cursor: pointer;
-    text-decoration: underline;
+    filter: none;
 }
+
+
 header nav .menu li .dropdown-content a{
     border-radius: 0%;
 }
-header nav .menu .dropdown-content a{
-    background-color: var(--cor-hover);
 
-}
 header nav .menu li a{   
     color: var(--black-color);
     font-family: arial;
