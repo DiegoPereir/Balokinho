@@ -138,3 +138,21 @@ function subirPage() {
     behavior: 'smooth'
   });
 }
+
+
+// Função para verificar a posição de rolagem e controlar a visibilidade do link
+function verificarPosicaoRolagem() {
+  const linkTopo = document.querySelector('.subirPage');
+  
+  if (window.scrollY > 0) {
+    linkTopo.style.display = 'block'; // Tornar o link visível se a rolagem não estiver no topo
+  } else {
+    linkTopo.style.display = 'none'; // Tornar o link invisível se a rolagem estiver no topo
+  }
+}
+
+// Ouvinte de rolagem para chamar a função ao rolar a página
+window.addEventListener('scroll', verificarPosicaoRolagem);
+
+// Chamar a função inicialmente para definir o estado inicial
+verificarPosicaoRolagem();
