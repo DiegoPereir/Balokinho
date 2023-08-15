@@ -90,24 +90,29 @@ document.addEventListener('DOMContentLoaded', function () {
   // Iterar sobre todos os links com a classe "home"
   document.querySelectorAll('.home').forEach(link => {
     link.addEventListener('click', function(event) {
-      event.preventDefault();
       const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
       
-      if (target) {
-        window.scrollTo({
-          top: target.getBoundingClientRect().top + window.scrollY - 90,
-          behavior: 'smooth'
-        });
-        menuShow();
+      // Verificar se o link é interno (começa com "#")
+      if (targetId.startsWith('#')) {
+        event.preventDefault();
+        const target = document.querySelector(targetId);
         
-        // Ativar ou desativar o checkbox com base no seu estado atual
-        const checkbox = document.getElementById('checkbox-menu');
-        checkbox.checked = !checkbox.checked; // Inverter o estado do checkbox
+        if (target) {
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - 90,
+            behavior: 'smooth'
+          });
+          menuShow();
+          
+          // Ativar ou desativar o checkbox com base no seu estado atual
+          const checkbox = document.getElementById('checkbox-menu');
+          checkbox.checked = !checkbox.checked; // Inverter o estado do checkbox
+        }
       }
     });
   });
 });
+
 
 
 
@@ -150,10 +155,6 @@ function setupMenuDrag() {
   let initialScrollLeftMenu;
 
   function startDrag(e) {
-      if (e.target.tagName === 'A') {
-          e.preventDefault(); // Previne o comportamento padrão do link
-      }
-
       isDraggingMenu = true;
       startXMenu = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
       initialScrollLeftMenu = menuElement.scrollLeft;
@@ -163,11 +164,16 @@ function setupMenuDrag() {
   }
 
   function dragMenu(e) {
-      if (isDraggingMenu) {
-          const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-          const dx = currentX - startXMenu;
-          menuElement.scrollLeft = initialScrollLeftMenu - dx;
+      if (!isDraggingMenu) return;
+
+      // Se chegarmos aqui, o usuário está realmente arrastando, então podemos impedir o comportamento padrão dos links
+      if (e.target.tagName === 'A') {
+          e.preventDefault();
       }
+
+      const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      const dx = currentX - startXMenu;
+      menuElement.scrollLeft = initialScrollLeftMenu - dx;
   }
 
   function stopDragMenuGlobal() {
@@ -188,6 +194,7 @@ function setupMenuDrag() {
 // Inicializando as funcionalidades de arrasto
 setupMenuDrag();
 setupCatalogoDrag();
+
 
 
 

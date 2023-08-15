@@ -36,11 +36,11 @@
 
 
       <ul class="menu">
-        <li><a href="#home" class="home" onclick="menuShow()">Home</a></li>
+        <li><a href="#home" class="home" >Home</a></li>
         <!-- <li><a href="#services" class="home">Serviços</a></li> -->
-        <li><a href="#depos" class="home" onclick="menuShow()">Depoimentos</a></li>
-        <li><a href="#contact" class="home" onclick="menuShow()">Contato</a></li>
-        <li><a href="catalogo.html" class="home" onclick="menuShow()">Catalogo</a></li>
+        <li><a href="#depos" class="home" >Depoimentos</a></li>
+        <li><a href="#contact" class="home" >Contato</a></li>
+        <li><a href="catalogo.html" class="home" >Catalogo</a></li>
       </ul>
     </nav>
     
@@ -69,70 +69,88 @@
     </div>
   </section>
 
-  <!-- <h1 class="title">Categorias</h1>
+  <div class="sessao_catalogo" id="p1">
+    <div class="conteudo_titulo">
+      <h1 class="titulo_catalogo">PRINCIPAIS PRODUTOS:</h1>
+    </div>
+    <div class="sub_sessao">
+      <div class="catalogo">
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+        <a class="conteudo_catalogo" href="catalogo.html">
+          <div class="produto_content" onclick="fullscreen(this)">
+            <img class="imagem_produto" id="imagem_produto" src="img/kids.jpg" alt="imagem produto" />
+          </div>
+          <div class="desc_produto">
+            <h1>Nome produto</h1>
+            <h2>Desc ou preço produto</h2>
+          </div>
+        </a>
+      </div>
 
-
-  <section id="services" class="container">
-
-    <div id="seta_esquerda" class="setas"><img src="icons/setaEsquerda.svg" alt=""></div>
-
-    <ul class="services_list">
-
-      <li class="service">
-        <div class="services_content">
-          <img
-            src="https://uploads-ssl.webflow.com/5a009662519aa50001481fa6/5d9210dda867cb98f4567966_tanga-azul-lisa.png"
-            alt="Crianças fazendo óculos com a mão" class="service_img">
-          <h2 class="services_title">Camisetas</h2>
-        </div>
-      </li>
-      <li class="service">
-        <div class="services_content">
-          <img src="img/baby.png" alt="Desenho de um bebê" class="service_img">
-          <h2 class="services_title">Macacões</h2>
-          <p1 class="services_text">Corte de cabelo para bebês</p1>
-        </div>
-      </li>
-      <li class="service">
-        <div class="services_content">
-          <img src="img/girl.png" alt="Desenho de uma menina de maria chiquinha" class="service_img">
-          <h2 class="services_title">Pijamas</h2>
-          <p1 class="services_text">Penteados feitos com carinho</p1>
-        </div>
-      </li>
-      <li class="service">
-        <div class="services_content">
-          <img src="img/mascara.png" alt="Desenho de um rímel" class="service_img">
-          <h2 class="services_title">Shorts</h2>
-          <p1 class="services_text">Maquiagem especial infantil</p1>
-        </div>
-      </li>
-      <li class="service">
-        <div class="services_content">
-          <img src="img/tiara.png" alt="Desenho de uma tiara de princesa" class="service_img">
-          <h2 class="services_title">Bodies</h2>
-          <p1 class="services_text">Penteado, maquiagem e manicure</p1>
-        </div>
-      </li>
-      <li class="service">
-        <div class="services_content">
-          <img src="img/catrina.png" alt="Desenho de maquiagem artística" class="service_img">
-          <h2 class="services_title">Cuecas e calcinhas</h5>
-            <p1 class="services_text">Para poder ser quem quiser</p1>
-        </div>
-      </li>
-      <li class="service">
-        <div class="services_content">
-          <img src="img/superheroe.png" alt="Desenho de fantasia do homem de ferro" class="service_img">
-          <h2 class="services_title">Fantasias</h2>
-          <p1 class="services_text">Aluguel de fantasias infantis</p1>
-        </div>
-      </li>
-    </ul>
-
-    <div id="seta_direita" class="setas"><img src="icons/setaDireita.svg" alt=""></div>
-
-  </section> -->
+    </div>
+  </div>
 
 
 

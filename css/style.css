@@ -186,6 +186,9 @@ header label span:nth-child(3) {
 }
 
 @media (max-width: 920px) {
+    .sessao_catalogo .titulo_catalogo {
+        font-size: 15px;
+      }
     nav .menu-btn {
         display: block;
         right: 15%;
@@ -411,86 +414,140 @@ header label span:nth-child(3) {
 }
 
 
-/* --------------------------------------- SERVICES */
+/* --------------------------------------- principais produtos */
 
-#services {
-    padding-bottom: 3rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.services_list {
-    border: 2px solid var(--ligth-sky-color);
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    height: 400px;
-    width: 100%;
-    scroll-behavior: smooth;
-}
-
-
-.services_list::-webkit-scrollbar {
-    display: none;
-}
-
-.service {
-    border: 2px solid var(--sky-color);
-    height: 350px;
+.sessao_catalogo {
+    font-family: 'Quicksand';
     display: flex;
     flex-direction: column;
-    padding: 0 5%;
-    border-radius: 5%;
-    margin: 20px 5px;
-}
-
-.service:hover {
-    transition: 0.5s;
-    margin-top: 10px;
-}
-
-.service_img {
+    margin: 2% 10%;
+  }
+  
+  .sessao_catalogo .conteudo_titulo {
+    background-color: var(--ligth-sky-color);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+  }
+  
+  .sessao_catalogo .titulo_catalogo {
+    color: var(--black-color);
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 40px;
+    height: 70px;
+  }
+  
+  .sessao_catalogo .sub_sessao .alinhar_titulo {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .sessao_catalogo .sub_sessao .alinhar_titulo .conteudo_titulo {
+    margin: 2% 0 1% 0;
+    border-radius: 15px;
+    display: flex;
+    justify-self: center;
+    width: 80%;
+  }
+  
+  .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
+    font-size: 25px;
+    height: 50px;
+  }
+  
+  .sub_sessao .catalogo {
+    border: 10px;
+    display: flex;
+    cursor: grab;
+    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .sub_sessao .catalogo img {
+    width: 200px; /* erro fulscreen , para funcionar o fullscreen deve se deixar 100% */
+    display: block;
+  }
+  
+  .sub_sessao .catalogo .conteudo_catalogo {
+    border: 1px solid var(--baby-blue-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    margin: 0 1% 1rem 1%;
+    padding: 5px;
+  
+  }
+  
+  .sub_sessao .catalogo .conteudo_catalogo .desc_catalogo {
+    width: 90%;
+  }
+  
+  .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
+    border: none;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0px;
+  }
+  
+  .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
+    font-size: 16px;
+    margin: 10px 0px;
+  }
+  
+  .produto_content {
+    border: 1px solid var(--baby-blue-color);
+    position: relative;
+    display: block;
+    border-radius: 15px;
     width: 100%;
     height: 100%;
-    object-fit: scale-down;
-    border: 2px solid var(--pink-color);
-    border-radius: 10px;
-}
-
-.services_content {
-    margin-top: 10px;
-    text-align: center;
+    overflow: hidden;
+  }
+  
+  .produto_content img {
+    transition: .4s;
     width: 200px;
-    height: 250px;
-}
-
-.services_title {
-    font-family: 'IBM Plex Serif', sans-serif;
-    color: var(--brown-color);
-    font-weight: bold;
-    padding: 0.75rem;
-}
-
-.services_text {
-    font-family: 'IBM Plex Serif', sans-serif;
-    color: var(--brown-color);
-    padding-top: 2rem;
-}
-
-
-/*rolagem horizontal*/
-
-.setas {
+    height: 100%;
+    object-fit: cover;
+  
+  }
+  .produto_content.fullscreen img {
+    width: 100% !important;
+    transition: 0s;
+  }
+  
+  .produto_content img:hover {
+    transform: scale(1.1);
     cursor: pointer;
-    margin: 0 20px;
-}
+  }
+  .sub_sessao .catalogo img {
+    transition: 0s;
+  }
+  .produto_content.fullscreen {
+    border: 2px solid var(--baby-blue-color);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    width: 90vw;
+    height: 90vh;
+    overflow: hidden;
+    z-index: 10;
+  }
+  
+  .produto_content.fullscreen img:hover {
+    transform: scale(1);
+    cursor: pointer;
+  }
 
 
 
