@@ -287,7 +287,7 @@ header label span:nth-child(3) {
 
 
 #home {
-    background-image: url(../img/kids.jpg);
+    background-image: url(../img/backgroundBalukinho.jpg);
     padding: 5rem;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -414,7 +414,27 @@ header label span:nth-child(3) {
     flex-direction: column;
     margin: 2% 10%;
   }
-  
+ .sessao_catalogo .button_catalogo{
+    background-color: var(--baby-pink-color);
+    border: none;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    white-space: nowrap;
+    font-weight: bolder;
+    align-self: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+ }
+ .sessao_catalogo .button_catalogo:hover{
+    width: 410px;
+    height: 55px;
+    border-radius: 20px;
+    color: white;
+    font-size: 22px;
+ }
   .sessao_catalogo .conteudo_titulo {
     background-color: var(--ligth-sky-color);
     border-radius: 20px;
@@ -510,7 +530,6 @@ header label span:nth-child(3) {
     width: 200px;
     height: 100%;
     object-fit: cover;
-  
   }
   .produto_content.fullscreen img {
     width: 100% !important;
