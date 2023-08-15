@@ -47,21 +47,18 @@ header {
   padding-bottom: 100px;
 }
 
-header nav .menu .controles {
-  margin: 0;
-}
 
 header nav {
-  height: 50px;
+  height: 70px;
   position: fixed;
   display: flex;
   width: 100%;
   z-index: 10;
   background-color: var(--white-color);
   align-items: center;
-  padding: 20px 50px 20px 50px;
-  flex-wrap: wrap;
+  padding: 20px 50px;
   font-family: 'Inter', sans-serif;
+  cursor: grab;
 }
 /* Estilize a lista aberta */
 header nav ul.open {
@@ -87,16 +84,16 @@ header nav .icon_home img{
   height: 100%;
 }
 header nav .menu {
-  position: absolute;
   display: flex;
+  width: 70%;
   align-items: center;
   font-family: 'Inter', sans-serif;
-  right: 30%;
-  width: 50%;
+  white-space: nowrap; /* Evita que os itens quebrem para a próxima linha */
   overflow: hidden;
 }
 header nav .menu.open{
   overflow-y: scroll;
+  height: 60px;
 }
 header nav .menu li {
   margin: 11.5px 5px;
@@ -113,7 +110,7 @@ header nav .menu li .home {
   white-space: nowrap
 }
 
-header nav .menu li a:hover{
+header nav .menu li a:hover {
   background-color: var(--menu-hover);
   color: white;
   font-size: 17px;
@@ -133,7 +130,6 @@ header nav .menu li a {
   padding: 8px 15px;
   letter-spacing: 1px;
   transition: 0.3s;
-  white-space: nowrap
 }
 
 /* menu hamburguer */
@@ -196,13 +192,12 @@ header label span:nth-child(3) {
 }
 
 
-@media (max-width:1400px) {
-  nav .controles {
-    margin-left: 1vw !important;
-  }
-}
+
 
 @media (max-width: 1300px) {
+  header nav .menu.open{
+    height: 560px;
+  }
   .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
     font-size: 15px !important;
   }
@@ -225,13 +220,6 @@ header label span:nth-child(3) {
   .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
     font-size: 20px !important;
     height: 40px !important;
-  }
-
-
-
-  header .controles button {
-    opacity: 0;
-    cursor: default;
   }
 
   nav .menu-btn {
@@ -272,6 +260,7 @@ header label span:nth-child(3) {
   nav ul.open {
     left: 0;
   }
+
 
   nav ul li {
     width: 100%;
@@ -364,6 +353,7 @@ header label span:nth-child(3) {
 .sub_sessao .catalogo {
   border: 10px;
   display: flex;
+  cursor: grab;
   overflow: hidden;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -449,36 +439,6 @@ header label span:nth-child(3) {
   transform: scale(1);
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-.sessao_catalogo .controles {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.controles button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-nav .controles {
-  display: flex;
-  align-items: center;
-  margin-left: 2vw;
-}
-
 
 .whatsapp-button {
   position: fixed;

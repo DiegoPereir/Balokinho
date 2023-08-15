@@ -38,25 +38,7 @@ setasDireita.forEach(setaDireita => {
   });
 });
 
-//rolagem horizontal do menu catalogo
-const setaEsquerda = document.querySelector('.seta-esquerda');
-const setaDireita = document.querySelector('.seta-direita');
 
-setaEsquerda.addEventListener('click', () => {
-  const menu = document.querySelector('.menu');
-  menu.scrollBy({
-    left: -150,
-    behavior: 'smooth'
-  });
-});
-
-setaDireita.addEventListener('click', () => {
-  const menu = document.querySelector('.menu');
-  menu.scrollBy({
-    left: 150,
-    behavior: 'smooth'
-  });
-});
 
 
 
@@ -156,3 +138,101 @@ window.addEventListener('scroll', verificarPosicaoRolagem);
 
 // Chamar a função inicialmente para definir o estado inicial
 verificarPosicaoRolagem();
+
+
+
+
+
+function setupMenuDrag() {
+  const menuElement = document.querySelector('header nav .menu');
+  let isDraggingMenu = false;
+  let startXMenu;
+  let initialScrollLeftMenu;
+
+  function startDrag(e) {
+      if (e.target.tagName === 'A') {
+          e.preventDefault(); // Previne o comportamento padrão do link
+      }
+
+      isDraggingMenu = true;
+      startXMenu = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      initialScrollLeftMenu = menuElement.scrollLeft;
+      menuElement.style.cursor = 'grabbing';
+      document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', dragMenu);
+      document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragMenuGlobal);
+  }
+
+  function dragMenu(e) {
+      if (isDraggingMenu) {
+          const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+          const dx = currentX - startXMenu;
+          menuElement.scrollLeft = initialScrollLeftMenu - dx;
+      }
+  }
+
+  function stopDragMenuGlobal() {
+      if (isDraggingMenu) {
+          isDraggingMenu = false;
+          menuElement.style.cursor = 'grab';
+          document.removeEventListener('touchmove', dragMenu);
+          document.removeEventListener('mousemove', dragMenu);
+          document.removeEventListener('touchend', stopDragMenuGlobal);
+          document.removeEventListener('mouseup', stopDragMenuGlobal);
+      }
+  }
+
+  menuElement.addEventListener('mousedown', startDrag);
+  menuElement.addEventListener('touchstart', startDrag);
+}
+
+// Inicializando as funcionalidades de arrasto
+setupMenuDrag();
+setupCatalogoDrag();
+
+
+
+
+function setupCatalogoDrag() {
+  const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
+
+  catalogoElements.forEach(catalogoElement => {
+      let isDraggingCatalogo = false;
+      let startXCatalogo;
+      let initialScrollLeftCatalogo;
+
+      function startDrag(e) {
+          isDraggingCatalogo = true;
+          startXCatalogo = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+          initialScrollLeftCatalogo = catalogoElement.scrollLeft;
+          catalogoElement.style.cursor = 'grabbing';
+          document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', dragCatalogo);
+          document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragCatalogoGlobal);
+      }
+
+      function dragCatalogo(e) {
+          if (isDraggingCatalogo) {
+              const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+              const dx = currentX - startXCatalogo;
+              catalogoElement.scrollLeft = initialScrollLeftCatalogo - dx;
+          }
+      }
+
+      function stopDragCatalogoGlobal() {
+          if (isDraggingCatalogo) {
+              isDraggingCatalogo = false;
+              catalogoElement.style.cursor = 'grab';
+              document.removeEventListener('touchmove', dragCatalogo);
+              document.removeEventListener('mousemove', dragCatalogo);
+              document.removeEventListener('touchend', stopDragCatalogoGlobal);
+              document.removeEventListener('mouseup', stopDragCatalogoGlobal);
+          }
+      }
+
+      catalogoElement.addEventListener('mousedown', startDrag);
+      catalogoElement.addEventListener('touchstart', startDrag);
+  });
+}
+
+// Inicializando as funcionalidades de arrasto
+setupMenuDrag();
+setupCatalogoDrag();
