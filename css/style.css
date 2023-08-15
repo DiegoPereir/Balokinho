@@ -50,15 +50,7 @@ body {
     padding-right: 10%;
 }
 
-.btn {
-    text-align: center;
-    display: inline-block;
-    max-width: 352px;
-    border: 1px solid var(--white-color);
-    box-sizing: border-box;
-    border-radius: 8px;
-    padding: 1rem 2rem;
-}
+
 /* --------------------------------------- CABEÇALHO 2.0*/
 header nav {
     height: 50px;
@@ -286,7 +278,6 @@ header label span:nth-child(3) {
 
 #home::before, #services::before, #depos::before, #galery::before, #constract::before {
     content: "";
-    display: block;
     height: 100px; /* Ajuste este valor para o deslocamento desejado */
     margin-top: -100px; /* Deve ser o negativo do valor acima */
     visibility: hidden;
@@ -380,18 +371,16 @@ header label span:nth-child(3) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 2%;
+    padding: 2% 10%;
 }
 
 .about_content {
-    text-align: center;
-    padding: 2% 10%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
 }
+
 .title {
     color: var(--purple-color);
     font-weight: 700;
@@ -402,16 +391,16 @@ header label span:nth-child(3) {
     padding: 24px;
 }
 .about_content .imagem_sobre{
-    width: 20%;
-    height: 20%;
+    object-fit: contain;
+    width: 50%;
+    height: 200px;
 }
 .about_text {
     width: 50%;
-    height: 50%;
-    margin-left: 5%;
+    height: auto;
     font-weight: 550;
     color: var(--purple-color);
-    text-align: justify;
+    text-align: left;
     line-height: normal;
     letter-spacing: 1px;
 }
@@ -463,6 +452,7 @@ header label span:nth-child(3) {
   }
   
   .sub_sessao .catalogo {
+    user-select: none;
     border: 10px;
     display: flex;
     cursor: grab;
@@ -840,7 +830,7 @@ header label span:nth-child(3) {
     z-index: 100;
     width: 30px;
     height: 30px;
-    display: flex;
+    display: flex!important;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
