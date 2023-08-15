@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+
 :root {
 
     --menu-hover: rgb(198,229,177);
@@ -187,7 +190,7 @@ header label span:nth-child(3) {
 
 @media (max-width: 920px) {
     .sessao_catalogo .titulo_catalogo {
-        font-size: 15px;
+        font-size: 25px!important;
       }
     nav .menu-btn {
         display: block;
