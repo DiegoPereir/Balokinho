@@ -267,7 +267,13 @@ header label span:nth-child(3) {
         right: 35%;
     }
 }
-@media (max-width: 350px) {
+@media (max-width: 400px) {
+    #home .home_text{
+        font-size: 20px!important;
+    }
+    #home .home_title{
+        font-size: 25px!important;
+    }
     nav .menu-btn{
     right: 40%;
     }
@@ -323,7 +329,6 @@ header label span:nth-child(3) {
 
 .home_text {
     white-space: nowrap;
-    padding: 2rem;
     color: var(--white-color);
     font-size: 1.5rem;
     font-weight: bold;
