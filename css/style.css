@@ -3,7 +3,7 @@
 
 :root {
 
-    --menu-hover: rgb(198,229,177);
+    --menu-hover: #9179be;
  
     --pink-color: #df8499;
 
@@ -249,6 +249,10 @@ header label span:nth-child(3) {
    
 }
 @media (max-width: 590px) {
+    .sessao_catalogo .button_catalogo{
+        width: 275px!important;
+        font-size: 15px!important;
+    }
     .about_content .imagem_sobre{
         width: 50%!important;
         height: 50%!important;
@@ -318,6 +322,7 @@ header label span:nth-child(3) {
 
 
 .home_text {
+    white-space: nowrap;
     padding: 2rem;
     color: var(--white-color);
     font-size: 1.5rem;
@@ -415,7 +420,10 @@ header label span:nth-child(3) {
     margin: 2% 10%;
   }
  .sessao_catalogo .button_catalogo{
-    background-color: var(--baby-pink-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple-color);
     border: none;
     width: 400px;
     height: 50px;
@@ -472,6 +480,7 @@ header label span:nth-child(3) {
   }
   
   .sub_sessao .catalogo {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
     user-select: none;
     border: 10px;
     display: flex;
@@ -737,28 +746,6 @@ header label span:nth-child(3) {
     line-height: 1.25;
     padding: 1rem 15%;
 }
-
-.whatsapp-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #25D366;
-}
-
-.whatsapp_button:hover {
-    background-color: var(--green-color);
-    letter-spacing: 5px;
-    border: 2px solid var(--baby-green-color);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
-}
-
 .address {
     padding-top: 2rem;
     text-align: center;
@@ -835,7 +822,7 @@ header label span:nth-child(3) {
 }
 
 .whatsapp-button:hover{
-    border: 1px solid var(--black-color);
+    border: 1px solid rgb(129, 129, 129);
     transition: 0.3s;
     scale: 1.2;
 }
@@ -847,8 +834,8 @@ header label span:nth-child(3) {
     bottom: 50px;
     left: 45px;
     z-index: 100;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: flex!important;
     align-items: center;
     justify-content: center;
@@ -856,6 +843,8 @@ header label span:nth-child(3) {
     background-color: #6f6f6f;
     color: white;
     cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .subirPage:hover {

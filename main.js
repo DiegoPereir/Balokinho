@@ -117,6 +117,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+window.addEventListener('scroll', function() {
+  var botao = document.querySelector('.subirPage');
+  if (window.scrollY >= 100) {
+      botao.style.opacity = '1';
+  } else {
+      botao.style.opacity = '0';
+  }
+});
+
 
 //Botão Subir Pagina
 function subirPage() {
