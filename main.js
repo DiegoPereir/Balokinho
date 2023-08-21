@@ -60,10 +60,10 @@ function updateBackground() {
 
     if (h1Element) {
       const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
-      const corDeFundo = h1Element.textContent.trim() === 'Masculinas:' ? 'rgba(206, 234, 240, 1)' :
-                         h1Element.textContent.trim() === 'Unissex:' ? 'rgba(239, 221, 168, 1)' : 
-                         h1Element.textContent.trim() === 'Femininas:' ? 'rgba(250, 225, 224, 1)' :
-                         'rgba(239, 221, 168, 1)'; // Cor padrão para conteúdo não especificado
+      const corDeFundo = h1Element.textContent.trim() === 'Masculinas:' ? '#89CFF0' :
+                         h1Element.textContent.trim() === 'Unissex:' ? '#FFDAB9' : 
+                         h1Element.textContent.trim() === 'Femininas:' ? '#FFB6C1' :
+                         '#FFDAB9'; // Cor padrão para conteúdo não especificado
 
       conteudosCatalogo.forEach(conteudoCatalogo => {
         conteudoCatalogo.style.backgroundColor = corDeFundo;
@@ -141,9 +141,11 @@ function verificarPosicaoRolagem() {
   const linkTopo = document.querySelector('.subirPage');
   
   if (window.scrollY > 0) {
-    linkTopo.style.display = 'block'; // Tornar o link visível se a rolagem não estiver no topo
+      linkTopo.style.display = 'block'; // Tornar o link visível se a rolagem não estiver no topo
+      linkTopo.style.cursor = 'pointer'; // Tornar o cursor como "mãozinha" quando o botão estiver visível
   } else {
-    linkTopo.style.display = 'none'; // Tornar o link invisível se a rolagem estiver no topo
+      linkTopo.style.display = 'none'; // Tornar o link invisível se a rolagem estiver no topo
+      linkTopo.style.cursor = 'default'; // Tornar o cursor padrão quando o botão estiver no topo e não visível
   }
 }
 
@@ -157,6 +159,7 @@ verificarPosicaoRolagem();
 
 
 
+//arrastar catalogo e menu
 function setupMenuDrag() {
   const menuElement = document.querySelector('header nav .menu');
   let isDraggingMenu = false;

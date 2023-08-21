@@ -2,13 +2,13 @@
 
 :root {
 
-  --menu-hover: #9179be;
+  --menu-hover: #B19CD9;
 
   --pink-color: #df8499;
 
   --baby-pink-color: #f1b6c7;
 
-  --blue-color: #8aa7d0;
+  --blue-color: #89CFF0;
 
   --baby-blue-color: #b3bdcb;
 
@@ -364,6 +364,7 @@ header label span:nth-child(3) {
 }
 
 .sub_sessao .catalogo {
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), black 40px, black calc(100% - 40px), rgba(0, 0, 0, 0));
   -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
   user-select: none;
   border: 10px;
@@ -510,7 +511,10 @@ header label span:nth-child(3) {
   opacity: 0;
   transition: opacity 0.5s;
 }
-
+.subirPage img{
+  width: 50%;
+  height: 50%;
+}
 .subirPage:hover {
   transition: 0.1s;
   background-color: #5b5b5b;

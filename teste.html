@@ -3,58 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arraste para Visualizar</title>
+    <title>Escrevendo Animação</title>
     <style>
-        #container {
-            width: 300px;
-            height: 200px;
-            overflow: hidden;
-            border: 1px solid black;
-            cursor: grab;
+        @keyframes typing {
+            0%, 100% { width: 0 }
+            40% { width: 0 }
+            90% { width: 24em } /* Ajuste este valor conforme o tamanho do seu texto */
         }
-        #content {
-            width: 100%;
-            height: 1000px;
-            background: linear-gradient(white, gray);
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
+
+        #texto {
+            max-width: 24em; /* Ajuste este valor conforme o tamanho do seu texto */
+            width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid black;
+            animation:
+                typing 12s steps(40, end) infinite,
+                blink-caret .5s step-end infinite;
         }
     </style>
 </head>
 <body>
-
-<div id="container" onmousedown="startDrag(event)" onmouseup="stopDrag()" onmousemove="drag(event)">
-    <div id="content">
-        <!-- Adicione seus elementos aqui -->
-        <p>Item 1</p>
-        <p>Item 2</p>
-        <!-- ... -->
-        <p>Item 50</p>
-    </div>
-</div>
-
-<script>
-let isDragging = false;
-let startY;
-
-function startDrag(e) {
-    isDragging = true;
-    startY = e.clientY;
-    document.getElementById('container').style.cursor = 'grabbing';
-}
-
-function stopDrag() {
-    isDragging = false;
-    document.getElementById('container').style.cursor = 'grab';
-}
-
-function drag(e) {
-    if (isDragging) {
-        const dy = e.clientY - startY;
-        const container = document.getElementById('container');
-        container.scrollTop -= dy;
-        startY = e.clientY;
-    }
-}
-</script>
-
+    <div id="texto">Este é um exemplo de animação de escrevendo...</div>
 </body>
 </html>

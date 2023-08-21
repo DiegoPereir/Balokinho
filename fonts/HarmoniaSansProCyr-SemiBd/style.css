@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Harmonia Sans';
+    src: local('Harmonia Sans Semi Bold'), local('Harmonia-Sans-Semi-Bold'),
+        url('HarmoniaSansProCyr-SemiBd.woff2') format('woff2'),
+        url('HarmoniaSansProCyr-SemiBd.woff') format('woff'),
+        url('HarmoniaSansProCyr-SemiBd.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
