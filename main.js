@@ -42,15 +42,28 @@ setasDireita.forEach(setaDireita => {
 
 
 
-
-  
-//tela cheia catalogo
+//deixar imagem catalogo em fullscreen
 function fullscreen(element) {
-    element.classList.toggle('fullscreen');
+  const imgSrc = element.querySelector('.imagem_produto').src;
+  
+  // Cria um elemento de imagem para exibir em tela cheia
+  const fullscreenImg = document.createElement('img');
+  fullscreenImg.src = imgSrc;
+  fullscreenImg.classList.add('fullscreen-img');
+  
+  // Adiciona o elemento de imagem ao body
+  document.body.appendChild(fullscreenImg);
+  
+  // Adiciona um evento para fechar a imagem em tela cheia quando clicada
+  fullscreenImg.addEventListener('click', function() {
+      fullscreenImg.remove();
+  });
 }
 
+  
 
-//mudar cor de fundo dos elementos do catalogo
+
+// Mudar cor de fundo dos elementos do catálogo
 function updateBackground() {
   const subSessoes = document.querySelectorAll('.sub_sessao');
 
@@ -58,19 +71,36 @@ function updateBackground() {
     const h1Element = subSessao.querySelector('h1');
     const conteudoTitulo = subSessao.querySelector('.conteudo_titulo');
 
-    if (h1Element) {
-      const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
-      const corDeFundo = h1Element.textContent.trim() === 'Masculinas:' ? '#89CFF0' :
-                         h1Element.textContent.trim() === 'Unissex:' ? '#FFDAB9' : 
-                         h1Element.textContent.trim() === 'Femininas:' ? '#FFB6C1' :
-                         '#FFDAB9'; // Cor padrão para conteúdo não especificado
+    let corDeFundo;
+    let corTitulo;
 
+    if (h1Element) {
+      switch (h1Element.textContent.trim()) {
+        case 'Masculinas:':
+          corDeFundo = '#F4E7FF';
+          corTitulo = '#0000FF'; // Azul
+          break;
+        case 'Femininas:':
+          corDeFundo = '#F4E7FF';
+          corTitulo = '#D81B60'; // Rosa escuro
+          break;
+        case 'Unissex:':
+          corDeFundo = '#F4E7FF';
+          corTitulo = '#FFA000'; // Amarelo profundo
+          break;
+        default:
+          corDeFundo = '#F4E7FF'; // Cor padrão para conteúdo não especificado
+          corTitulo = '#000000'; // Cor padrão para título não especificado (preto)
+      }
+
+      const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
       conteudosCatalogo.forEach(conteudoCatalogo => {
         conteudoCatalogo.style.backgroundColor = corDeFundo;
       });
 
       if (conteudoTitulo) {
-        conteudoTitulo.style.backgroundColor = corDeFundo;
+        h1Element.style.color = corTitulo; // Aplica a cor ao texto do título
+        conteudoTitulo.style.backgroundColor = corDeFundo; // Aplica a cor de fundo ao título
       }
     }
   });
@@ -79,6 +109,9 @@ function updateBackground() {
 window.onload = function() {
   updateBackground();
 };
+
+
+
 
 
 
@@ -165,6 +198,16 @@ function setupMenuDrag() {
   let isDraggingMenu = false;
   let startXMenu;
   let initialScrollLeftMenu;
+  let velocity = 0;
+  let lastX = 0;
+
+  function animateMomentum() {
+      if (Math.abs(velocity) > 0.5) {
+          menuElement.scrollLeft -= velocity; // Invertendo a direção aqui
+          velocity *= 0.92; // Fator de atrito
+          requestAnimationFrame(animateMomentum);
+      }
+  }
 
   function startDrag(e) {
       isDraggingMenu = true;
@@ -173,6 +216,7 @@ function setupMenuDrag() {
       menuElement.style.cursor = 'grabbing';
       document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', dragMenu);
       document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragMenuGlobal);
+      document.addEventListener('mouseleave', stopDragMenuGlobal);
   }
 
   function dragMenu(e) {
@@ -186,6 +230,8 @@ function setupMenuDrag() {
       const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
       const dx = currentX - startXMenu;
       menuElement.scrollLeft = initialScrollLeftMenu - dx;
+      velocity = currentX - lastX;
+      lastX = currentX;
   }
 
   function stopDragMenuGlobal() {
@@ -196,8 +242,24 @@ function setupMenuDrag() {
           document.removeEventListener('mousemove', dragMenu);
           document.removeEventListener('touchend', stopDragMenuGlobal);
           document.removeEventListener('mouseup', stopDragMenuGlobal);
+          document.removeEventListener('mouseleave', stopDragMenuGlobal);
+          animateMomentum();
       }
   }
+
+  // Impedir o comportamento padrão de arrastar e soltar para links
+  menuElement.addEventListener('dragstart', function(e) {
+      if (e.target.tagName === 'A') {
+          e.preventDefault();
+      }
+  });
+
+  // Impedir o clique enquanto estiver arrastando
+  menuElement.addEventListener('click', function(e) {
+      if (isDraggingMenu && e.target.tagName === 'A') {
+          e.preventDefault();
+      }
+  });
 
   menuElement.addEventListener('mousedown', startDrag);
   menuElement.addEventListener('touchstart', startDrag);
@@ -211,6 +273,10 @@ setupCatalogoDrag();
 
 
 
+
+
+
+
 function setupCatalogoDrag() {
   const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
 
@@ -218,6 +284,16 @@ function setupCatalogoDrag() {
       let isDraggingCatalogo = false;
       let startXCatalogo;
       let initialScrollLeftCatalogo;
+      let velocity = 0;
+      let lastX = 0;
+
+      function animateMomentum() {
+          if (Math.abs(velocity) > 0.5) {
+              catalogoElement.scrollLeft -= velocity; // Invertendo a direção aqui
+              velocity *= 0.92; // Fator de atrito
+              requestAnimationFrame(animateMomentum);
+          }
+      }
 
       function startDrag(e) {
           isDraggingCatalogo = true;
@@ -229,22 +305,21 @@ function setupCatalogoDrag() {
       }
 
       function dragCatalogo(e) {
-          if (isDraggingCatalogo) {
-              const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-              const dx = currentX - startXCatalogo;
-              catalogoElement.scrollLeft = initialScrollLeftCatalogo - dx;
-          }
+          const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+          const dx = currentX - startXCatalogo;
+          catalogoElement.scrollLeft = initialScrollLeftCatalogo - dx;
+          velocity = currentX - lastX;
+          lastX = currentX;
       }
 
       function stopDragCatalogoGlobal() {
-          if (isDraggingCatalogo) {
-              isDraggingCatalogo = false;
-              catalogoElement.style.cursor = 'grab';
-              document.removeEventListener('touchmove', dragCatalogo);
-              document.removeEventListener('mousemove', dragCatalogo);
-              document.removeEventListener('touchend', stopDragCatalogoGlobal);
-              document.removeEventListener('mouseup', stopDragCatalogoGlobal);
-          }
+          isDraggingCatalogo = false;
+          catalogoElement.style.cursor = 'grab';
+          document.removeEventListener('touchmove', dragCatalogo);
+          document.removeEventListener('mousemove', dragCatalogo);
+          document.removeEventListener('touchend', stopDragCatalogoGlobal);
+          document.removeEventListener('mouseup', stopDragCatalogoGlobal);
+          animateMomentum();
       }
 
       catalogoElement.addEventListener('mousedown', startDrag);
