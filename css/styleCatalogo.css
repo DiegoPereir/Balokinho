@@ -90,7 +90,7 @@ header nav .icon_home img {
 
 header nav .menu {
   display: flex;
-  width: 70%;
+  width: 60%;
   height: 70px;
   align-items: center;
   font-family: 'Inter', sans-serif;
@@ -203,6 +203,10 @@ header label span:nth-child(3) {
 
 
 @media (max-width: 1300px) {
+  #searchInput {
+    width: 20%!important;
+  }
+
   header nav .menu.open {
     height: 560px;
   }
@@ -306,6 +310,14 @@ header label span:nth-child(3) {
   nav .menu-btn {
     right: 25%;
   }
+  #searchInput {
+    width: 40px;
+    background: url('../icons/Lupa.svg') no-repeat center center;
+    background-size: 20px;
+    cursor: pointer;
+    padding-left: 40px; /* Esconde o texto digitado */
+    text-indent: -9999px; /* Esconde o placeholder */
+}
 }
 
 @media (max-width: 350px) {
@@ -512,4 +524,44 @@ header label span:nth-child(3) {
   background-color: #5b5b5b;
   border: 1px solid #ffffff;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo padrão para a barra de pesquisa */
+#searchInput {
+  width: 10%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+/* Estilo para a lupa */
+#searchInput.lupa {
+  width: 40px;
+  background: url('../icons/Lupa.svg') no-repeat center center;
+  background-size: 20px;
+  cursor: pointer;
+  padding-left: 40px; /* Esconde o texto digitado */
+  text-indent: -9999px; /* Esconde o placeholder */
+}
+
+#suggestions {
+  border: 1px solid #ccc;
+  max-height: 200px;
+  min-width: 220px;
+  overflow-y: auto;
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 240px;
+  background-color: var(--white-color);
+}
+
+#suggestions div {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#suggestions div:hover {
+  background-color: #eee;
 }
