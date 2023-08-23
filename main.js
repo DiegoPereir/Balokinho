@@ -77,19 +77,19 @@ function updateBackground() {
     if (h1Element) {
       switch (h1Element.textContent.trim()) {
         case 'Masculinas:':
-          corDeFundo = '#F4E7FF';
+          corDeFundo = '#f1f1f1';
           corTitulo = '#0000FF'; // Azul
           break;
         case 'Femininas:':
-          corDeFundo = '#F4E7FF';
+          corDeFundo = '#f1f1f1';
           corTitulo = '#D81B60'; // Rosa escuro
           break;
         case 'Unissex:':
-          corDeFundo = '#F4E7FF';
+          corDeFundo = '#f1f1f1';
           corTitulo = '#FFA000'; // Amarelo profundo
           break;
         default:
-          corDeFundo = '#F4E7FF'; // Cor padrão para conteúdo não especificado
+          corDeFundo = '#f1f1f1'; // Cor padrão para conteúdo não especificado
           corTitulo = '#000000'; // Cor padrão para título não especificado (preto)
       }
 

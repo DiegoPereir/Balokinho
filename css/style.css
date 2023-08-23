@@ -331,16 +331,19 @@ header label span:nth-child(3) {
 
 #home {
     background-image: url(../img/imagembebêolhandocima.png);
-    padding: 5rem;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center; /* Centraliza horizontalmente */
+    background-position-y: top;
+    padding: 5rem;
     position: relative;
     justify-content: center;
     align-items: center;
     display: flex;
+
 }
+
+
 
 .overlay {
     background: linear-gradient(180deg, var(--blue-color) 0%, var(--pink-color) 100%);
