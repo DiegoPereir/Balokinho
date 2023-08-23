@@ -330,7 +330,7 @@ header label span:nth-child(3) {
 
 
 #home {
-    background-image: url(../img/backgroundBalukinho.jpg);
+    background-image: url(../img/imagembebêolhandocima.png);
     padding: 5rem;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -432,7 +432,7 @@ header label span:nth-child(3) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2% 10%;
+    padding: 2% 10% 70px 10%;
 }
 
 
@@ -753,6 +753,8 @@ header label span:nth-child(3) {
     font-size: 1.25rem;
     align-items: center;
     margin: 10px;
+    text-decoration: underline;
+    color: green;
 }
 
 .telefone {
