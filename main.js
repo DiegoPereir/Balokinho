@@ -331,6 +331,8 @@ const products = Array.from(document.querySelectorAll('.desc_produto h1')).map(h
     };
 });
 
+let selectedIndex = -1;
+
 searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
     suggestions.innerHTML = '';
@@ -342,44 +344,45 @@ searchInput.addEventListener('input', function() {
             const div = document.createElement('div');
             div.textContent = product.name;
             div.addEventListener('click', function() {
-              const productTop = product.element.getBoundingClientRect().top;
-              
-              product.element.scrollIntoView({ behavior: 'smooth' });
-          
-              setTimeout(() => {
-                  if (productTop > 0) { // Se o produto estiver abaixo da posição atual
-                      window.scrollBy(0, -50);
-                  } else { // Se o produto estiver acima da posição atual
-                      window.scrollBy(0, 70);
-                  }
-                  suggestions.style.display = 'none';
-              }, 500);
-          });
-          
+                // Identificando a subseção do produto
+                const subsection = product.element.closest('.sub_sessao');
+
+                // Rolando até a subseção
+                subsection.scrollIntoView({ behavior: 'smooth' });
+            });
+
             suggestions.appendChild(div);
         }
     }
 
     suggestions.style.display = found ? 'block' : 'none';
+    selectedIndex = -1; // Resetando o índice selecionado
 });
 
-searchInput.addEventListener('click', function() {
-    if (window.innerWidth <= 590 && this.style.width === '40px') {
-        this.style.width = '100%';
-        this.style.background = 'none';
-        this.style.paddingLeft = '10px';
-        this.style.textIndent = '0px';
-        this.focus();
+searchInput.addEventListener('keydown', function(event) {
+    const items = suggestions.children;
+
+    if (event.key === 'ArrowDown' && selectedIndex < items.length - 1) {
+        selectedIndex++;
+        for (let i = 0; i < items.length; i++) {
+            items[i].classList.remove('selected');
+        }
+        items[selectedIndex].classList.add('selected');
+    } else if (event.key === 'ArrowUp' && selectedIndex > 0) {
+        selectedIndex--;
+        for (let i = 0; i < items.length; i++) {
+            items[i].classList.remove('selected');
+        }
+        items[selectedIndex].classList.add('selected');
+    } else if (event.key === 'Enter' && selectedIndex >= 0) {
+        items[selectedIndex].click();
     }
 });
 
-const lupa = `<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M796-121 533-384q-30 26-69.959 40.5T378-329q-108.162 0-183.081-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.125-57.5T572-585q0-81-56.875-138.5T377-781q-82.083 0-139.542 57.5Q180-666 180-585t57.458 138.5Q294.917-389 377-389Z"/></svg>`;
+// Adicionando o evento de clique ao document
 document.addEventListener('click', function(event) {
-    if (window.innerWidth <= 590 && event.target !== searchInput && !searchInput.contains(event.target)) {
-        searchInput.style.width = '40px';
-        searchInput.style.background = `url('${lupa}') no-repeat center center`;
-        searchInput.style.backgroundSize = '20px';
-        searchInput.style.paddingLeft = '40px';
-        searchInput.style.textIndent = '-9999px';
+    // Verificando se o clique foi fora da barra de busca ou da área de sugestões
+    if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
+        suggestions.style.display = 'none';
     }
 });
