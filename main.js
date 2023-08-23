@@ -268,15 +268,6 @@ function setupMenuDrag() {
 // Inicializando as funcionalidades de arrasto
 setupMenuDrag();
 setupCatalogoDrag();
-
-
-
-
-
-
-
-
-
 function setupCatalogoDrag() {
   const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
 
@@ -327,7 +318,9 @@ function setupCatalogoDrag() {
   });
 }
 
-// Inicializando as funcionalidades de arrasto
+
+
+//barra de pesquisa
 const searchInput = document.getElementById('searchInput');
 const suggestions = document.getElementById('suggestions');
 

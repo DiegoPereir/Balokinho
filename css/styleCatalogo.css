@@ -89,6 +89,7 @@ header nav .icon_home img {
 }
 
 header nav .menu {
+  margin-left: 10px;
   display: flex;
   width: 60%;
   height: 70px;
@@ -243,7 +244,7 @@ header label span:nth-child(3) {
   }
 
   nav ul.open {
-    top: 90px;
+    top: 70px;
     width: 90%;
     margin-left: -30px;
     display: flex;
@@ -403,10 +404,12 @@ header label span:nth-child(3) {
   transition: transform 0.3s ease;
 }
 
-.conteudo_catalogo:hover {
+.conteudo_catalogo:hover,
+.conteudo_catalogo:active {
   cursor: pointer;
   transform: translateY(-10px);
 }
+
 
 .sub_sessao .catalogo .conteudo_catalogo .desc_catalogo {
   width: 90%;
@@ -549,19 +552,36 @@ header label span:nth-child(3) {
   border: 1px solid #ccc;
   max-height: 200px;
   min-width: 220px;
+  z-index: 5;
   overflow-y: auto;
   display: none;
   position: fixed;
   top: 70px;
   left: 240px;
   background-color: var(--white-color);
+  border-radius: 5px;
+}
+#suggestions::-webkit-scrollbar {
+  width: 10px;               /* width of the entire scrollbar */
 }
 
+#suggestions::-webkit-scrollbar-track {
+  background: rgb(241, 241, 241);        /* color of the tracking area */
+}
+
+#suggestions::-webkit-scrollbar-thumb {
+  background-color: rgb(77, 77, 77);    /* color of the scroll thumb */
+  border-radius: 10px;       /* roundness of the scroll thumb */
+  border: 2px solid rgb(241, 241, 241);;
+}
+#suggestions:hover{
+  border: 2px solid rgb(232, 232, 232);
+}
 #suggestions div {
   padding: 5px;
   cursor: pointer;
 }
 
 #suggestions div:hover {
-  background-color: #eee;
+  background-color: #f1f1f1;
 }
