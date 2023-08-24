@@ -7,6 +7,24 @@ function menuShow() {
 }
 
 
+//banner sobre nos
+const images = [
+  'url("img/backgroundBalukinho.jpg")',
+  'url("img/salao.jpg")',
+  'url("img/imagembebêolhandocima.png")'
+];
+
+let currentImageIndex = 0;
+
+function rotateBackgroundImage() {
+  const section = document.querySelector('.sobre_nos');
+  section.style.backgroundImage = images[currentImageIndex];
+  currentImageIndex = (currentImageIndex + 1) % images.length; // Isso fará com que volte ao início após a última imagem
+}
+
+// Iniciar a rotação
+setInterval(rotateBackgroundImage, 5000); // Muda a imagem a cada 5 segundos
+
 
 //rolagem horizontal
 
@@ -45,20 +63,31 @@ setasDireita.forEach(setaDireita => {
 //deixar imagem catalogo em fullscreen
 function fullscreen(element) {
   const imgSrc = element.querySelector('.imagem_produto').src;
-  
+
+  // Cria um elemento de fundo
+  const fullscreenBackground = document.createElement('div');
+  fullscreenBackground.classList.add('fullscreen-background');
+  document.body.appendChild(fullscreenBackground);
+
   // Cria um elemento de imagem para exibir em tela cheia
   const fullscreenImg = document.createElement('img');
   fullscreenImg.src = imgSrc;
   fullscreenImg.classList.add('fullscreen-img');
-  
-  // Adiciona o elemento de imagem ao body
   document.body.appendChild(fullscreenImg);
-  
-  // Adiciona um evento para fechar a imagem em tela cheia quando clicada
+
+  // Adiciona um evento para fechar a imagem em tela cheia e o fundo quando clicada
   fullscreenImg.addEventListener('click', function() {
       fullscreenImg.remove();
+      fullscreenBackground.remove();
+  });
+
+  // Adiciona um evento para fechar a imagem em tela cheia e o fundo quando o fundo é clicado
+  fullscreenBackground.addEventListener('click', function() {
+      fullscreenImg.remove();
+      fullscreenBackground.remove();
   });
 }
+
 
   
 
@@ -76,21 +105,21 @@ function updateBackground() {
 
     if (h1Element) {
       switch (h1Element.textContent.trim()) {
-        case 'Masculinas:':
-          corDeFundo = '#f1f1f1';
-          corTitulo = '#0000FF'; // Azul
+        case 'Masculinas':
+          corDeFundo = '#ffffff';
+          corTitulo = '#4E9AE6'; // Azul
           break;
-        case 'Femininas:':
-          corDeFundo = '#f1f1f1';
-          corTitulo = '#D81B60'; // Rosa escuro
+        case 'Femininas':
+          corDeFundo = '#ffffff';
+          corTitulo = '#FF5275'; // Rosa escuro
           break;
-        case 'Unissex:':
-          corDeFundo = '#f1f1f1';
-          corTitulo = '#FFA000'; // Amarelo profundo
+        case 'Unissex':
+          corDeFundo = '#ffffff';
+          corTitulo = '#FFB347'; // Amarelo profundo
           break;
         default:
-          corDeFundo = '#f1f1f1'; // Cor padrão para conteúdo não especificado
-          corTitulo = '#000000'; // Cor padrão para título não especificado (preto)
+          corDeFundo = '#ffffff'; // Cor padrão para conteúdo não especificado
+          corTitulo = '#FFB347'; // Cor padrão para título não especificado (preto)
       }
 
       const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
@@ -193,6 +222,7 @@ verificarPosicaoRolagem();
 
 
 //arrastar catalogo e menu
+setupMenuDrag();
 function setupMenuDrag() {
   const menuElement = document.querySelector('header nav .menu');
   let isDraggingMenu = false;
@@ -266,8 +296,16 @@ function setupMenuDrag() {
 }
 
 // Inicializando as funcionalidades de arrasto
-setupMenuDrag();
-setupCatalogoDrag();
+function isMobileDevice() {
+  return window.innerWidth <= 768;
+}
+
+function removeHoverEffect(element) {
+  if (isMobileDevice()) {
+      element.classList.remove('hover-effect');
+  }
+}
+
 function setupCatalogoDrag() {
   const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
 
@@ -278,10 +316,20 @@ function setupCatalogoDrag() {
       let velocity = 0;
       let lastX = 0;
 
+      const conteudoCatalogoElements = catalogoElement.querySelectorAll('.conteudo_catalogo');
+      conteudoCatalogoElements.forEach(element => {
+          element.addEventListener('touchstart', () => {
+              removeHoverEffect(element);
+          });
+          element.addEventListener('touchend', () => {
+              removeHoverEffect(element);
+          });
+      });
+
       function animateMomentum() {
           if (Math.abs(velocity) > 0.5) {
-              catalogoElement.scrollLeft -= velocity; // Invertendo a direção aqui
-              velocity *= 0.92; // Fator de atrito
+              catalogoElement.scrollLeft -= velocity;
+              velocity *= 0.92;
               requestAnimationFrame(animateMomentum);
           }
       }
@@ -318,6 +366,9 @@ function setupCatalogoDrag() {
   });
 }
 
+setupCatalogoDrag();
+
+
 
 
 //barra de pesquisa
@@ -333,8 +384,7 @@ const products = Array.from(document.querySelectorAll('.desc_produto h1')).map(h
 
 let selectedIndex = -1;
 
-searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase();
+function displaySuggestions(query) {
     suggestions.innerHTML = '';
     let found = false;
 
@@ -356,7 +406,16 @@ searchInput.addEventListener('input', function() {
     }
 
     suggestions.style.display = found ? 'block' : 'none';
+}
+
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    displaySuggestions(query);
     selectedIndex = -1; // Resetando o índice selecionado
+});
+
+searchInput.addEventListener('focus', function() {
+    displaySuggestions(this.value.toLowerCase());
 });
 
 searchInput.addEventListener('keydown', function(event) {
@@ -368,12 +427,14 @@ searchInput.addEventListener('keydown', function(event) {
             items[i].classList.remove('selected');
         }
         items[selectedIndex].classList.add('selected');
+        items[selectedIndex].scrollIntoView({ block: 'nearest' });
     } else if (event.key === 'ArrowUp' && selectedIndex > 0) {
         selectedIndex--;
         for (let i = 0; i < items.length; i++) {
             items[i].classList.remove('selected');
         }
         items[selectedIndex].classList.add('selected');
+        items[selectedIndex].scrollIntoView({ block: 'nearest' });
     } else if (event.key === 'Enter' && selectedIndex >= 0) {
         items[selectedIndex].click();
     }
@@ -386,3 +447,6 @@ document.addEventListener('click', function(event) {
         suggestions.style.display = 'none';
     }
 });
+
+
+

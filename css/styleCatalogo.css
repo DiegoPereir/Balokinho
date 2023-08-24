@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root {
 
@@ -45,6 +45,7 @@
 
 header {
   padding-bottom: 100px;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -57,7 +58,6 @@ header nav {
   background-color: var(--white-color);
   align-items: center;
   padding: 20px 20px;
-  font-family: 'Inter', sans-serif;
   cursor: grab;
 }
 
@@ -72,7 +72,7 @@ header nav a {
   height: 50px;
 }
 
-header nav .logo{
+header nav .logo {
   width: 100%;
   height: 100%;
 }
@@ -94,7 +94,6 @@ header nav .menu {
   width: 60%;
   height: 70px;
   align-items: center;
-  font-family: 'Inter', sans-serif;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -135,7 +134,6 @@ header nav .menu li .dropdown-content a {
 
 header nav .menu li a {
   color: var(--black-color);
-  font-family: arial;
   padding: 8px 15px;
   letter-spacing: 1px;
   transition: 0.3s;
@@ -201,11 +199,21 @@ header label span:nth-child(3) {
 }
 
 
-
+@media (min-width: 1300px) {
+  .conteudo_catalogo:hover {
+    cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow:
+      rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
+      rgba(50, 50, 93, 0.1) 0px -2px 5px -1px,
+      rgba(50, 50, 93, 0.1) 2px 0px 5px -1px,
+      rgba(50, 50, 93, 0.3) 0px 4px 6px -2px;
+  }
+}
 
 @media (max-width: 1300px) {
   #searchInput {
-    width: 20%!important;
+    width: 20% !important;
   }
 
   header nav .menu.open {
@@ -219,10 +227,6 @@ header label span:nth-child(3) {
 
   .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
     display: none;
-  }
-
-  .sub_sessao .catalogo img {
-    width: 100px !important;
   }
 
   .sub_sessao .catalogo .conteudo_catalogo {
@@ -255,6 +259,10 @@ header label span:nth-child(3) {
   header nav .menu li a:hover,
   header nav .menu li button:hover {
     font-size: 25px;
+  }
+
+  .produto_content {
+    width: 130px !important;
   }
 
   .menu {
@@ -306,8 +314,8 @@ header label span:nth-child(3) {
     font-size: 22px;
   }
 
-  #suggestions{
-    left: 210px!important;
+  #suggestions {
+    left: 210px !important;
   }
 
 }
@@ -316,38 +324,34 @@ header label span:nth-child(3) {
   nav .menu-btn {
     right: 25%;
   }
-  header nav .content_logo{
+
+  header nav .content_logo {
     width: fit-content;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  header nav .logo{
+
+  header nav .logo {
     width: 90px;
     height: 50px;
   }
-  #suggestions{
-    left: 54px!important;
+
+  #suggestions {
+    left: 54px !important;
   }
 }
 
-
-
-
-
-
-
-
 .sessao_catalogo {
-  font-family: 'Quicksand';
+  font-family: 'Nunito', Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  margin: 0 10%;
+  margin: 0 5%;
 }
 
 .sessao_catalogo .conteudo_titulo {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(219, 219, 219);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,7 +359,7 @@ header label span:nth-child(3) {
 }
 
 .sessao_catalogo .titulo_catalogo {
-  color: var(--black-color);
+  color: #1e0096d1;
   display: flex;
   align-items: center;
   font-weight: bold;
@@ -365,19 +369,21 @@ header label span:nth-child(3) {
 
 .sessao_catalogo .sub_sessao .alinhar_titulo {
   display: flex;
-  justify-content: center;
+  margin-left: 5%;
+  justify-content: left;
+  width: fit-content;
 }
 
 .sessao_catalogo .sub_sessao .alinhar_titulo .conteudo_titulo {
+  border: none;
   margin: 2% 0 1% 0;
-  border-radius: 15px;
   display: flex;
-  justify-self: center;
-  width: 80%;
+  width: 100%;
 }
 
 .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
-  font-size: 25px;
+  align-items: end;
+  font-size: 30px;
   height: 50px;
 }
 
@@ -392,30 +398,22 @@ header label span:nth-child(3) {
   flex-wrap: nowrap;
 }
 
-.sub_sessao .catalogo img {
-  width: 200px;
-  display: block;
-}
+
 
 .sub_sessao .catalogo .conteudo_catalogo {
-  border: 1px solid var(--baby-blue-color);
-  border-bottom: 2px solid black;
+  border: 2px solid rgb(233, 233, 233);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 300px;
-  border-radius: 15px;
+  height: 100%;
+  border-radius: 5px;
   margin: 1rem 1% 1rem 1%;
   padding: 5px;
   transition: transform 0.3s ease;
 }
 
-.conteudo_catalogo:hover,
-.conteudo_catalogo:active {
-  cursor: pointer;
-  transform: translateY(-10px);
-}
+
 
 
 .sub_sessao .catalogo .conteudo_catalogo .desc_catalogo {
@@ -425,12 +423,12 @@ header label span:nth-child(3) {
 .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
   border: none;
   text-align: center;
-  font-size: 24px;
-  margin: 10px 0px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px 0px;
 }
 
@@ -438,36 +436,49 @@ header label span:nth-child(3) {
   border: 1px solid var(--baby-blue-color);
   position: relative;
   display: block;
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 300px;
   overflow: hidden;
+  margin: 5%;
+
 }
 
 .produto_content img {
   transition: .4s;
-  width: 200px;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-
+  display: block;
 }
 
-.sub_sessao .catalogo img {
-  transition: 0s;
-}
 .fullscreen-img {
   border: 1px solid var(--sky-color);
   position: fixed;
-  top: 12%;  /* Centraliza verticalmente */
-  left: 10%; /* Centraliza horizontalmente */
+  top: 12%;
+  /* Centraliza verticalmente */
+  left: 10%;
+  /* Centraliza horizontalmente */
   width: 80vw;
   height: 80vh;
   object-fit: cover;
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
   z-index: 1000;
-  border-radius: 15px; /* Bordas arredondadas */
+  border-radius: 5px;
+  /* Bordas arredondadas */
 }
+
+.fullscreen-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.7);
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+
 
 
 
@@ -525,10 +536,12 @@ header label span:nth-child(3) {
   opacity: 0;
   transition: opacity 0.5s;
 }
-.subirPage img{
+
+.subirPage img {
   width: 50%;
   height: 50%;
 }
+
 .subirPage:hover {
   transition: 0.1s;
   background-color: #5b5b5b;
@@ -552,8 +565,10 @@ header label span:nth-child(3) {
   background: url('../icons/Lupa.svg') no-repeat center center;
   background-size: 20px;
   cursor: pointer;
-  padding-left: 40px; /* Esconde o texto digitado */
-  text-indent: -9999px; /* Esconde o placeholder */
+  padding-left: 40px;
+  /* Esconde o texto digitado */
+  text-indent: -9999px;
+  /* Esconde o placeholder */
 }
 
 #suggestions {
@@ -569,22 +584,30 @@ header label span:nth-child(3) {
   background-color: var(--white-color);
   border-radius: 5px;
 }
+
 #suggestions::-webkit-scrollbar {
-  width: 10px;               /* width of the entire scrollbar */
+  width: 10px;
+  /* width of the entire scrollbar */
 }
 
 #suggestions::-webkit-scrollbar-track {
-  background: rgb(241, 241, 241);        /* color of the tracking area */
+  background: rgb(241, 241, 241);
+  /* color of the tracking area */
 }
 
 #suggestions::-webkit-scrollbar-thumb {
-  background-color: rgb(77, 77, 77);    /* color of the scroll thumb */
-  border-radius: 10px;       /* roundness of the scroll thumb */
-  border: 2px solid rgb(241, 241, 241);;
+  background-color: rgb(77, 77, 77);
+  /* color of the scroll thumb */
+  border-radius: 10px;
+  /* roundness of the scroll thumb */
+  border: 2px solid rgb(241, 241, 241);
+  ;
 }
-#suggestions:hover{
+
+#suggestions:hover {
   border: 2px solid rgb(232, 232, 232);
 }
+
 #suggestions div {
   padding: 5px;
   cursor: pointer;
@@ -593,6 +616,7 @@ header label span:nth-child(3) {
 #suggestions div:hover {
   background-color: #f1f1f1;
 }
+
 #suggestions .selected {
   background-color: #e0e0e0;
 }

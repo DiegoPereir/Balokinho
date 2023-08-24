@@ -81,6 +81,8 @@ function fullscreen(element) {
     updateBackground();
   };
   
+
+  
   //BOTÃO SUBIRPAGE
   window.addEventListener('scroll', function() {
     var botao = document.querySelector('.subirPage');
