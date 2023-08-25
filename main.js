@@ -17,7 +17,7 @@ const images = [
 let currentImageIndex = 0;
 
 function rotateBackgroundImage() {
-  const section = document.querySelector('.sobre_nos');
+  const section = document.querySelector('#home');
   section.style.backgroundImage = images[currentImageIndex];
   currentImageIndex = (currentImageIndex + 1) % images.length; // Isso fará com que volte ao início após a última imagem
 }

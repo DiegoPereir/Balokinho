@@ -1,14 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
 
-@font-face {
-    font-family: 'Harmonia Sans';
-    src: local('Harmonia Sans Semi Bold'), local('Harmonia-Sans-Semi-Bold'),
-        url('HarmoniaSansProCyr-SemiBd.woff2') format('woff2'),
-        url('HarmoniaSansProCyr-SemiBd.woff') format('woff'),
-        url('HarmoniaSansProCyr-SemiBd.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
 
 :root {
 
@@ -188,7 +181,9 @@ header label span:nth-child(3) {
 }
 
 @media (max-width: 920px) {
-
+    .contact_content{
+        flex-direction: column!important;
+    }
     .home_text p {
         animation: none !important;
         border-right: none !important;
@@ -312,6 +307,8 @@ header label span:nth-child(3) {
 
 /* --------------------------------------- HOME */
 
+
+  
 #home::before,
 #services::before,
 #depos::before,
@@ -333,6 +330,7 @@ header label span:nth-child(3) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
+    height: 600px;
     /* Centraliza horizontalmente */
     background-position-y: top;
     padding: 5rem;
@@ -350,14 +348,7 @@ header label span:nth-child(3) {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: .5;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    opacity: .3;
 }
 
 .home_content {
@@ -429,12 +420,11 @@ header label span:nth-child(3) {
 
 /* SOBRE NOS */
 .sobre_nos {
-    background-image: url(../img/imagembebêolhandocima.png);
+    background-image: url(../img/criancasfelizes.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
-    /* background-color: #b5b5b5; */
 
     width: 100%;
     height: 700px;
@@ -446,93 +436,39 @@ header label span:nth-child(3) {
 }
 
 .sobre_nos .conteudo_sobre {
+    font-family: 'ADLaM Display', cursive;
+    font-weight: 400;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    width: 300px;
+    width: 600px;
     height: fit-content;
 
-    background-color: #ffffff;
     position: absolute;
     left: 10%;
-    border-radius: 10px;
-    box-shadow:
-        rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
-        /* Sombra superior fraca */
-        rgba(50, 50, 93, 0.1) 0px -2px 5px -1px,
-        /* Sombra esquerda fraca */
-        rgba(50, 50, 93, 0.1) 2px 0px 5px -1px,
-        /* Sombra direita fraca */
-        rgba(0, 0, 0, 0.3) 0px 4px 6px -2px;
-    /* Sombra inferior mais escura */
 
+    background-color: #ededed8e;
+    color: #ffffff;
     padding: 10px 10px 20px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    text-shadow:-1px 1px 2px rgb(114, 114, 114);
+
 }
 
 .sobre_nos .conteudo_sobre .titulo_sobre {
-    font-size: 32px;
-    font-weight: 300;
+    font-size: 36px;
+    font-weight: 100;
     color: (--black-color);
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(184, 184, 184, 0.797);
 }
 
 .sobre_nos .conteudo_sobre .texto_sobre {
-    font-size: 16px;
-    font-weight: 100;
+    font-size: 18px;
+    font-weight: 500;
     width: 90%;
-    color: (--black-color);
 }
-
-/* --------------------------------------- ABOUT */
-#about {
-    background-color: var(--menu-hover);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2% 10% 0 10%;
-}
-
-
-
-.about_content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: inherit;
-    height: 100%;
-}
-
-.title {
-    color: var(--white-color);
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 1.5;
-    padding: 24px;
-}
-
-.about_content .imagem_sobre {
-    object-fit: contain;
-    width: 50%;
-    height: 300px;
-}
-
-.about_text {
-    width: 50%;
-    height: auto;
-    font-weight: 550;
-    color: var(--white-color);
-    text-align: left;
-    line-height: normal;
-    letter-spacing: 1px;
-    margin-bottom: 70px;
-}
-
-
 /* --------------------------------------- principais produtos */
 
 
@@ -549,6 +485,19 @@ header label span:nth-child(3) {
 }
 
 @media (max-width: 1300px) {
+    .sobre_nos .conteudo_sobre .titulo_sobre {
+        font-size: 26px;
+        font-weight: 100;
+    }
+    
+    .sobre_nos .conteudo_sobre .texto_sobre {
+        font-size: 18px;
+        font-weight: 100;
+    }
+    .sobre_nos .conteudo_sobre{
+        width: 50vw!important;
+        left: auto;
+    }
     #searchInput {
         width: 20% !important;
     }
@@ -656,7 +605,11 @@ header label span:nth-child(3) {
     }
 
 }
-
+@media (max-width:950px){
+    .sobre_nos .conteudo_sobre{
+        width: 90vw!important;
+    }
+}
 @media (max-width: 590px) {
     nav .menu-btn {
         right: 25%;
@@ -744,7 +697,7 @@ header label span:nth-child(3) {
     align-items: center;
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 1rem 1% 1rem 1%;
     padding: 5px;
     transition: transform 0.3s ease;
@@ -816,9 +769,8 @@ header label span:nth-child(3) {
     backdrop-filter: blur(5px);
 }
 
-.veja_mais {
+.veja_mais_button{
     display: block;
-    margin: 1% auto 3%;
     padding: 15px 25px;
     background-color: var(--menu-hover);
     border: 1px solid #8160bc;
@@ -829,8 +781,11 @@ header label span:nth-child(3) {
     transition: background-color 0.3s;
     font-size: 16px;
 }
+.veja_mais{
+    margin: 1% auto 3%;
+}
 
-.veja_mais:hover {
+.veja_mais_button:hover {
     background-color: #8575a3;
     transition: 0.3s;
     transform: translatey(-10px);
@@ -850,6 +805,7 @@ header label span:nth-child(3) {
     background-size: cover;
     position: relative;
     padding: 5rem 0;
+    margin-top: 5%;
 }
 
 .depo_title {
@@ -932,6 +888,7 @@ header label span:nth-child(3) {
 }
 
 
+
 /* --------------------------------------- CONTATO */
 
 #contact {
@@ -941,13 +898,20 @@ header label span:nth-child(3) {
     background-size: cover;
     background-position: center;
 }
-
-.contact_content {
+.contact_all{
     text-align: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.contact_content {
+    text-align: center;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
 }
 
 .contact_title {
@@ -972,9 +936,16 @@ header label span:nth-child(3) {
     flex-direction: column;
 }
 
-.telefone::before {
+/* .telefone::before {
     content: url(../icons/icon_call.png);
     display: inline-block;
+} */
+.insta {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    font-size: 20px;
 }
 
 .contact_mail {
@@ -982,13 +953,19 @@ header label span:nth-child(3) {
     align-items: center;
     flex-direction: column;
     padding: 2rem 0;
+    font-size: 20px;
 }
-
-.contact_mail::before {
+.contact_mail img,
+.telefone img,
+.insta img{
+    width: 50px;
+    height: 50px;
+}
+/* .contact_mail::before {
     content: url(../icons/icon_mail.png);
     display: inline-block;
     margin-bottom: 10px;
-}
+} */
 
 .media {
     display: flex;
