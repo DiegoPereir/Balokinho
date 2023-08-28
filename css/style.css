@@ -361,10 +361,12 @@ header label span:nth-child(3) {
 
 
 .sessao_catalogo {
+    height: 600px;
     font-family: 'Nunito', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     margin: 0 5%;
+    justify-content: center;
 }
 
 .sessao_catalogo .conteudo_titulo {
@@ -526,7 +528,7 @@ header label span:nth-child(3) {
 /* --------------------------------------- DEPOIMENTOS */
 
 #depos {
-    background-image: url(../img/makeup.jpg);
+    background: linear-gradient(to bottom right, rgba(68, 255, 0, 0.563), rgba(255, 0, 0, 0.53)), url(../img/salao.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -535,6 +537,7 @@ header label span:nth-child(3) {
     padding: 5rem 0;
     margin-top: 5%;
 }
+
 
 .depo_title {
     color: var(--white-color);
@@ -921,9 +924,8 @@ header label span:nth-child(3) {
     }
 
     .produto_content {
-        width: 130px !important;
+        width: 175px !important;
     }
-
     .sessao_catalogo .titulo_catalogo {
         font-size: 25px !important;
         height: 50px !important;
@@ -935,7 +937,7 @@ header label span:nth-child(3) {
     }
 
     .sub_sessao .catalogo .conteudo_catalogo {
-        height: 175px !important;
+        height: 250px !important;
         width: 100%;
     }
 

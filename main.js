@@ -1,3 +1,5 @@
+
+// Exemplos para teste
 const words = ["produtoA", "ProdutoB", "ProdutoC", "ProdutoD", "ProdutoE","produtoF", "ProdutoG", "ProdutoH", "ProdutoI", "ProdutoJ"];
 const h1Elements = document.querySelectorAll('.desc_produto h1');
 
@@ -6,7 +8,7 @@ h1Elements.forEach(h1 => {
     h1.textContent = words[randomIndex];
 });
 
-// MENU HAMBURGUER
+// MENU HAMBURGUER------------------------------------------------------------------------------------------------------------------------------------
 var ul = document.querySelector('nav ul');
 
 function menuShow() {
@@ -14,7 +16,7 @@ function menuShow() {
 }
 
 
-//BANNER HOME
+//BANNER HOME--------------------------------------------------------------------------------------------------------------------------
 const images = [
   'url("img/backgroundBalukinho.jpg")',
   'url("img/img (9).jpg")',
@@ -31,7 +33,7 @@ function rotateBackgroundImage() {
 setInterval(rotateBackgroundImage, 5000); // Muda a imagem a cada 5 segundos
 
 
-// FULLSCREM IMAGEM
+// FULLSCREM IMAGEM--------------------------------------------------------------------------------------------------------------------------------
 function fullscreen(element) {
   const imgSrc = element.querySelector('.imagem_produto').src;
 
@@ -62,7 +64,7 @@ function fullscreen(element) {
   
 
 
-// MUDAR COR DOS TITULOS DE SESSÕES NA PAGINA DE CATALOGO
+// MUDAR COR DOS TITULOS DE SESSÕES NA PAGINA DE CATALOGO---------------------------------------------------------------------------------------------
 function updateBackground() {
   const subSessoes = document.querySelectorAll('.sub_sessao');
 
@@ -114,7 +116,7 @@ window.onload = function() {
 
 
 
-//FECHAR MEN APOS HREF CLICADO
+//FECHAR MENU APOS HREF CLICADO------------------------------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
   // Iterar sobre todos os links com a classe "home"
   document.querySelectorAll('.home').forEach(link => {
@@ -143,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-//BOTÃO SUBIR PAGE
+//BOTÃO SUBIR PAGE------------------------------------------------------------------------------------------------------------------------------------
 function toggleSubirPageButtonVisibility() {
   const botao = document.querySelector('.subirPage');
   botao.style.opacity = window.scrollY >= 100 ? '1' : '0';
@@ -162,7 +164,7 @@ window.addEventListener('scroll', toggleSubirPageButtonVisibility);
 toggleSubirPageButtonVisibility();
 
 
-//GRAP AND DROP MENU E CATALOGO
+//GRAP AND DROP MENU E CATALOGO -------------------------------------------------------------------------------------------------------------------------
 const isMobileDevice = () => window.innerWidth <= 768;
 
 function setupDragForElement(element, isMenu = false) {
@@ -175,7 +177,7 @@ function setupDragForElement(element, isMenu = false) {
     const animateMomentum = () => {
         if (Math.abs(velocity) > 0.5) {
             element.scrollLeft -= velocity;
-            velocity *= 0.92;
+            velocity *= 0.98;
             requestAnimationFrame(animateMomentum);
         }
     };
@@ -209,6 +211,9 @@ function setupDragForElement(element, isMenu = false) {
 
     element.addEventListener('mousedown', startDrag);
     element.addEventListener('touchstart', startDrag);
+    element.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
 
     if (isMenu) {
         element.addEventListener('click', (e) => {
@@ -222,6 +227,9 @@ function setupDragForElement(element, isMenu = false) {
 function setupMenuDrag() {
     const menuElement = document.querySelector('header nav .menu');
     setupDragForElement(menuElement, true);
+    menuElement.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+    });
 }
 
 function setupCatalogoDrag() {
@@ -245,7 +253,8 @@ setupMenuDrag();
 setupCatalogoDrag();
 
 
-//BARRA DE PESQUISA CATALOGO
+
+//BARRA DE PESQUISA CATALOGO---------------------------------------------------------------------------------------------------------------------------
 const searchInput = document.getElementById('searchInput');
 const suggestions = document.getElementById('suggestions');
 
