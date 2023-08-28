@@ -1,5 +1,12 @@
-//menu hamburguer
+const words = ["produtoA", "ProdutoB", "ProdutoC", "ProdutoD", "ProdutoE","produtoF", "ProdutoG", "ProdutoH", "ProdutoI", "ProdutoJ"];
+const h1Elements = document.querySelectorAll('.desc_produto h1');
 
+h1Elements.forEach(h1 => {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    h1.textContent = words[randomIndex];
+});
+
+// MENU HAMBURGUER
 var ul = document.querySelector('nav ul');
 
 function menuShow() {
@@ -7,10 +14,10 @@ function menuShow() {
 }
 
 
-//banner sobre nos
+//BANNER HOME
 const images = [
   'url("img/backgroundBalukinho.jpg")',
-  'url("img/salao.jpg")',
+  'url("img/img (9).jpg")',
   'url("img/imagembebêolhandocima.png")'
 ];
 
@@ -21,46 +28,10 @@ function rotateBackgroundImage() {
   section.style.backgroundImage = images[currentImageIndex];
   currentImageIndex = (currentImageIndex + 1) % images.length; // Isso fará com que volte ao início após a última imagem
 }
-
-// Iniciar a rotação
 setInterval(rotateBackgroundImage, 5000); // Muda a imagem a cada 5 segundos
 
 
-//rolagem horizontal
-
-
-const setasEsquerda = document.querySelectorAll('.seta-esquerda');
-const setasDireita = document.querySelectorAll('.seta-direita');
-
-setasEsquerda.forEach(setaEsquerda => {
-  setaEsquerda.addEventListener('click', () => {
-    const catalogo = setaEsquerda.closest('.sub_sessao').querySelector('.catalogo');
-    const larguraItem = catalogo.firstElementChild.offsetWidth;
-
-    catalogo.scrollBy({
-      left: -larguraItem,
-      behavior: 'smooth'
-    });
-  });
-});
-
-setasDireita.forEach(setaDireita => {
-  setaDireita.addEventListener('click', () => {
-    const catalogo = setaDireita.closest('.sub_sessao').querySelector('.catalogo');
-    const larguraItem = catalogo.firstElementChild.offsetWidth;
-
-    catalogo.scrollBy({
-      left: larguraItem,
-      behavior: 'smooth'
-    });
-  });
-});
-
-
-
-
-
-//deixar imagem catalogo em fullscreen
+// FULLSCREM IMAGEM
 function fullscreen(element) {
   const imgSrc = element.querySelector('.imagem_produto').src;
 
@@ -75,24 +46,23 @@ function fullscreen(element) {
   fullscreenImg.classList.add('fullscreen-img');
   document.body.appendChild(fullscreenImg);
 
-  // Adiciona um evento para fechar a imagem em tela cheia e o fundo quando clicada
-  fullscreenImg.addEventListener('click', function() {
+  // Função para remover a imagem e o fundo
+  const closeFullscreen = () => {
       fullscreenImg.remove();
       fullscreenBackground.remove();
-  });
+  };
 
-  // Adiciona um evento para fechar a imagem em tela cheia e o fundo quando o fundo é clicado
-  fullscreenBackground.addEventListener('click', function() {
-      fullscreenImg.remove();
-      fullscreenBackground.remove();
-  });
+  // Adiciona eventos para fechar a imagem e o fundo
+  fullscreenImg.addEventListener('click', closeFullscreen);
+  fullscreenBackground.addEventListener('click', closeFullscreen);
 }
+
 
 
   
 
 
-// Mudar cor de fundo dos elementos do catálogo
+// MUDAR COR DOS TITULOS DE SESSÕES NA PAGINA DE CATALOGO
 function updateBackground() {
   const subSessoes = document.querySelectorAll('.sub_sessao');
 
@@ -144,10 +114,7 @@ window.onload = function() {
 
 
 
-//Fechar menu navbar apos clicar em algum href
-
-
-
+//FECHAR MEN APOS HREF CLICADO
 document.addEventListener('DOMContentLoaded', function () {
   // Iterar sobre todos os links com a classe "home"
   document.querySelectorAll('.home').forEach(link => {
@@ -176,277 +143,187 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//BOTÃO SUBIR PAGE
+function toggleSubirPageButtonVisibility() {
+  const botao = document.querySelector('.subirPage');
+  botao.style.opacity = window.scrollY >= 100 ? '1' : '0';
+  botao.style.cursor = window.scrollY > 0 ? 'pointer' : 'default'; // Tornar o cursor apropriado
+}
 
-
-
-window.addEventListener('scroll', function() {
-  var botao = document.querySelector('.subirPage');
-  if (window.scrollY >= 100) {
-      botao.style.opacity = '1';
-  } else {
-      botao.style.opacity = '0';
-  }
-});
-
-
-//Botão Subir Pagina
 function subirPage() {
   window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+      top: 0,
+      behavior: 'smooth'
   });
 }
 
+// Adiciona ouvinte de rolagem para controlar a visibilidade do botão de subir página
+window.addEventListener('scroll', toggleSubirPageButtonVisibility);
+toggleSubirPageButtonVisibility();
 
-// Função para verificar a posição de rolagem e controlar a visibilidade do link
-function verificarPosicaoRolagem() {
-  const linkTopo = document.querySelector('.subirPage');
-  
-  if (window.scrollY > 0) {
-      linkTopo.style.display = 'block'; // Tornar o link visível se a rolagem não estiver no topo
-      linkTopo.style.cursor = 'pointer'; // Tornar o cursor como "mãozinha" quando o botão estiver visível
-  } else {
-      linkTopo.style.display = 'none'; // Tornar o link invisível se a rolagem estiver no topo
-      linkTopo.style.cursor = 'default'; // Tornar o cursor padrão quando o botão estiver no topo e não visível
-  }
+
+//GRAP AND DROP MENU E CATALOGO
+const isMobileDevice = () => window.innerWidth <= 768;
+
+function setupDragForElement(element, isMenu = false) {
+    let isDragging = false;
+    let startX;
+    let initialScrollLeft;
+    let velocity = 0;
+    let lastX = 0;
+
+    const animateMomentum = () => {
+        if (Math.abs(velocity) > 0.5) {
+            element.scrollLeft -= velocity;
+            velocity *= 0.92;
+            requestAnimationFrame(animateMomentum);
+        }
+    };
+
+    const startDrag = (e) => {
+        isDragging = true;
+        startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        initialScrollLeft = element.scrollLeft;
+        element.style.cursor = 'grabbing';
+        document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', drag);
+        document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragGlobal);
+    };
+
+    const drag = (e) => {
+        const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+        const dx = currentX - startX;
+        element.scrollLeft = initialScrollLeft - dx;
+        velocity = currentX - lastX;
+        lastX = currentX;
+    };
+
+    const stopDragGlobal = () => {
+        isDragging = false;
+        element.style.cursor = 'grab';
+        document.removeEventListener('touchmove', drag);
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('touchend', stopDragGlobal);
+        document.removeEventListener('mouseup', stopDragGlobal);
+        animateMomentum();
+    };
+
+    element.addEventListener('mousedown', startDrag);
+    element.addEventListener('touchstart', startDrag);
+
+    if (isMenu) {
+        element.addEventListener('click', (e) => {
+            if (isDragging && e.target.tagName === 'A') {
+                e.preventDefault();
+            }
+        });
+    }
 }
 
-// Ouvinte de rolagem para chamar a função ao rolar a página
-window.addEventListener('scroll', verificarPosicaoRolagem);
-
-// Chamar a função inicialmente para definir o estado inicial
-verificarPosicaoRolagem();
-
-
-
-
-
-//arrastar catalogo e menu
-setupMenuDrag();
 function setupMenuDrag() {
-  const menuElement = document.querySelector('header nav .menu');
-  let isDraggingMenu = false;
-  let startXMenu;
-  let initialScrollLeftMenu;
-  let velocity = 0;
-  let lastX = 0;
-
-  function animateMomentum() {
-      if (Math.abs(velocity) > 0.5) {
-          menuElement.scrollLeft -= velocity; // Invertendo a direção aqui
-          velocity *= 0.92; // Fator de atrito
-          requestAnimationFrame(animateMomentum);
-      }
-  }
-
-  function startDrag(e) {
-      isDraggingMenu = true;
-      startXMenu = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-      initialScrollLeftMenu = menuElement.scrollLeft;
-      menuElement.style.cursor = 'grabbing';
-      document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', dragMenu);
-      document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragMenuGlobal);
-      document.addEventListener('mouseleave', stopDragMenuGlobal);
-  }
-
-  function dragMenu(e) {
-      if (!isDraggingMenu) return;
-
-      // Se chegarmos aqui, o usuário está realmente arrastando, então podemos impedir o comportamento padrão dos links
-      if (e.target.tagName === 'A') {
-          e.preventDefault();
-      }
-
-      const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-      const dx = currentX - startXMenu;
-      menuElement.scrollLeft = initialScrollLeftMenu - dx;
-      velocity = currentX - lastX;
-      lastX = currentX;
-  }
-
-  function stopDragMenuGlobal() {
-      if (isDraggingMenu) {
-          isDraggingMenu = false;
-          menuElement.style.cursor = 'grab';
-          document.removeEventListener('touchmove', dragMenu);
-          document.removeEventListener('mousemove', dragMenu);
-          document.removeEventListener('touchend', stopDragMenuGlobal);
-          document.removeEventListener('mouseup', stopDragMenuGlobal);
-          document.removeEventListener('mouseleave', stopDragMenuGlobal);
-          animateMomentum();
-      }
-  }
-
-  // Impedir o comportamento padrão de arrastar e soltar para links
-  menuElement.addEventListener('dragstart', function(e) {
-      if (e.target.tagName === 'A') {
-          e.preventDefault();
-      }
-  });
-
-  // Impedir o clique enquanto estiver arrastando
-  menuElement.addEventListener('click', function(e) {
-      if (isDraggingMenu && e.target.tagName === 'A') {
-          e.preventDefault();
-      }
-  });
-
-  menuElement.addEventListener('mousedown', startDrag);
-  menuElement.addEventListener('touchstart', startDrag);
-}
-
-// Inicializando as funcionalidades de arrasto
-function isMobileDevice() {
-  return window.innerWidth <= 768;
-}
-
-function removeHoverEffect(element) {
-  if (isMobileDevice()) {
-      element.classList.remove('hover-effect');
-  }
+    const menuElement = document.querySelector('header nav .menu');
+    setupDragForElement(menuElement, true);
 }
 
 function setupCatalogoDrag() {
-  const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
-
-  catalogoElements.forEach(catalogoElement => {
-      let isDraggingCatalogo = false;
-      let startXCatalogo;
-      let initialScrollLeftCatalogo;
-      let velocity = 0;
-      let lastX = 0;
-
-      const conteudoCatalogoElements = catalogoElement.querySelectorAll('.conteudo_catalogo');
-      conteudoCatalogoElements.forEach(element => {
-          element.addEventListener('touchstart', () => {
-              removeHoverEffect(element);
-          });
-          element.addEventListener('touchend', () => {
-              removeHoverEffect(element);
-          });
-      });
-
-      function animateMomentum() {
-          if (Math.abs(velocity) > 0.5) {
-              catalogoElement.scrollLeft -= velocity;
-              velocity *= 0.92;
-              requestAnimationFrame(animateMomentum);
-          }
-      }
-
-      function startDrag(e) {
-          isDraggingCatalogo = true;
-          startXCatalogo = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-          initialScrollLeftCatalogo = catalogoElement.scrollLeft;
-          catalogoElement.style.cursor = 'grabbing';
-          document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', dragCatalogo);
-          document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragCatalogoGlobal);
-      }
-
-      function dragCatalogo(e) {
-          const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-          const dx = currentX - startXCatalogo;
-          catalogoElement.scrollLeft = initialScrollLeftCatalogo - dx;
-          velocity = currentX - lastX;
-          lastX = currentX;
-      }
-
-      function stopDragCatalogoGlobal() {
-          isDraggingCatalogo = false;
-          catalogoElement.style.cursor = 'grab';
-          document.removeEventListener('touchmove', dragCatalogo);
-          document.removeEventListener('mousemove', dragCatalogo);
-          document.removeEventListener('touchend', stopDragCatalogoGlobal);
-          document.removeEventListener('mouseup', stopDragCatalogoGlobal);
-          animateMomentum();
-      }
-
-      catalogoElement.addEventListener('mousedown', startDrag);
-      catalogoElement.addEventListener('touchstart', startDrag);
-  });
+    const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
+    catalogoElements.forEach(catalogoElement => {
+        setupDragForElement(catalogoElement);
+        const conteudoCatalogoElements = catalogoElement.querySelectorAll('.conteudo_catalogo');
+        conteudoCatalogoElements.forEach(element => {
+            ['touchstart', 'touchend'].forEach(eventType => {
+                element.addEventListener(eventType, () => {
+                    if (isMobileDevice()) {
+                        element.classList.remove('hover-effect');
+                    }
+                });
+            });
+        });
+    });
 }
 
+setupMenuDrag();
 setupCatalogoDrag();
 
 
-
-
-//barra de pesquisa
+//BARRA DE PESQUISA CATALOGO
 const searchInput = document.getElementById('searchInput');
 const suggestions = document.getElementById('suggestions');
 
-const products = Array.from(document.querySelectorAll('.desc_produto h1')).map(h1 => {
-    return {
-        name: h1.textContent.trim(),
-        element: h1.closest('.conteudo_catalogo')
-    };
-});
+const products = Array.from(document.querySelectorAll('.desc_produto h1')).map(h1 => ({
+    name: h1.textContent.trim(),
+    element: h1.closest('.conteudo_catalogo')
+}));
 
 let selectedIndex = -1;
 
-function displaySuggestions(query) {
-    suggestions.innerHTML = '';
-    let found = false;
-
-    for (const product of products) {
-        if (product.name.toLowerCase().includes(query)) {
-            found = true;
-            const div = document.createElement('div');
-            div.textContent = product.name;
-            div.addEventListener('click', function() {
-                // Identificando a subseção do produto
-                const subsection = product.element.closest('.sub_sessao');
-
-                // Rolando até a subseção
-                subsection.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            suggestions.appendChild(div);
-        }
-    }
-
+const updateSuggestionDisplay = (found) => {
     suggestions.style.display = found ? 'block' : 'none';
-}
+};
 
-searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    displaySuggestions(query);
-    selectedIndex = -1; // Resetando o índice selecionado
-});
+const createSuggestionDiv = (product) => {
+    const div = document.createElement('div');
+    div.textContent = product.name;
+    div.addEventListener('click', () => {
+        product.element.closest('.sub_sessao').scrollIntoView({ behavior: 'smooth' });
+        searchInput.value = product.name;
+        updateSuggestionDisplay(false); // Fechar a barra de sugestões
+    });
+    return div;
+};
 
-searchInput.addEventListener('focus', function() {
-    displaySuggestions(this.value.toLowerCase());
-});
+const displaySuggestions = (query) => {
+    suggestions.innerHTML = '';
 
-searchInput.addEventListener('keydown', function(event) {
-    const items = suggestions.children;
+    // Adicionando o texto "por ordem alfabética"
+    const orderText = document.createElement('div');
+    orderText.textContent = "-POR ORDEM ALFABETICA-";
+    orderText.style.fontWeight = "normal";
+    orderText.style.color = "#B0B0B0";
+    orderText.style.textAlign = "center";
+    suggestions.appendChild(orderText);
 
+    const foundProducts = products.filter(product => product.name.toLowerCase().includes(query));
+    foundProducts.forEach(product => suggestions.appendChild(createSuggestionDiv(product)));
+    updateSuggestionDisplay(foundProducts.length > 0);
+};
+
+const handleArrowNavigation = (event, items) => {
     if (event.key === 'ArrowDown' && selectedIndex < items.length - 1) {
         selectedIndex++;
-        for (let i = 0; i < items.length; i++) {
-            items[i].classList.remove('selected');
-        }
-        items[selectedIndex].classList.add('selected');
-        items[selectedIndex].scrollIntoView({ block: 'nearest' });
     } else if (event.key === 'ArrowUp' && selectedIndex > 0) {
         selectedIndex--;
-        for (let i = 0; i < items.length; i++) {
-            items[i].classList.remove('selected');
-        }
-        items[selectedIndex].classList.add('selected');
+    }
+    Array.from(items).forEach((item, index) => {
+        item.classList.toggle('selected', index === selectedIndex);
+    });
+    if (selectedIndex >= 0) {
         items[selectedIndex].scrollIntoView({ block: 'nearest' });
-    } else if (event.key === 'Enter' && selectedIndex >= 0) {
-        items[selectedIndex].click();
+    }
+};
+
+searchInput.addEventListener('input', (e) => {
+    displaySuggestions(e.target.value.toLowerCase());
+    selectedIndex = -1;
+});
+
+searchInput.addEventListener('focus', (e) => {
+    displaySuggestions(e.target.value.toLowerCase());
+});
+
+searchInput.addEventListener('keydown', (event) => {
+    const items = suggestions.children;
+    handleArrowNavigation(event, items);
+    if (event.key === 'Enter') {
+        if (selectedIndex >= 0) {
+            items[selectedIndex].click();
+        } else if (items.length > 0) {
+            items[0].click();
+        }
     }
 });
 
-// Adicionando o evento de clique ao document
-document.addEventListener('click', function(event) {
-    // Verificando se o clique foi fora da barra de busca ou da área de sugestões
+document.addEventListener('click', (event) => {
     if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
-        suggestions.style.display = 'none';
+        updateSuggestionDisplay(false);
     }
 });
-
-
-

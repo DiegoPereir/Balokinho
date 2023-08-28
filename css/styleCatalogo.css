@@ -201,149 +201,7 @@ header label span:nth-child(3) {
 }
 
 
-@media (min-width: 1300px) {
-  .conteudo_catalogo:hover {
-    cursor: pointer;
-    transform: translateY(-10px);
-    box-shadow:
-      rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
-      rgba(50, 50, 93, 0.1) 0px -2px 5px -1px,
-      rgba(50, 50, 93, 0.1) 2px 0px 5px -1px,
-      rgba(50, 50, 93, 0.3) 0px 4px 6px -2px;
-  }
-}
 
-@media (max-width: 1300px) {
-  #searchInput {
-    width: 20% !important;
-  }
-
-  header nav .menu.open {
-    height: 560px;
-    width: 100%;
-  }
-
-  .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
-    font-size: 15px !important;
-  }
-
-  .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
-    display: none;
-  }
-
-  .sub_sessao .catalogo .conteudo_catalogo {
-    width: 100%;
-    height: 175px !important;
-  }
-
-  .sessao_catalogo .titulo_catalogo {
-    font-size: 25px !important;
-    height: 50px !important;
-  }
-
-  .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
-    font-size: 20px !important;
-    height: 40px !important;
-  }
-
-  nav .menu-btn {
-    display: block;
-  }
-
-  nav ul.open {
-    top: 70px;
-    width: 90%;
-    margin-left: -30px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  header nav .menu li a:hover,
-  header nav .menu li button:hover {
-    font-size: 25px;
-  }
-
-  .produto_content {
-    width: 130px !important;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-  }
-
-  header nav ul {
-    position: absolute;
-    top: 115px;
-    left: -100%;
-    background-color: var(--white-color);
-    height: auto;
-    width: 100%;
-    text-align: center;
-    display: block;
-    transition: 0.1s;
-    z-index: 2;
-  }
-
-  nav ul.open {
-    left: 0;
-  }
-
-
-  nav ul li {
-    width: 100%;
-    margin: 50px 0;
-  }
-
-  nav ul li a,
-  nav .dropbtn {
-    font-size: 22px;
-  }
-
-  nav ul li a.active,
-  nav ul li a:hover {
-    background: none;
-    color: var(--cor-primaria);
-  }
-
-  .dropdown-content {
-    background-image: var(--gradiente);
-  }
-
-  .dropdown:hover .dropbtn {
-    color: var(--cor-primaria);
-    background: transparent;
-    font-size: 22px;
-  }
-
-  #suggestions {
-    left: 210px !important;
-  }
-
-}
-
-@media (max-width: 590px) {
-  nav .menu-btn {
-    right: 25%;
-  }
-
-  header nav .content_logo {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  header nav .logo {
-    width: 90px;
-    height: 50px;
-  }
-
-  #suggestions {
-    left: 54px !important;
-  }
-}
 
 .sessao_catalogo {
   font-family: 'Nunito', Arial, sans-serif;
@@ -621,6 +479,7 @@ header label span:nth-child(3) {
 
 /* FOOTER  */
 .footer {
+  margin-top: 20px;
   position: relative;
   background: #ffffff;
   min-height: 100px;
@@ -629,7 +488,7 @@ header label span:nth-child(3) {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-shadow: 0 -5px 10px 2px #ffffff;
+  box-shadow: 0 -5px 10px 2px #eeeeee;
 }
 
 .footer .social-icon,
@@ -689,4 +548,148 @@ header label span:nth-child(3) {
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
+}
+
+@media (min-width: 1300px) {
+  .conteudo_catalogo:hover {
+      box-shadow:
+          rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
+          rgba(50, 50, 93, 0.1) 0px -2px 5px -1px,
+          rgba(50, 50, 93, 0.1) 2px 0px 5px -1px,
+          rgba(50, 50, 93, 0.3) 0px 4px 6px -2px;
+      cursor: pointer;
+      transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 1300px) {
+  #searchInput {
+      width: 20% !important;
+  }
+
+  #suggestions {
+      left: 210px !important;
+  }
+
+  .produto_content {
+      width: 130px !important;
+  }
+
+  .menu {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .sub_sessao .catalogo .conteudo_catalogo {
+      height: 175px !important;
+      width: 100%;
+  }
+
+  .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
+      font-size: 15px !important;
+  }
+
+  .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
+      display: none;
+  }
+
+  .sessao_catalogo .titulo_catalogo {
+      font-size: 25px !important;
+      height: 50px !important;
+  }
+
+  .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
+      font-size: 20px !important;
+      height: 40px !important;
+  }
+
+  header nav .menu {
+      display: flex;
+      flex-direction: column;
+  }
+
+  header nav .menu.open {
+      height: 585px;
+      width: 100%;
+  }
+
+  header nav .menu li a:hover,
+  header nav .menu li button:hover {
+      font-size: 25px;
+  }
+
+  header nav ul {
+      background-color: var(--white-color);
+      display: block;
+      height: auto;
+      left: -100%;
+      position: absolute;
+      text-align: center;
+      top: 115px;
+      transition: 0.1s;
+      width: 100%;
+      z-index: 2;
+  }
+
+  nav .menu-btn {
+      display: block;
+  }
+
+  nav ul li {
+      margin: 50px 0;
+      width: 100%;
+  }
+
+  nav ul li a,
+  nav .dropbtn {
+      font-size: 22px;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+      background: none;
+      color: var(--cor-primaria);
+  }
+
+  nav ul.open {
+      display: flex;
+      justify-content: space-evenly;
+      left: 0;
+      margin-left: -30px;
+      top: 70px;
+      width: 90%;
+  }
+
+  .dropdown-content {
+      background-image: var(--gradiente);
+  }
+
+  .dropdown:hover .dropbtn {
+      background: transparent;
+      color: var(--cor-primaria);
+      font-size: 22px;
+  }
+}
+
+@media (max-width: 590px) {
+  header nav .content_logo {
+      align-items: center;
+      display: flex;
+      height: fit-content;
+      justify-content: center;
+      width: fit-content;
+  }
+
+  header nav .logo {
+      height: 50px;
+      width: 90px;
+  }
+
+  nav .menu-btn {
+      right: 25%;
+  }
+
+  #suggestions {
+      left: 54px !important;
+  }
 }

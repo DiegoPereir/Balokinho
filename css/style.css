@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Archivo+Black&display=swap');
 
 :root {
 
@@ -182,126 +182,7 @@ header label span:nth-child(3) {
     top: 8px;
 }
 
-@media (max-width: 920px) {
-    .contact_content {
-        flex-direction: column !important;
-    }
 
-    .home_text p {
-        animation: none !important;
-        border-right: none !important;
-        white-space: normal;
-    }
-
-    .sessao_catalogo .titulo_catalogo {
-        font-size: 25px !important;
-    }
-
-    nav .menu-btn {
-        display: block;
-        right: 15%;
-    }
-
-    nav ul.open {
-        top: 115px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    header nav .menu li a:hover,
-    header nav .menu li button:hover {
-        font-size: 25px;
-    }
-
-    .menu {
-        display: flex;
-        flex-direction: column;
-    }
-
-    header nav ul {
-        position: absolute;
-        top: 90px;
-        left: -100%;
-        background-color: var(--white-color);
-        height: auto;
-        width: 100%;
-        text-align: center;
-        display: block;
-        transition: 0.1s;
-        z-index: 2;
-    }
-
-    nav ul.open {
-        left: -55px;
-        top: 90px;
-
-    }
-
-    nav ul li {
-        width: 100%;
-        margin: 50px 0;
-    }
-
-    nav ul li a,
-    nav .dropbtn {
-        font-size: 22px;
-    }
-
-    nav ul li a.active,
-    nav ul li a:hover {
-        background: none;
-        color: var(--cor-primaria);
-    }
-
-    .dropdown-content {
-        background-image: var(--gradiente);
-    }
-
-    .dropdown:hover .dropbtn {
-        color: var(--cor-primaria);
-        background: transparent;
-        font-size: 22px;
-    }
-
-}
-
-@media (max-width: 590px) {
-    .sessao_catalogo .button_catalogo {
-        width: 275px !important;
-        font-size: 15px !important;
-    }
-
-    .about_content .imagem_sobre {
-        width: 50% !important;
-        height: 50% !important;
-    }
-
-    .about_content {
-        flex-direction: column !important;
-    }
-
-    .about_content .about_text {
-        width: 100% !important;
-    }
-
-    nav .menu-btn {
-        right: 35%;
-    }
-}
-
-@media (max-width: 400px) {
-    #home .home_text {
-        font-size: 20px !important;
-    }
-
-    #home .home_title {
-        font-size: 25px !important;
-    }
-
-    nav .menu-btn {
-        right: 40%;
-    }
-}
 
 
 
@@ -440,7 +321,7 @@ header label span:nth-child(3) {
 
 .sobre_nos .conteudo_sobre {
     font-family: 'ADLaM Display', cursive;
-    font-weight: 400;
+    font-weight: 100;
 
     display: flex;
     flex-direction: column;
@@ -476,170 +357,8 @@ header label span:nth-child(3) {
 /* --------------------------------------- principais produtos */
 
 
-@media (min-width: 1300px) {
-    .conteudo_catalogo:hover {
-        cursor: pointer;
-        transform: translateY(-10px);
-        box-shadow:
-            rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
-            rgba(50, 50, 93, 0.1) 0px -2px 5px -1px,
-            rgba(50, 50, 93, 0.1) 2px 0px 5px -1px,
-            rgba(50, 50, 93, 0.3) 0px 4px 6px -2px;
-    }
-}
-
-@media (max-width: 1300px) {
-    .sobre_nos .conteudo_sobre .titulo_sobre {
-        font-size: 26px;
-        font-weight: 100;
-    }
-
-    .sobre_nos .conteudo_sobre .texto_sobre {
-        font-size: 18px;
-        font-weight: 100;
-    }
-
-    .sobre_nos .conteudo_sobre {
-        width: 50vw !important;
-        left: auto;
-    }
-
-    #searchInput {
-        width: 20% !important;
-    }
-
-    header nav .menu.open {
-        height: 560px;
-        width: 100%;
-    }
-
-    .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
-        font-size: 15px !important;
-    }
-
-    .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
-        display: none;
-    }
-
-    .sub_sessao .catalogo .conteudo_catalogo {
-        width: 100%;
-        height: 175px !important;
-    }
-
-    .sessao_catalogo .titulo_catalogo {
-        font-size: 25px !important;
-        height: 50px !important;
-    }
-
-    .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
-        font-size: 20px !important;
-        height: 40px !important;
-    }
-
-    nav .menu-btn {
-        display: block;
-    }
-
-    nav ul.open {
-        top: 70px;
-        width: 90%;
-        margin-left: -30px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    header nav .menu li a:hover,
-    header nav .menu li button:hover {
-        font-size: 25px;
-    }
-
-    .produto_content {
-        width: 130px !important;
-    }
-
-    .menu {
-        display: flex;
-        flex-direction: column;
-    }
-
-    header nav ul {
-        position: absolute;
-        top: 115px;
-        left: -100%;
-        background-color: var(--white-color);
-        height: auto;
-        width: 100%;
-        text-align: center;
-        display: block;
-        transition: 0.1s;
-        z-index: 2;
-    }
-
-    nav ul.open {
-        left: 0;
-    }
 
 
-    nav ul li {
-        width: 100%;
-        margin: 50px 0;
-    }
-
-    nav ul li a,
-    nav .dropbtn {
-        font-size: 22px;
-    }
-
-    nav ul li a.active,
-    nav ul li a:hover {
-        background: none;
-        color: var(--cor-primaria);
-    }
-
-    .dropdown-content {
-        background-image: var(--gradiente);
-    }
-
-    .dropdown:hover .dropbtn {
-        color: var(--cor-primaria);
-        background: transparent;
-        font-size: 22px;
-    }
-
-    #suggestions {
-        left: 210px !important;
-    }
-
-}
-
-@media (max-width:950px) {
-    .sobre_nos .conteudo_sobre {
-        width: 90vw !important;
-    }
-}
-
-@media (max-width: 590px) {
-    nav .menu-btn {
-        right: 25%;
-    }
-
-    header nav .content_logo {
-        width: fit-content;
-        height: fit-content;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    header nav .logo {
-        width: 90px;
-        height: 50px;
-    }
-
-    #suggestions {
-        left: 54px !important;
-    }
-}
 
 .sessao_catalogo {
     font-family: 'Nunito', Arial, sans-serif;
@@ -1021,11 +740,6 @@ header label span:nth-child(3) {
     padding-bottom: .5rem;
 }
 
-@media screen and (min-width: 768px) {
-    .address {
-        font-size: 1.5rem;
-    }
-}
 
 
 /* FOOTER  */
@@ -1164,4 +878,272 @@ header label span:nth-child(3) {
     background-color: #5b5b5b;
     border: 1px solid #ffffff;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+@media (min-width: 1300px) {
+    .conteudo_catalogo:hover {
+        box-shadow:
+            rgba(50, 50, 93, 0.1) 0px 2px 5px -1px,
+            rgba(50, 50, 93, 0.1) 0px -2px 5px -1px,
+            rgba(50, 50, 93, 0.1) 2px 0px 5px -1px,
+            rgba(50, 50, 93, 0.3) 0px 4px 6px -2px;
+        cursor: pointer;
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 1300px) {
+    .sobre_nos .conteudo_sobre {
+        left: auto;
+        width: 50vw !important;
+    }
+
+    .sobre_nos .conteudo_sobre .texto_sobre {
+        font-size: 18px;
+        font-weight: 100;
+    }
+
+    .sobre_nos .conteudo_sobre .titulo_sobre {
+        font-size: 26px;
+        font-weight: 100;
+    }
+
+    #searchInput {
+        width: 20% !important;
+    }
+
+    #suggestions {
+        left: 210px !important;
+    }
+
+    .produto_content {
+        width: 130px !important;
+    }
+
+    .sessao_catalogo .titulo_catalogo {
+        font-size: 25px !important;
+        height: 50px !important;
+    }
+
+    .sessao_catalogo .sub_sessao .alinhar_titulo .titulo_catalogo {
+        font-size: 20px !important;
+        height: 40px !important;
+    }
+
+    .sub_sessao .catalogo .conteudo_catalogo {
+        height: 175px !important;
+        width: 100%;
+    }
+
+    .sub_sessao .catalogo .conteudo_catalogo .desc_produto h1 {
+        font-size: 15px !important;
+    }
+
+    .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
+        display: none;
+    }
+
+    header nav .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav .menu.open {
+        height: 585px;
+        width: 100%;
+    }
+
+    header nav .menu li a:hover,
+    header nav .menu li button:hover {
+        font-size: 25px;
+    }
+
+    header nav ul {
+        background-color: var(--white-color);
+        display: block;
+        height: auto;
+        left: -100%;
+        position: absolute;
+        text-align: center;
+        top: 115px;
+        transition: 0.1s;
+        width: 100%;
+        z-index: 2;
+    }
+
+    nav .menu-btn {
+        display: block;
+    }
+
+    nav ul li {
+        margin: 50px 0;
+        width: 100%;
+    }
+
+    nav ul li a,
+    nav .dropbtn {
+        font-size: 22px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: var(--cor-primaria);
+    }
+
+    nav ul.open {
+        display: flex;
+        justify-content: space-evenly;
+        left: 0;
+        margin-left: -30px;
+        top: 70px;
+        width: 90%;
+    }
+
+    .dropdown:hover .dropbtn {
+        background: transparent;
+        color: var(--cor-primaria);
+        font-size: 22px;
+    }
+
+    .dropdown-content {
+        background-image: var(--gradiente);
+    }
+}
+
+@media (max-width: 950px) {
+    .contact_content {
+        flex-direction: column !important;
+    }
+
+    .home_text p {
+        animation: none !important;
+        border-right: none !important;
+        white-space: normal;
+    }
+
+    .sessao_catalogo .titulo_catalogo {
+        font-size: 25px !important;
+    }
+
+    nav .menu-btn {
+        display: block;
+        right: 15%;
+    }
+
+    nav ul.open {
+        display: flex;
+        justify-content: space-evenly;
+        top: 115px;
+    }
+
+    header nav .menu li a:hover,
+    header nav .menu li button:hover {
+        font-size: 25px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav ul {
+        position: absolute;
+        top: 90px;
+        left: -100%;
+        background-color: var(--white-color);
+        height: auto;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: 0.1s;
+        z-index: 2;
+    }
+
+    nav ul.open {
+        left: -55px;
+        top: 90px;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    nav ul li a,
+    nav .dropbtn {
+        font-size: 22px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: var(--cor-primaria);
+    }
+
+    .dropdown-content {
+        background-image: var(--gradiente);
+    }
+
+    .dropdown:hover .dropbtn {
+        color: var(--cor-primaria);
+        background: transparent;
+        font-size: 22px;
+    }
+
+    .sobre_nos .conteudo_sobre {
+        width: 90vw !important;
+    }
+}
+
+@media (max-width: 590px) {
+    #home .home_text {
+        font-size: 20px !important;
+    }
+
+    #home .home_title {
+        font-size: 25px !important;
+    }
+
+    nav .menu-btn {
+        right: 35%;
+    }
+
+    .sessao_catalogo .button_catalogo {
+        font-size: 15px !important;
+        width: 275px !important;
+    }
+
+    .about_content .imagem_sobre {
+        height: 50% !important;
+        width: 50% !important;
+    }
+
+    .about_content {
+        flex-direction: column !important;
+    }
+
+    .about_content .about_text {
+        width: 100% !important;
+    }
+
+    header nav .content_logo {
+        align-items: center;
+        display: flex;
+        height: fit-content;
+        justify-content: center;
+        width: fit-content;
+    }
+
+    header nav .menu.open {
+        width: auto;
+    }
+
+    #suggestions {
+        left: 54px !important;
+    }
 }
