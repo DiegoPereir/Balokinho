@@ -336,7 +336,7 @@ section{
     position: absolute;
     left: 10%;
 
-    background-color: #ededed8e;
+    background-color: #b19cd984;
     color: #ffffff;
     padding: 10px 10px 20px 10px;
     border-radius: 10px;
@@ -353,7 +353,7 @@ section{
 }
 
 .sobre_nos .conteudo_sobre .texto_sobre {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     width: 90%;
 }
@@ -889,8 +889,8 @@ footer .icons{
     display: flex;
     justify-content: center;
     column-gap: 25px;
-}
-footer .icon{
+  }
+  footer .icon{
     width: 35px;
     height: 35px;
     display:flex;
@@ -899,47 +899,46 @@ footer .icon{
     border-radius: 50%;
     outline: 1px solid #ffffff;
     transition-duration: .45s;
-}
-footer .icon img{
-    filter: invert(1);
-
+  }
+  footer .icon img{
     width: 60%;
     height: 60%;
-}
-footer .icon:hover{
+  }
+  footer .icon:hover{
     outline-offset: 4px;
-}
-
-footer .icon:hover img{
+  }
+  
+  footer .icon:hover img{
+    filter: invert(1);
     animation: shake .25s;
-}
-
-footer .icon--instagram{
+  }
+  
+  footer .icon--instagram:hover{
     background-image:
     radial-gradient(circle at 30% 107%,
     #fdf497 0%, #fdf497 5%,
     #fd5949 45%,  #d6249f 60%,
     #285AEB 90%);
     outline-color: #a02d76;
-}
-
-footer .icon--facebook{
+  }
+  
+  footer .icon--facebook:hover{
     background-color: #707070;
     outline-color: #707070;
-}
-
-footer .icon--youtube{
+  }
+  
+  footer .icon--youtube:hover{
     background-color: #ff4141;
     outline-color: #ff4141;
-}
-
-
-@keyframes shake{
+  }
+  
+  
+  @keyframes shake{
     10%{transform: rotate(10deg);}
     20%{transform: rotate(-10deg);}
     30%{transform: rotate(10deg);}
     40%{transform: rotate(-10deg);}
-}
+  }
 
 
 
@@ -1074,6 +1073,9 @@ footer .icon--youtube{
 }
 
 @media (max-width: 950px) {
+    footer .menu li {
+        margin-bottom: 10px;
+      }
     .contact_content {
         flex-direction: column !important;
     }

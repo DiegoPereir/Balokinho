@@ -729,10 +729,11 @@ footer .icon--youtube:hover{
       font-size: 22px;
   }
 }
-@media (max-width: 980){
+@media (max-width: 980px){
   footer .menu li{
     margin-bottom: 10px;
 }
+
 }
 @media (max-width: 590px) {
   header nav .content_logo {

@@ -195,13 +195,14 @@ toggleSubirPageButtonVisibility();
 
 //GRAP AND DROP MENU E CATALOGO -------------------------------------------------------------------------------------------------------------------------
 const isMobileDevice = () => window.innerWidth <= 768;
-let isDragging = false; // Flag global para verificar se está arrastando
+let isDragging = false;
 
 function setupDragForElement(element, isMenu = false) {
     let startX, startY;
     let initialScrollLeft;
     let velocity = 0;
     let lastX = 0;
+    let isHorizontalDrag = false;
 
     const animateMomentum = () => {
         if (Math.abs(velocity) > 0.5) {
@@ -227,27 +228,34 @@ function setupDragForElement(element, isMenu = false) {
         const dx = currentX - startX;
         const dy = currentY - startY;
 
-        // Se o arrasto for predominantemente vertical, retorne e permita a rolagem padrão
-        if (Math.abs(dy) > Math.abs(dx)) {
-            return;
+        if (!isDragging) {
+            if (Math.abs(dy) > Math.abs(dx)) {
+                // Predominantemente vertical, então não continue com o arrasto horizontal
+                stopDragGlobal();
+                return;
+            } else {
+                isHorizontalDrag = true;
+                isDragging = true;
+            }
         }
 
-        isDragging = true;
-        element.scrollLeft = initialScrollLeft - dx;
-        velocity = currentX - lastX;
-        lastX = currentX;
+        if (isHorizontalDrag) {
+            e.preventDefault();
+            element.scrollLeft = initialScrollLeft - dx;
+            velocity = currentX - lastX;
+            lastX = currentX;
+        }
     };
 
     const stopDragGlobal = () => {
+        isDragging = false;
+        isHorizontalDrag = false;
         element.style.cursor = 'grab';
         document.removeEventListener('touchmove', drag);
         document.removeEventListener('mousemove', drag);
         document.removeEventListener('touchend', stopDragGlobal);
         document.removeEventListener('mouseup', stopDragGlobal);
         animateMomentum();
-        setTimeout(() => {
-            isDragging = false;
-        }, 100); // 100ms de cooldown
     };
 
     element.addEventListener('mousedown', startDrag);
@@ -260,29 +268,12 @@ function setupDragForElement(element, isMenu = false) {
 function setupMenuDrag() {
     const menuElement = document.querySelector('header nav .menu');
     setupDragForElement(menuElement, true);
-    menuElement.addEventListener('dragstart', (e) => {
-        e.preventDefault();
-    });
 }
 
 function setupCatalogoDrag() {
     const catalogoElements = document.querySelectorAll('.sessao_catalogo .catalogo');
     catalogoElements.forEach(catalogoElement => {
         setupDragForElement(catalogoElement);
-        const conteudoCatalogoElements = catalogoElement.querySelectorAll('.conteudo_catalogo');
-        conteudoCatalogoElements.forEach(element => {
-            ['touchstart', 'touchend'].forEach(eventType => {
-                element.addEventListener(eventType, (e) => {
-                    if (isDragging) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                    if (isMobileDevice()) {
-                        element.classList.remove('hover-effect');
-                    }
-                });
-            });
-        });
     });
 }
 
@@ -292,7 +283,7 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
     }
-}, true); // Use a fase de captura para interceptar o evento antes de qualquer outro ouvinte
+}, true);
 
 setupMenuDrag();
 setupCatalogoDrag();
