@@ -1,12 +1,41 @@
 
 // Exemplos para teste
-const words = ["produtoA", "ProdutoB", "ProdutoC", "ProdutoD", "ProdutoE","produtoF", "ProdutoG", "ProdutoH", "ProdutoI", "ProdutoJ"];
+const words = ["produtoA", "ProdutoB", "ProdutoC", "ProdutoD", "ProdutoE", "produtoF", "ProdutoG", "ProdutoH", "ProdutoI", "ProdutoJ"];
+const imgProduto = [
+    "banners/imagem1.png",
+    "banners/imagem2.png",
+    "banners/imagem3.png",
+    "banners/imagem4.png",
+    "banners/imagem5.png",
+    "banners/imagem6.png",
+    "banners/imagem7.png",
+    "banners/imagem8.png",
+    "banners/imagem9.png",
+    "banners/imagem10.png",
+    "banners/imagem11.png",
+    "banners/imagem12.png",
+    "banners/imagem13.png",
+    "banners/imagem14.png",
+    "banners/imagem15.png",
+    "banners/imagem16.png",
+    "banners/imagem17.png",
+    "banners/imagem18.png",
+    // ... adicione mais URLs conforme necessário
+];
+
 const h1Elements = document.querySelectorAll('.desc_produto h1');
+const imgElements = document.querySelectorAll('.imagem_produto');
 
 h1Elements.forEach(h1 => {
-    const randomIndex = Math.floor(Math.random() * words.length);
-    h1.textContent = words[randomIndex];
+    const randomWordIndex = Math.floor(Math.random() * words.length);
+    h1.textContent = words[randomWordIndex];
 });
+
+imgElements.forEach(img => {
+    const randomImgIndex = Math.floor(Math.random() * imgProduto.length);
+    img.src = imgProduto[randomImgIndex];
+});
+
 
 // MENU HAMBURGUER------------------------------------------------------------------------------------------------------------------------------------
 var ul = document.querySelector('nav ul');
@@ -18,9 +47,9 @@ function menuShow() {
 
 //BANNER HOME--------------------------------------------------------------------------------------------------------------------------
 const images = [
-  'url("img/backgroundBalukinho.jpg")',
-  'url("img/img (9).jpg")',
-  'url("img/imagembebêolhandocima.png")'
+  'url("banners/imagem1.png")',
+  'url("banners/imagem2.png")',
+  'url("banners/imagem16.png")'
 ];
 
 let currentImageIndex = 0;
@@ -78,19 +107,19 @@ function updateBackground() {
     if (h1Element) {
       switch (h1Element.textContent.trim()) {
         case 'Masculinas':
-          corDeFundo = '#ffffff';
+          // corDeFundo = '#ffffff';
           corTitulo = '#4E9AE6'; // Azul
           break;
         case 'Femininas':
-          corDeFundo = '#ffffff';
+          // corDeFundo = '#ffffff';
           corTitulo = '#FF5275'; // Rosa escuro
           break;
         case 'Unissex':
-          corDeFundo = '#ffffff';
+          // corDeFundo = '#ffffff';
           corTitulo = '#FFB347'; // Amarelo profundo
           break;
         default:
-          corDeFundo = '#ffffff'; // Cor padrão para conteúdo não especificado
+          // corDeFundo = '#ffffff'; // Cor padrão para conteúdo não especificado
           corTitulo = '#FFB347'; // Cor padrão para título não especificado (preto)
       }
 
@@ -273,7 +302,18 @@ const createSuggestionDiv = (product) => {
     const div = document.createElement('div');
     div.textContent = product.name;
     div.addEventListener('click', () => {
-        product.element.closest('.sub_sessao').scrollIntoView({ behavior: 'smooth' });
+        // Remova a classe 'simulated-hover' de qualquer produto anteriormente selecionado
+        const previouslySelected = document.querySelector('.simulated-hover');
+        if (previouslySelected) {
+            previouslySelected.classList.remove('simulated-hover');
+        }
+
+        // Adicione a classe 'simulated-hover' ao .conteudo_catalogo do produto clicado
+        product.element.classList.add('simulated-hover');
+
+        // Scroll lateral para tornar o produto visível
+        product.element.scrollIntoView({ inline: 'center', behavior: 'smooth' });
+
         searchInput.value = product.name;
         updateSuggestionDisplay(false); // Fechar a barra de sugestões
     });
@@ -334,5 +374,11 @@ searchInput.addEventListener('keydown', (event) => {
 document.addEventListener('click', (event) => {
     if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
         updateSuggestionDisplay(false);
+
+        // Remova a classe 'simulated-hover' de qualquer produto
+        const activeProduct = document.querySelector('.simulated-hover');
+        if (activeProduct) {
+            activeProduct.classList.remove('simulated-hover');
+        }
     }
 });
