@@ -198,7 +198,7 @@ const isMobileDevice = () => window.innerWidth <= 768;
 let isDragging = false; // Flag global para verificar se está arrastando
 
 function setupDragForElement(element, isMenu = false) {
-    let startX;
+    let startX, startY;
     let initialScrollLeft;
     let velocity = 0;
     let lastX = 0;
@@ -213,6 +213,7 @@ function setupDragForElement(element, isMenu = false) {
 
     const startDrag = (e) => {
         startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
         initialScrollLeft = element.scrollLeft;
         element.style.cursor = 'grabbing';
         document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', drag);
@@ -220,9 +221,18 @@ function setupDragForElement(element, isMenu = false) {
     };
 
     const drag = (e) => {
-        isDragging = true;
         const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+        const currentY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+        
         const dx = currentX - startX;
+        const dy = currentY - startY;
+
+        // Se o arrasto for predominantemente vertical, retorne e permita a rolagem padrão
+        if (Math.abs(dy) > Math.abs(dx)) {
+            return;
+        }
+
+        isDragging = true;
         element.scrollLeft = initialScrollLeft - dx;
         velocity = currentX - lastX;
         lastX = currentX;
