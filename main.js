@@ -301,8 +301,7 @@ const updateSuggestionDisplay = (found) => {
 const createSuggestionDiv = (product) => {
     const div = document.createElement('div');
     div.textContent = product.name;
-
-    const handleSelection = () => {
+    div.addEventListener('click', () => {
         // Remova a classe 'simulated-hover' de qualquer produto anteriormente selecionado
         const previouslySelected = document.querySelector('.simulated-hover');
         if (previouslySelected) {
@@ -317,11 +316,7 @@ const createSuggestionDiv = (product) => {
 
         searchInput.value = product.name;
         updateSuggestionDisplay(false); // Fechar a barra de sugestões
-    };
-
-    div.addEventListener('click', handleSelection);
-    div.addEventListener('touchend', handleSelection);
-
+    });
     return div;
 };
 
@@ -378,6 +373,10 @@ searchInput.addEventListener('keydown', (event) => {
 
 const handleDocumentClick = (event) => {
     if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
+        if (event.type === 'touchend' && suggestions.contains(event.target)) {
+            return; // Se o toque ocorreu dentro da área de sugestões, não feche a caixa de sugestões
+        }
+
         updateSuggestionDisplay(false);
 
         // Remova a classe 'simulated-hover' de qualquer produto
