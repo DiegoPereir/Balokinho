@@ -195,9 +195,9 @@ toggleSubirPageButtonVisibility();
 
 //GRAP AND DROP MENU E CATALOGO -------------------------------------------------------------------------------------------------------------------------
 const isMobileDevice = () => window.innerWidth <= 768;
+let isDragging = false; // Flag global para verificar se está arrastando
 
 function setupDragForElement(element, isMenu = false) {
-    let isDragging = false;
     let startX;
     let initialScrollLeft;
     let velocity = 0;
@@ -212,7 +212,6 @@ function setupDragForElement(element, isMenu = false) {
     };
 
     const startDrag = (e) => {
-        isDragging = true;
         startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
         initialScrollLeft = element.scrollLeft;
         element.style.cursor = 'grabbing';
@@ -221,6 +220,7 @@ function setupDragForElement(element, isMenu = false) {
     };
 
     const drag = (e) => {
+        isDragging = true;
         const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
         const dx = currentX - startX;
         element.scrollLeft = initialScrollLeft - dx;
@@ -229,13 +229,15 @@ function setupDragForElement(element, isMenu = false) {
     };
 
     const stopDragGlobal = () => {
-        isDragging = false;
         element.style.cursor = 'grab';
         document.removeEventListener('touchmove', drag);
         document.removeEventListener('mousemove', drag);
         document.removeEventListener('touchend', stopDragGlobal);
         document.removeEventListener('mouseup', stopDragGlobal);
         animateMomentum();
+        setTimeout(() => {
+            isDragging = false;
+        }, 100); // 100ms de cooldown
     };
 
     element.addEventListener('mousedown', startDrag);
@@ -243,14 +245,6 @@ function setupDragForElement(element, isMenu = false) {
     element.addEventListener('dragstart', (e) => {
         e.preventDefault();
     });
-
-    if (isMenu) {
-        element.addEventListener('click', (e) => {
-            if (isDragging && e.target.tagName === 'A') {
-                e.preventDefault();
-            }
-        });
-    }
 }
 
 function setupMenuDrag() {
@@ -268,7 +262,11 @@ function setupCatalogoDrag() {
         const conteudoCatalogoElements = catalogoElement.querySelectorAll('.conteudo_catalogo');
         conteudoCatalogoElements.forEach(element => {
             ['touchstart', 'touchend'].forEach(eventType => {
-                element.addEventListener(eventType, () => {
+                element.addEventListener(eventType, (e) => {
+                    if (isDragging) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
                     if (isMobileDevice()) {
                         element.classList.remove('hover-effect');
                     }
@@ -277,6 +275,14 @@ function setupCatalogoDrag() {
         });
     });
 }
+
+// Bloquear cliques enquanto estiver arrastando
+document.addEventListener('click', (e) => {
+    if (isDragging) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+}, true); // Use a fase de captura para interceptar o evento antes de qualquer outro ouvinte
 
 setupMenuDrag();
 setupCatalogoDrag();
