@@ -301,7 +301,8 @@ const updateSuggestionDisplay = (found) => {
 const createSuggestionDiv = (product) => {
     const div = document.createElement('div');
     div.textContent = product.name;
-    div.addEventListener('click', () => {
+
+    const handleSelection = () => {
         // Remova a classe 'simulated-hover' de qualquer produto anteriormente selecionado
         const previouslySelected = document.querySelector('.simulated-hover');
         if (previouslySelected) {
@@ -316,7 +317,11 @@ const createSuggestionDiv = (product) => {
 
         searchInput.value = product.name;
         updateSuggestionDisplay(false); // Fechar a barra de sugestões
-    });
+    };
+
+    div.addEventListener('click', handleSelection);
+    div.addEventListener('touchend', handleSelection);
+
     return div;
 };
 
@@ -371,7 +376,7 @@ searchInput.addEventListener('keydown', (event) => {
     }
 });
 
-document.addEventListener('click', (event) => {
+const handleDocumentClick = (event) => {
     if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
         updateSuggestionDisplay(false);
 
@@ -381,4 +386,7 @@ document.addEventListener('click', (event) => {
             activeProduct.classList.remove('simulated-hover');
         }
     }
-});
+};
+
+document.addEventListener('click', handleDocumentClick);
+document.addEventListener('touchend', handleDocumentClick);
