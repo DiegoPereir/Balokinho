@@ -106,7 +106,7 @@ function updateBackground() {
 
     if (h1Element) {
       switch (h1Element.textContent.trim()) {
-        case 'Masculinas':
+        case 'Masculinos':
           // corDeFundo = '#ffffff';
           corTitulo = '#4E9AE6'; // Azul
           break;
@@ -196,6 +196,7 @@ toggleSubirPageButtonVisibility();
 //GRAP AND DROP MENU E CATALOGO -------------------------------------------------------------------------------------------------------------------------
 const isMobileDevice = () => window.innerWidth <= 768;
 let isDragging = false;
+let dragDistance = 0;
 
 function setupDragForElement(element, isMenu = false) {
     let startX, startY;
@@ -204,7 +205,7 @@ function setupDragForElement(element, isMenu = false) {
     let lastX = 0;
     let isHorizontalDrag = false;
 
-    const MAX_VELOCITY = 5; // Valor máximo para a velocidade
+    const MAX_VELOCITY = 5;
 
     const animateMomentum = () => {
         if (Math.abs(velocity) > 0.5) {
@@ -215,12 +216,12 @@ function setupDragForElement(element, isMenu = false) {
     };
 
     const startDrag = (e) => {
-        e.preventDefault(); // Desativar comportamento padrão
+        dragDistance = 0;
         startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
         startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
         initialScrollLeft = element.scrollLeft;
         element.style.cursor = 'grabbing';
-        element.style.userSelect = 'none'; // Desativar seleção de texto
+        element.style.userSelect = 'none';
         document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', drag);
         document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragGlobal);
     };
@@ -232,6 +233,8 @@ function setupDragForElement(element, isMenu = false) {
         const dx = currentX - startX;
         const dy = currentY - startY;
 
+        dragDistance += Math.abs(dx);
+
         if (!isDragging) {
             if (Math.abs(dy) > Math.abs(dx)) {
                 stopDragGlobal();
@@ -239,28 +242,30 @@ function setupDragForElement(element, isMenu = false) {
             } else {
                 isHorizontalDrag = true;
                 isDragging = true;
+                e.preventDefault();
             }
         }
 
         if (isHorizontalDrag) {
-            e.preventDefault();
             element.scrollLeft = initialScrollLeft - dx;
             velocity = currentX - lastX;
-            velocity = Math.min(Math.max(velocity, -MAX_VELOCITY), MAX_VELOCITY); // Limitar a velocidade
+            velocity = Math.min(Math.max(velocity, -MAX_VELOCITY), MAX_VELOCITY);
             lastX = currentX;
         }
     };
 
     const stopDragGlobal = () => {
-        isDragging = false;
         isHorizontalDrag = false;
         element.style.cursor = 'grab';
-        element.style.userSelect = ''; // Reativar seleção de texto
+        element.style.userSelect = '';
         document.removeEventListener('touchmove', drag);
         document.removeEventListener('mousemove', drag);
         document.removeEventListener('touchend', stopDragGlobal);
         document.removeEventListener('mouseup', stopDragGlobal);
         animateMomentum();
+        setTimeout(() => {
+            isDragging = false;
+        }, 100);
     };
 
     element.addEventListener('mousedown', startDrag);
@@ -282,7 +287,6 @@ function setupCatalogoDrag() {
     });
 }
 
-// Bloquear cliques enquanto estiver arrastando
 document.addEventListener('click', (e) => {
     if (isDragging) {
         e.preventDefault();
@@ -296,39 +300,48 @@ setupCatalogoDrag();
 
 
 
+
+
 //BARRA DE PESQUISA CATALOGO---------------------------------------------------------------------------------------------------------------------------
 const searchInput = document.getElementById('searchInput');
 const suggestions = document.getElementById('suggestions');
 
-const products = Array.from(document.querySelectorAll('.desc_produto h1')).map(h1 => ({
+const products = Array.from(document.querySelectorAll('.desc_produto h1')).map((h1, index) => ({
     name: h1.textContent.trim(),
-    element: h1.closest('.conteudo_catalogo')
+    element: h1.closest('.conteudo_catalogo'),
+    originalIndex: index
 }));
 
 let selectedIndex = -1;
+let sortType = 'original'; // 'asc', 'desc', 'original'
 
 const updateSuggestionDisplay = (found) => {
     suggestions.style.display = found ? 'block' : 'none';
+};
+
+const updateOrderText = () => {
+    switch (sortType) {
+        case 'asc':
+            return "-Ordem A-Z-";
+        case 'desc':
+            return "-Ordem Z-A-";
+        case 'original':
+            return "-Mudar Ordem-";
+    }
 };
 
 const createSuggestionDiv = (product) => {
     const div = document.createElement('div');
     div.textContent = product.name;
     div.addEventListener('click', () => {
-        // Remova a classe 'simulated-hover' de qualquer produto anteriormente selecionado
         const previouslySelected = document.querySelector('.simulated-hover');
         if (previouslySelected) {
             previouslySelected.classList.remove('simulated-hover');
         }
-
-        // Adicione a classe 'simulated-hover' ao .conteudo_catalogo do produto clicado
         product.element.classList.add('simulated-hover');
-
-        // Scroll lateral para tornar o produto visível
         product.element.scrollIntoView({ inline: 'center', behavior: 'smooth' });
-
         searchInput.value = product.name;
-        updateSuggestionDisplay(false); // Fechar a barra de sugestões
+        updateSuggestionDisplay(false);
     });
     return div;
 };
@@ -336,15 +349,42 @@ const createSuggestionDiv = (product) => {
 const displaySuggestions = (query) => {
     suggestions.innerHTML = '';
 
-    // Adicionando o texto "por ordem alfabética"
     const orderText = document.createElement('div');
-    orderText.textContent = "-POR ORDEM ALFABETICA-";
+    orderText.textContent = updateOrderText();
     orderText.style.fontWeight = "normal";
     orderText.style.color = "#B0B0B0";
     orderText.style.textAlign = "center";
+    orderText.addEventListener('click', (e) => {
+        switch (sortType) {
+            case 'asc':
+                sortType = 'desc';
+                break;
+            case 'desc':
+                sortType = 'original';
+                break;
+            case 'original':
+                sortType = 'asc';
+                break;
+        }
+        displaySuggestions(searchInput.value.toLowerCase());
+        e.stopPropagation();
+    });
     suggestions.appendChild(orderText);
 
-    const foundProducts = products.filter(product => product.name.toLowerCase().includes(query));
+    let foundProducts = products.filter(product => product.name.toLowerCase().includes(query));
+    
+    switch (sortType) {
+        case 'asc':
+            foundProducts.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'desc':
+            foundProducts.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        case 'original':
+            foundProducts.sort((a, b) => a.originalIndex - b.originalIndex);
+            break;
+    }
+
     foundProducts.forEach(product => suggestions.appendChild(createSuggestionDiv(product)));
     updateSuggestionDisplay(foundProducts.length > 0);
 };
@@ -387,12 +427,9 @@ searchInput.addEventListener('keydown', (event) => {
 const handleDocumentClick = (event) => {
     if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
         if (event.type === 'touchend' && suggestions.contains(event.target)) {
-            return; // Se o toque ocorreu dentro da área de sugestões, não feche a caixa de sugestões
+            return;
         }
-
         updateSuggestionDisplay(false);
-
-        // Remova a classe 'simulated-hover' de qualquer produto
         const activeProduct = document.querySelector('.simulated-hover');
         if (activeProduct) {
             activeProduct.classList.remove('simulated-hover');
@@ -402,3 +439,4 @@ const handleDocumentClick = (event) => {
 
 document.addEventListener('click', handleDocumentClick);
 document.addEventListener('touchend', handleDocumentClick);
+

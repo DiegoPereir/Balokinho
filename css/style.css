@@ -336,7 +336,7 @@ section{
     position: absolute;
     left: 10%;
 
-    background-color: #b19cd984;
+    background-color: #9cd9d484;
     color: #ffffff;
     padding: 10px 10px 20px 10px;
     border-radius: 10px;
@@ -476,21 +476,17 @@ section{
 }
 
 .fullscreen-img {
-    border: 1px solid var(--sky-color);
     position: fixed;
     top: 12%;
-    /* Centraliza verticalmente */
     left: 10%;
-    /* Centraliza horizontalmente */
     width: 80vw;
     height: 80vh;
-    object-fit: cover;
-    background-color: rgba(0, 0, 0, 0.8);
+    object-fit: scale-down;
+    background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
     z-index: 1000;
     border-radius: 5px;
-    /* Bordas arredondadas */
-}
+  }
 
 .fullscreen-background {
     position: fixed;
@@ -533,15 +529,31 @@ section{
 /* --------------------------------------- DEPOIMENTOS */
 
 #depos {
-    background: linear-gradient(to bottom right, rgba(0, 103, 158, 0.563), rgba(195, 0, 255, 0.53)), url(../img/salao.jpg);
+    position: relative;
+    padding: 5rem 0;
+    margin-top: 5%;
+    overflow: hidden; /* Isso garante que a imagem de fundo não se estenda além da seção */
+}
+
+.background-image {
+    background: url(../img/salao.jpg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    position: relative;
-    padding: 5rem 0;
-    margin-top: 5%;
+    filter: blur(5px); /* Ajuste o valor conforme necessário para obter o nível de desfoque desejado */
+    position: absolute;
+    top: -10%; /* Aumentar a área da imagem para garantir que o desfoque não crie bordas visíveis */
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    z-index: -1; /* Para garantir que o conteúdo da seção fique acima do fundo desfocado */
 }
+
+#depos {
+    background: linear-gradient(to bottom right, rgba(0, 103, 158, 0.563), rgba(195, 0, 255, 0.53));
+}
+
 
 
 .depo_title {
@@ -605,6 +617,7 @@ section{
     background-position: center;
     transform: scaleY(-1);
     z-index: 1;
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -655,6 +668,7 @@ section{
 .contact_title {
     color: var(--purple-color);
     font-size: 1.75rem;
+    font-weight: bold;
     text-transform: uppercase;
     margin: 2rem 0 0 0;
     letter-spacing: 2px;
@@ -740,7 +754,7 @@ section{
     text-transform: uppercase;
     line-height: 1.25;
     padding-bottom: 1rem;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 
