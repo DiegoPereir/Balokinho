@@ -204,6 +204,8 @@ function setupDragForElement(element, isMenu = false) {
     let lastX = 0;
     let isHorizontalDrag = false;
 
+    const MAX_VELOCITY = 5; // Valor máximo para a velocidade
+
     const animateMomentum = () => {
         if (Math.abs(velocity) > 0.5) {
             element.scrollLeft -= velocity;
@@ -213,10 +215,12 @@ function setupDragForElement(element, isMenu = false) {
     };
 
     const startDrag = (e) => {
+        e.preventDefault(); // Desativar comportamento padrão
         startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
         startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
         initialScrollLeft = element.scrollLeft;
         element.style.cursor = 'grabbing';
+        element.style.userSelect = 'none'; // Desativar seleção de texto
         document.addEventListener(e.type === 'touchstart' ? 'touchmove' : 'mousemove', drag);
         document.addEventListener(e.type === 'touchstart' ? 'touchend' : 'mouseup', stopDragGlobal);
     };
@@ -230,7 +234,6 @@ function setupDragForElement(element, isMenu = false) {
 
         if (!isDragging) {
             if (Math.abs(dy) > Math.abs(dx)) {
-                // Predominantemente vertical, então não continue com o arrasto horizontal
                 stopDragGlobal();
                 return;
             } else {
@@ -243,6 +246,7 @@ function setupDragForElement(element, isMenu = false) {
             e.preventDefault();
             element.scrollLeft = initialScrollLeft - dx;
             velocity = currentX - lastX;
+            velocity = Math.min(Math.max(velocity, -MAX_VELOCITY), MAX_VELOCITY); // Limitar a velocidade
             lastX = currentX;
         }
     };
@@ -251,6 +255,7 @@ function setupDragForElement(element, isMenu = false) {
         isDragging = false;
         isHorizontalDrag = false;
         element.style.cursor = 'grab';
+        element.style.userSelect = ''; // Reativar seleção de texto
         document.removeEventListener('touchmove', drag);
         document.removeEventListener('mousemove', drag);
         document.removeEventListener('touchend', stopDragGlobal);
@@ -287,6 +292,7 @@ document.addEventListener('click', (e) => {
 
 setupMenuDrag();
 setupCatalogoDrag();
+
 
 
 
