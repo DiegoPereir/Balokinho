@@ -880,7 +880,7 @@ section{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #6f6f6f;
+    background-color: #6f6f6f73;
     color: white;
     cursor: pointer;
     opacity: 0;
@@ -894,10 +894,10 @@ section{
 
 .subirPage:hover {
     transition: 0.1s;
-    background-color: #5b5b5b;
-    border: 1px solid #ffffff;
+    background-color: #5b5b5b8a;
+    border: 1px inset #ffffff;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-}
+  }
 
 footer .icons{
     display: flex;
@@ -1087,9 +1087,6 @@ footer .icons{
 }
 
 @media (max-width: 950px) {
-    footer .menu li {
-        margin-bottom: 10px;
-      }
     .contact_content {
         flex-direction: column !important;
     }
@@ -1111,7 +1108,7 @@ footer .icons{
 
     nav ul.open {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         top: 115px;
     }
 
@@ -1123,10 +1120,6 @@ footer .icons{
     .menu {
         display: flex;
         flex-direction: column;
-    }
-    footer .menu li{
-        margin-bottom: 10px;
-
     }
     header nav ul {
         position: absolute;
@@ -1142,7 +1135,7 @@ footer .icons{
     }
 
     nav ul.open {
-        left: -55px;
+        left: -25px;
         top: 90px;
     }
 
@@ -1215,11 +1208,6 @@ footer .icons{
         justify-content: center;
         width: fit-content;
     }
-
-    header nav .menu.open {
-        width: auto;
-    }
-
     #suggestions {
         left: 54px !important;
     }

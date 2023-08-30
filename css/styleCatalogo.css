@@ -58,7 +58,6 @@ header nav {
   background-color: var(--white-color);
   align-items: center;
   padding: 20px 20px;
-  cursor: grab;
   box-shadow: 0 5px 10px 2px rgba(255, 255, 255);
 
 }
@@ -66,6 +65,7 @@ header nav {
 /* Estilize a lista aberta */
 header nav ul.open {
   overflow-y: scroll;
+
   /* Adicione uma barra de rolagem vertical quando necessário */
 }
 
@@ -98,6 +98,8 @@ header nav .menu {
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
+  cursor: grab;
+
 }
 
 header nav .menu.open {
@@ -449,7 +451,7 @@ header label span:nth-child(3) {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #6f6f6f;
+  background-color: #6f6f6f73;
   color: white;
   cursor: pointer;
   opacity: 0;
@@ -463,8 +465,8 @@ header label span:nth-child(3) {
 
 .subirPage:hover {
   transition: 0.1s;
-  background-color: #5b5b5b;
-  border: 1px solid #ffffff;
+  background-color: #5b5b5b8a;
+  border: 1px inset #ffffff;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
 }
 

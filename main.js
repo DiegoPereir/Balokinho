@@ -303,24 +303,25 @@ setupCatalogoDrag();
 
 
 //BARRA DE PESQUISA CATALOGO---------------------------------------------------------------------------------------------------------------------------
-const searchInput = document.getElementById('searchInput');
-const suggestions = document.getElementById('suggestions');
+const searchInputElem = document.getElementById('searchInput');
+const suggestionsElem = document.getElementById('suggestions');
 
-const products = Array.from(document.querySelectorAll('.desc_produto h1')).map((h1, index) => ({
+const productItems = Array.from(document.querySelectorAll('.desc_produto h1')).map((h1, index) => ({
     name: h1.textContent.trim(),
     element: h1.closest('.conteudo_catalogo'),
     originalIndex: index
 }));
 
-let selectedIndex = -1;
-let sortType = 'original'; // 'asc', 'desc', 'original'
+let selectedIndexSearch = -1;
+let sortTypeSearch = 'original';
+let isSearchDragging = false; // Variável para rastrear o estado do drag
 
-const updateSuggestionDisplay = (found) => {
-    suggestions.style.display = found ? 'block' : 'none';
+const updateSuggestionDisplaySearch = (found) => {
+    suggestionsElem.style.display = found ? 'block' : 'none';
 };
 
-const updateOrderText = () => {
-    switch (sortType) {
+const updateOrderTextSearch = () => {
+    switch (sortTypeSearch) {
         case 'asc':
             return "-Ordem A-Z-";
         case 'desc':
@@ -330,50 +331,54 @@ const updateOrderText = () => {
     }
 };
 
-const createSuggestionDiv = (product) => {
+const createSuggestionDivSearch = (product) => {
     const div = document.createElement('div');
     div.textContent = product.name;
     div.addEventListener('click', () => {
+        if (isSearchDragging) return; // Evitar cliques durante o drag
+
         const previouslySelected = document.querySelector('.simulated-hover');
         if (previouslySelected) {
             previouslySelected.classList.remove('simulated-hover');
         }
         product.element.classList.add('simulated-hover');
         product.element.scrollIntoView({ inline: 'center', behavior: 'smooth' });
-        searchInput.value = product.name;
-        updateSuggestionDisplay(false);
+        searchInputElem.value = product.name;
+        updateSuggestionDisplaySearch(false);
     });
     return div;
 };
 
-const displaySuggestions = (query) => {
-    suggestions.innerHTML = '';
+const displaySuggestionsSearch = (query) => {
+    suggestionsElem.innerHTML = '';
 
     const orderText = document.createElement('div');
-    orderText.textContent = updateOrderText();
+    orderText.textContent = updateOrderTextSearch();
     orderText.style.fontWeight = "normal";
     orderText.style.color = "#B0B0B0";
     orderText.style.textAlign = "center";
     orderText.addEventListener('click', (e) => {
-        switch (sortType) {
+        if (isSearchDragging) return; // Evitar cliques durante o drag
+
+        switch (sortTypeSearch) {
             case 'asc':
-                sortType = 'desc';
+                sortTypeSearch = 'desc';
                 break;
             case 'desc':
-                sortType = 'original';
+                sortTypeSearch = 'original';
                 break;
             case 'original':
-                sortType = 'asc';
+                sortTypeSearch = 'asc';
                 break;
         }
-        displaySuggestions(searchInput.value.toLowerCase());
+        displaySuggestionsSearch(searchInputElem.value.toLowerCase());
         e.stopPropagation();
     });
-    suggestions.appendChild(orderText);
+    suggestionsElem.appendChild(orderText);
 
-    let foundProducts = products.filter(product => product.name.toLowerCase().includes(query));
+    let foundProducts = productItems.filter(product => product.name.toLowerCase().includes(query));
     
-    switch (sortType) {
+    switch (sortTypeSearch) {
         case 'asc':
             foundProducts.sort((a, b) => a.name.localeCompare(b.name));
             break;
@@ -385,51 +390,51 @@ const displaySuggestions = (query) => {
             break;
     }
 
-    foundProducts.forEach(product => suggestions.appendChild(createSuggestionDiv(product)));
-    updateSuggestionDisplay(foundProducts.length > 0);
+    foundProducts.forEach(product => suggestionsElem.appendChild(createSuggestionDivSearch(product)));
+    updateSuggestionDisplaySearch(foundProducts.length > 0);
 };
 
-const handleArrowNavigation = (event, items) => {
-    if (event.key === 'ArrowDown' && selectedIndex < items.length - 1) {
-        selectedIndex++;
-    } else if (event.key === 'ArrowUp' && selectedIndex > 0) {
-        selectedIndex--;
+const handleArrowNavigationSearch = (event, items) => {
+    if (event.key === 'ArrowDown' && selectedIndexSearch < items.length - 1) {
+        selectedIndexSearch++;
+    } else if (event.key === 'ArrowUp' && selectedIndexSearch > 0) {
+        selectedIndexSearch--;
     }
     Array.from(items).forEach((item, index) => {
-        item.classList.toggle('selected', index === selectedIndex);
+        item.classList.toggle('selected', index === selectedIndexSearch);
     });
-    if (selectedIndex >= 0) {
-        items[selectedIndex].scrollIntoView({ block: 'nearest' });
+    if (selectedIndexSearch >= 0) {
+        items[selectedIndexSearch].scrollIntoView({ block: 'nearest' });
     }
 };
 
-searchInput.addEventListener('input', (e) => {
-    displaySuggestions(e.target.value.toLowerCase());
-    selectedIndex = -1;
+searchInputElem.addEventListener('input', (e) => {
+    displaySuggestionsSearch(e.target.value.toLowerCase());
+    selectedIndexSearch = -1;
 });
 
-searchInput.addEventListener('focus', (e) => {
-    displaySuggestions(e.target.value.toLowerCase());
+searchInputElem.addEventListener('focus', (e) => {
+    displaySuggestionsSearch(e.target.value.toLowerCase());
 });
 
-searchInput.addEventListener('keydown', (event) => {
-    const items = suggestions.children;
-    handleArrowNavigation(event, items);
+searchInputElem.addEventListener('keydown', (event) => {
+    const items = suggestionsElem.children;
+    handleArrowNavigationSearch(event, items);
     if (event.key === 'Enter') {
-        if (selectedIndex >= 0) {
-            items[selectedIndex].click();
+        if (selectedIndexSearch >= 0) {
+            items[selectedIndexSearch].click();
         } else if (items.length > 0) {
             items[0].click();
         }
     }
 });
 
-const handleDocumentClick = (event) => {
-    if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
-        if (event.type === 'touchend' && suggestions.contains(event.target)) {
+const handleDocumentClickSearch = (event) => {
+    if (!searchInputElem.contains(event.target) && !suggestionsElem.contains(event.target)) {
+        if (event.type === 'touchend' && suggestionsElem.contains(event.target)) {
             return;
         }
-        updateSuggestionDisplay(false);
+        updateSuggestionDisplaySearch(false);
         const activeProduct = document.querySelector('.simulated-hover');
         if (activeProduct) {
             activeProduct.classList.remove('simulated-hover');
@@ -437,6 +442,37 @@ const handleDocumentClick = (event) => {
     }
 };
 
-document.addEventListener('click', handleDocumentClick);
-document.addEventListener('touchend', handleDocumentClick);
+document.addEventListener('click', handleDocumentClickSearch);
+document.addEventListener('touchend', handleDocumentClickSearch);
 
+// Função para permitir arrastar com o mouse
+function setupDragForSuggestionsSearch(element) {
+    let isSuggestionsSearchDragging = false;
+    let startDragY, initialSuggestionsScrollTop;
+
+    const beginDragSearch = (e) => {
+        isSearchDragging = true; // Iniciar o drag
+        startDragY = e.clientY;
+        initialSuggestionsScrollTop = element.scrollTop;
+        document.addEventListener('mousemove', performDragSearch);
+        document.addEventListener('mouseup', endDragSearch);
+    };
+
+    const performDragSearch = (e) => {
+        if (!isSearchDragging) return;
+        const deltaY = e.clientY - startDragY;
+        element.scrollTop = initialSuggestionsScrollTop - deltaY;
+        e.preventDefault();
+    };
+
+    const endDragSearch = () => {
+        isSearchDragging = false; // Finalizar o drag
+        document.removeEventListener('mousemove', performDragSearch);
+        document.removeEventListener('mouseup', endDragSearch);
+    };
+
+    element.addEventListener('mousedown', beginDragSearch);
+}
+
+// Chame a função para o elemento suggestions
+setupDragForSuggestionsSearch(suggestionsElem);
