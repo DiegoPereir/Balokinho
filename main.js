@@ -1,40 +1,5 @@
 
-// Exemplos para teste
-const words = ["produtoA", "ProdutoB", "ProdutoC", "ProdutoD", "ProdutoE", "produtoF", "ProdutoG", "ProdutoH", "ProdutoI", "ProdutoJ"];
-const imgProduto = [
-    "banners/imagem1.png",
-    "banners/imagem2.png",
-    "banners/imagem3.png",
-    "banners/imagem4.png",
-    "banners/imagem5.png",
-    "banners/imagem6.png",
-    "banners/imagem7.png",
-    "banners/imagem8.png",
-    "banners/imagem9.png",
-    "banners/imagem10.png",
-    "banners/imagem11.png",
-    "banners/imagem12.png",
-    "banners/imagem13.png",
-    "banners/imagem14.png",
-    "banners/imagem15.png",
-    "banners/imagem16.png",
-    "banners/imagem17.png",
-    "banners/imagem18.png",
-    // ... adicione mais URLs conforme necessário
-];
 
-const h1Elements = document.querySelectorAll('.desc_produto h1');
-const imgElements = document.querySelectorAll('.imagem_produto');
-
-h1Elements.forEach(h1 => {
-    const randomWordIndex = Math.floor(Math.random() * words.length);
-    h1.textContent = words[randomWordIndex];
-});
-
-imgElements.forEach(img => {
-    const randomImgIndex = Math.floor(Math.random() * imgProduto.length);
-    img.src = imgProduto[randomImgIndex];
-});
 
 
 // MENU HAMBURGUER------------------------------------------------------------------------------------------------------------------------------------
@@ -93,52 +58,7 @@ function fullscreen(element) {
   
 
 
-// MUDAR COR DOS TITULOS DE SESSÕES NA PAGINA DE CATALOGO---------------------------------------------------------------------------------------------
-function updateBackground() {
-  const subSessoes = document.querySelectorAll('.sub_sessao');
 
-  subSessoes.forEach(subSessao => {
-    const h1Element = subSessao.querySelector('h1');
-    const conteudoTitulo = subSessao.querySelector('.conteudo_titulo');
-
-    let corDeFundo;
-    let corTitulo;
-
-    if (h1Element) {
-      switch (h1Element.textContent.trim()) {
-        case 'Masculinos':
-          // corDeFundo = '#ffffff';
-          corTitulo = '#4E9AE6'; // Azul
-          break;
-        case 'Femininas':
-          // corDeFundo = '#ffffff';
-          corTitulo = '#FF5275'; // Rosa escuro
-          break;
-        case 'Unissex':
-          // corDeFundo = '#ffffff';
-          corTitulo = '#FFB347'; // Amarelo profundo
-          break;
-        default:
-          // corDeFundo = '#ffffff'; // Cor padrão para conteúdo não especificado
-          corTitulo = '#FFB347'; // Cor padrão para título não especificado (preto)
-      }
-
-      const conteudosCatalogo = subSessao.querySelectorAll('.conteudo_catalogo');
-      conteudosCatalogo.forEach(conteudoCatalogo => {
-        conteudoCatalogo.style.backgroundColor = corDeFundo;
-      });
-
-      if (conteudoTitulo) {
-        h1Element.style.color = corTitulo; // Aplica a cor ao texto do título
-        conteudoTitulo.style.backgroundColor = corDeFundo; // Aplica a cor de fundo ao título
-      }
-    }
-  });
-}
-
-window.onload = function() {
-  updateBackground();
-};
 
 
 

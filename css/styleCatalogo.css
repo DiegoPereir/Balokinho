@@ -372,7 +372,7 @@ header label span:nth-child(3) {
   transition: .4s;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -685,6 +685,12 @@ footer .icon--youtube:hover{
 }
 
 @media (max-width: 1300px) {
+  header nav .menu li{
+    margin: 10px 0;
+  }
+  header nav .menu li .home{
+    font-size: 16px!important;
+  }
   #searchInput {
       width: 20% !important;
   }
@@ -775,7 +781,7 @@ footer .icon--youtube:hover{
 
   nav ul.open {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       left: 0;
       margin-left: -30px;
       top: 70px;
