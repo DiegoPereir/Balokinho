@@ -708,6 +708,18 @@ const database = {
 
 
 
+let imagesToLoad = 0; // Contador para imagens a serem carregadas
+
+function showLoading() {
+    const loadingElement = document.getElementById('loading');
+    loadingElement.style.display = 'block';
+}
+
+function hideLoading() {
+    const loadingElement = document.getElementById('loading');
+    loadingElement.style.display = 'none';
+}
+
 function preencherSessao(idSessao) {
     const sessao = database[idSessao];
     if (!sessao) return;
@@ -734,9 +746,6 @@ function preencherSessao(idSessao) {
         h1SubTitulo.textContent = subSessao.titulo;
         tituloSubDiv.appendChild(h1SubTitulo);
         divSubSessao.appendChild(tituloSubDiv);
-
-        // Atualiza a cor do título aqui
-        updateTitleColor(h1SubTitulo);
 
         const divCatalogo = document.createElement('div');
         divCatalogo.className = "catalogo";
@@ -767,29 +776,28 @@ function preencherSessao(idSessao) {
             divProduto.appendChild(divDesc);
 
             divCatalogo.appendChild(divProduto);
+
+            imagesToLoad++; // Incrementa o contador
+            showLoading(); // Mostra o elemento de loading
+
+            imgProduto.onload = function() {
+                imagesToLoad--; // Decrementa o contador
+                if (imagesToLoad === 0) {
+                    hideLoading(); // Esconde o elemento de loading quando todas as imagens forem carregadas
+                }
+            };
+
+            imgProduto.onerror = function() {
+                imagesToLoad--; // Decrementa o contador mesmo se a imagem falhar ao carregar
+                if (imagesToLoad === 0) {
+                    hideLoading();
+                }
+            };
         });
 
         divSubSessao.appendChild(divCatalogo);
         divSessao.appendChild(divSubSessao);
     });
-}
-
-function updateTitleColor(h1Element) {
-    let corTitulo;
-    switch (h1Element.textContent.trim()) {
-        case 'Masculinos':
-            corTitulo = '#4E9AE6';
-            break;
-        case 'Femininas':
-            corTitulo = '#FF5275';
-            break;
-        case 'Unissex':
-            corTitulo = '#FFB347';
-            break;
-        default:
-            corTitulo = '#FFB347';
-    }
-    h1Element.style.color = corTitulo;
 }
 
 for (let idSessao in database) {
