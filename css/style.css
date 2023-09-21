@@ -366,13 +366,14 @@ section{
 
 
 .sessao_catalogo {
+    margin-top: 5%;
     height: 600px;
     font-family: 'Nunito', Arial, sans-serif;
     display: flex;
     flex-direction: column;
     padding: 1% 5%;
     justify-content: center;
-    background-color: #fff9eb;
+    background-color: #ffffff;
 }
 
 .sessao_catalogo .conteudo_titulo {
@@ -472,7 +473,7 @@ section{
     transition: .4s;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
 }
 
@@ -587,6 +588,7 @@ section{
     text-align: center;
     justify-content: center;
     padding: 2rem;
+    gap: 5px;
 }
 
 .star_element {
