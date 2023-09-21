@@ -195,48 +195,19 @@ const database = {
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
+                    
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    // ... outros produtos
+                    
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    // ... outros produtos
+                    
                 ]
             }
         ]
@@ -313,48 +284,19 @@ const database = {
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
+                    
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    // ... outros produtos
+                    
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    // ... outros produtos
+                    
                 ]
             }
         ]
@@ -622,26 +564,7 @@ const database = {
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
+                   
                 ]
             },
         ]
@@ -652,26 +575,7 @@ const database = {
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
+                    
                 ]
             },
         ]
@@ -682,48 +586,19 @@ const database = {
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
+                    
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    // ... outros produtos
+                    
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    {
-                        imagem: "",
-                        nome: "",
-                        descricao: ""
-                    },
-                    // ... outros produtos
+                    
                 ]
             }
         ]
