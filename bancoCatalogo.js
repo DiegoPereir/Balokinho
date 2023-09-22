@@ -708,18 +708,6 @@ const database = {
 
 
 
-let imagesToLoad = 0; // Contador para imagens a serem carregadas
-
-function showLoading() {
-    const loadingElement = document.getElementById('loading');
-    loadingElement.style.display = 'block';
-}
-
-function hideLoading() {
-    const loadingElement = document.getElementById('loading');
-    loadingElement.style.display = 'none';
-}
-
 function preencherSessao(idSessao) {
     const sessao = database[idSessao];
     if (!sessao) return;
@@ -747,6 +735,8 @@ function preencherSessao(idSessao) {
         tituloSubDiv.appendChild(h1SubTitulo);
         divSubSessao.appendChild(tituloSubDiv);
 
+        updateTitleColor(h1SubTitulo);
+
         const divCatalogo = document.createElement('div');
         divCatalogo.className = "catalogo";
 
@@ -757,11 +747,31 @@ function preencherSessao(idSessao) {
             const divImagem = document.createElement('div');
             divImagem.className = "produto_content";
             divImagem.setAttribute("onclick", "fullscreen(this)");
+
+            // Adicione o elemento de carregamento aqui
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = "loading";
+
+            const spinner = document.createElement('div');
+            spinner.className = "spinner";
+            loadingDiv.appendChild(spinner);
+
+            divImagem.appendChild(loadingDiv);
+
             const imgProduto = document.createElement('img');
             imgProduto.className = "imagem_produto";
             imgProduto.src = produto.imagem;
             imgProduto.alt = "imagem produto";
             imgProduto.draggable = false;
+
+            // Adicionando o atributo lazy loading
+            imgProduto.loading = "lazy";
+
+            // Adicione um evento de carregamento para remover o elemento de carregamento assim que a imagem estiver carregada
+            imgProduto.onload = function() {
+                divImagem.removeChild(loadingDiv);
+            };
+
             divImagem.appendChild(imgProduto);
             divProduto.appendChild(divImagem);
 
@@ -776,28 +786,29 @@ function preencherSessao(idSessao) {
             divProduto.appendChild(divDesc);
 
             divCatalogo.appendChild(divProduto);
-
-            imagesToLoad++; // Incrementa o contador
-            showLoading(); // Mostra o elemento de loading
-
-            imgProduto.onload = function() {
-                imagesToLoad--; // Decrementa o contador
-                if (imagesToLoad === 0) {
-                    hideLoading(); // Esconde o elemento de loading quando todas as imagens forem carregadas
-                }
-            };
-
-            imgProduto.onerror = function() {
-                imagesToLoad--; // Decrementa o contador mesmo se a imagem falhar ao carregar
-                if (imagesToLoad === 0) {
-                    hideLoading();
-                }
-            };
         });
 
         divSubSessao.appendChild(divCatalogo);
         divSessao.appendChild(divSubSessao);
     });
+}
+
+function updateTitleColor(h1Element) {
+    let corTitulo;
+    switch (h1Element.textContent.trim()) {
+        case 'Masculinos':
+            corTitulo = '#4E9AE6';
+            break;
+        case 'Femininas':
+            corTitulo = '#FF5275';
+            break;
+        case 'Unissex':
+            corTitulo = '#FFB347';
+            break;
+        default:
+            corTitulo = '#FFB347';
+    }
+    h1Element.style.color = corTitulo;
 }
 
 for (let idSessao in database) {
