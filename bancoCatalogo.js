@@ -1,4 +1,7 @@
 const database = {
+    bannerCatalogo: {
+        imagem: "banners/BannerCatalogo.png"
+    },
     p1: {
         titulo: "Pijamas/Baby Doll",
         subSessoes: [
@@ -712,6 +715,15 @@ function preencherSessao(idSessao) {
     const sessao = database[idSessao];
     if (!sessao) return;
 
+    // Se a sessão for o bannerCatalogo, defina a imagem de fundo e retorne
+    if (idSessao === 'bannerCatalogo') {
+        const bannerElement = document.getElementById('bannerCatalogo');
+        if (bannerElement && sessao.imagem) {
+            bannerElement.style.backgroundImage = `url(${sessao.imagem})`;
+        }
+        return;
+    }
+
     const divSessao = document.getElementById(idSessao);
     divSessao.innerHTML = ''; // Limpar o conteúdo existente
 
@@ -748,7 +760,6 @@ function preencherSessao(idSessao) {
             divImagem.className = "produto_content";
             divImagem.setAttribute("onclick", "fullscreen(this)");
 
-            // Adicione o elemento de carregamento aqui
             const loadingDiv = document.createElement('div');
             loadingDiv.className = "loading";
 
@@ -763,11 +774,7 @@ function preencherSessao(idSessao) {
             imgProduto.src = produto.imagem;
             imgProduto.alt = "imagem produto";
             imgProduto.draggable = false;
-
-            // Adicionando o atributo lazy loading
             imgProduto.loading = "lazy";
-
-            // Adicione um evento de carregamento para remover o elemento de carregamento assim que a imagem estiver carregada
             imgProduto.onload = function() {
                 divImagem.removeChild(loadingDiv);
             };
@@ -792,6 +799,7 @@ function preencherSessao(idSessao) {
         divSessao.appendChild(divSubSessao);
     });
 }
+
 
 function updateTitleColor(h1Element) {
     let corTitulo;
