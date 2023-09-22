@@ -219,22 +219,22 @@ const database = {
                 titulo: "Masculinos",
                 produtos: [
                     {
-                        imagem: "img/kits/masculino/B206 1.png",
+                        imagem: "img/kits/masculino/B206 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/kits/masculino/B211 1.png",
+                        imagem: "img/kits/masculino/B211 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/kits/masculino/B212 1.png",
+                        imagem: "img/kits/masculino/B212 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/kits/masculino/B214G 1.png",
+                        imagem: "img/kits/masculino/B214G 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -244,17 +244,17 @@ const database = {
                 titulo: "Femininas",
                 produtos: [
                     {
-                        imagem: "img/kits/feminino/B205 1.png",
+                        imagem: "img/kits/feminino/B205 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/kits/feminino/B207 1.png",
+                        imagem: "img/kits/feminino/B207 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/kits/feminino/B214 1.png",
+                        imagem: "img/kits/feminino/B214 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -264,12 +264,12 @@ const database = {
                 titulo: "Unissex",
                 produtos: [
                     {
-                        imagem: "img/kits/unissex/B208 1.png",
+                        imagem: "img/kits/unissex/B208 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/kits/unissex/B208G 1.png",
+                        imagem: "img/kits/unissex/B208G 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -308,7 +308,7 @@ const database = {
                 titulo: "Masculinos",
                 produtos: [
                     {
-                        imagem: "img/macacao/masculino/B256, 1.png",
+                        imagem: "img/macacao/masculino/B256, 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -318,7 +318,7 @@ const database = {
                 titulo: "Femininas",
                 produtos: [
                     {
-                        imagem: "img/macacao/feminino/B256 1.png",
+                        imagem: "img/macacao/feminino/B256 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
@@ -329,7 +329,7 @@ const database = {
                 titulo: "Unissex",
                 produtos: [
                     {
-                        imagem: "img/macacao/unissex/B256, 1.png",
+                        imagem: "img/macacao/unissex/B256, 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -345,22 +345,22 @@ const database = {
                 titulo: "Masculinos",
                 produtos: [
                     {
-                        imagem: "img/camisetas/masculina/B003. 1.png",
+                        imagem: "img/camisetas/masculina/B003. 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/masculina/B003-2 1.png",
+                        imagem: "img/camisetas/masculina/B003-2 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/masculina/B003G 1.png",
+                        imagem: "img/camisetas/masculina/B003G 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/masculina/B08 1.png",
+                        imagem: "img/camisetas/masculina/B08 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -370,62 +370,62 @@ const database = {
                 titulo: "Femininas",
                 produtos: [
                     {
-                        imagem: "img/camisetas/feminina/B004.. 1.png",
+                        imagem: "img/camisetas/feminina/B004.. 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B005G 1.png",
+                        imagem: "img/camisetas/feminina/B005G 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B05 1.png",
+                        imagem: "img/camisetas/feminina/B05 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B006G 1.png",
+                        imagem: "img/camisetas/feminina/B006G 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B007 1.png",
+                        imagem: "img/camisetas/feminina/B007 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B007G. 1.png",
+                        imagem: "img/camisetas/feminina/B007G. 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B0009 1.png",
+                        imagem: "img/camisetas/feminina/B0009 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B009 1.png",
+                        imagem: "img/camisetas/feminina/B009 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B09G-2 1.png",
+                        imagem: "img/camisetas/feminina/B09G-2 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B010G 1.png",
+                        imagem: "img/camisetas/feminina/B010G 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B263-2 1.png",
+                        imagem: "img/camisetas/feminina/B263-2 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/feminina/B263G 1.png",
+                        imagem: "img/camisetas/feminina/B263G 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
@@ -435,12 +435,12 @@ const database = {
                 titulo: "Unissex",
                 produtos: [
                     {
-                        imagem: "img/camisetas/unissex/B06 1.png",
+                        imagem: "img/camisetas/unissex/B06 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/camisetas/unissex/B011 1.png",
+                        imagem: "img/camisetas/unissex/B011 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -455,7 +455,7 @@ const database = {
                 titulo: "Masculinos",
                 produtos: [
                     {
-                        imagem: "img/mijosShorts/masculino/B257 1.png",
+                        imagem: "img/mijosShorts/masculino/B257 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -465,22 +465,22 @@ const database = {
                 titulo: "Femininas",
                 produtos: [
                     {
-                        imagem: "img/mijosShorts/feminino/B050-2 1.png",
+                        imagem: "img/mijosShorts/feminino/B050-2 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/mijosShorts/feminino/B050G 1.png",
+                        imagem: "img/mijosShorts/feminino/B050G 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/mijosShorts/feminino/B257, 1.png",
+                        imagem: "img/mijosShorts/feminino/B257, 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/mijosShorts/feminino/B257G 1.png",
+                        imagem: "img/mijosShorts/feminino/B257G 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
@@ -490,7 +490,7 @@ const database = {
                 titulo: "Unissex",
                 produtos: [
                     {
-                        imagem: "img/mijosShorts/unissex/B257 1.png",
+                        imagem: "img/mijosShorts/unissex/B257 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -505,52 +505,52 @@ const database = {
                 titulo: "",
                 produtos: [
                     {
-                        imagem: "img/cuecasCalcinhas/B001.. 1.png",
+                        imagem: "img/cuecasCalcinhas/B001.. 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B002-4 1.png",
+                        imagem: "img/cuecasCalcinhas/B002-4 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B254 1.png",
+                        imagem: "img/cuecasCalcinhas/B254 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B259 1.png",
+                        imagem: "img/cuecasCalcinhas/B259 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B259G 1.png",
+                        imagem: "img/cuecasCalcinhas/B259G 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B260 1.png",
+                        imagem: "img/cuecasCalcinhas/B260 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B260G 1.png",
+                        imagem: "img/cuecasCalcinhas/B260G 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B260G 1.png",
+                        imagem: "img/cuecasCalcinhas/B260G 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B261G 1.png",
+                        imagem: "img/cuecasCalcinhas/B261G 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/cuecasCalcinhas/B267 1.png",
+                        imagem: "img/cuecasCalcinhas/B267 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -610,17 +610,17 @@ const database = {
                 titulo: "Masculinos",
                 produtos: [
                     {
-                        imagem: "img/acessorios/masculino/B122 1.png",
+                        imagem: "img/acessorios/masculino/B122 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/masculino/B201 1.png",
+                        imagem: "img/acessorios/masculino/B201 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/masculino/B252-2 1.png",
+                        imagem: "img/acessorios/masculino/B252-2 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -630,22 +630,22 @@ const database = {
                 titulo: "Femininas",
                 produtos: [
                     {
-                        imagem: "img/acessorios/femininos/B202 1.png",
+                        imagem: "img/acessorios/femininos/B202 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/femininos/B203-2 1.png",
+                        imagem: "img/acessorios/femininos/B203-2 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/femininos/B204-2 1.png",
+                        imagem: "img/acessorios/femininos/B204-2 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/femininos/B253 1.png",
+                        imagem: "img/acessorios/femininos/B253 1.jpg",
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
@@ -656,17 +656,17 @@ const database = {
                 titulo: "Unissex",
                 produtos: [
                     {
-                        imagem: "img/acessorios/unissex/B252 1.png",
+                        imagem: "img/acessorios/unissex/B252 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/unissex/B252 1.png",
+                        imagem: "img/acessorios/unissex/B252 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/unissex/B262 1.png",
+                        imagem: "img/acessorios/unissex/B262 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -681,17 +681,17 @@ const database = {
                 titulo: "",
                 produtos: [
                     {
-                        imagem: "img/chapeuBones/B251 1.png",
+                        imagem: "img/chapeuBones/B251 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/chapeuBones/B264 1.png",
+                        imagem: "img/chapeuBones/B264 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/chapeuBones/B265 1.png",
+                        imagem: "img/chapeuBones/B265 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
