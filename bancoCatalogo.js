@@ -10,7 +10,7 @@ const database = {
                 produtos: [
                     {
                         imagem: "img/pijamasBabyDoll/B100 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
@@ -196,21 +196,22 @@ const database = {
         titulo: "Conjuntos",
         subSessoes: [
             {
-                titulo: "",
+                titulo: "Novos Produtos em Breve...",
                 produtos: [
-                    
+
+
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    
+
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    
+
                 ]
             }
         ]
@@ -285,21 +286,21 @@ const database = {
         titulo: "Bodies",
         subSessoes: [
             {
-                titulo: "",
+                titulo: "Novos Produtos em Breve...",
                 produtos: [
-                    
+
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    
+
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    
+
                 ]
             }
         ]
@@ -565,9 +566,9 @@ const database = {
         titulo: "Vestidos",
         subSessoes: [
             {
-                titulo: "",
+                titulo: "Novos Produtos em Breve...",
                 produtos: [
-                   
+
                 ]
             },
         ]
@@ -576,9 +577,9 @@ const database = {
         titulo: "Tanga Enxuta",
         subSessoes: [
             {
-                titulo: "",
+                titulo: "Novos Produtos em Breve...",
                 produtos: [
-                    
+
                 ]
             },
         ]
@@ -587,21 +588,21 @@ const database = {
         titulo: "Saida Maternidade",
         subSessoes: [
             {
-                titulo: "",
+                titulo: "Novos Produtos em Breve...",
                 produtos: [
-                    
+
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    
+
                 ]
             },
             {
                 titulo: "",
                 produtos: [
-                    
+
                 ]
             }
         ]
@@ -664,7 +665,7 @@ const database = {
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/acessorios/unissex/B252 1.jpg",
+                        imagem: "img/acessorios/unissex/B258-3 1.jpg",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -775,7 +776,7 @@ function preencherSessao(idSessao) {
             imgProduto.alt = "imagem produto";
             imgProduto.draggable = false;
             imgProduto.loading = "lazy";
-            imgProduto.onload = function() {
+            imgProduto.onload = function () {
                 divImagem.removeChild(loadingDiv);
             };
 
@@ -812,6 +813,9 @@ function updateTitleColor(h1Element) {
             break;
         case 'Unissex':
             corTitulo = '#FFB347';
+            break;
+        case 'Novos Produtos em Breve...':
+            corTitulo = '#7c7c7c';
             break;
         default:
             corTitulo = '#FFB347';

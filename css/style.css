@@ -366,12 +366,11 @@ section{
 
 
 .sessao_catalogo {
-    margin-top: 5%;
     height: 600px;
     font-family: 'Nunito', Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    padding: 1% 5%;
+    padding: 5% 5%;
     justify-content: center;
     background-color: #ffffff;
 }
@@ -418,6 +417,7 @@ section{
     -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
     user-select: none;
     display: flex;
+    align-items: center;
     cursor: grab;
     overflow: hidden;
     flex-direction: row;

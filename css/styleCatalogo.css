@@ -271,7 +271,7 @@ header label span:nth-child(3) {
   font-family: 'Nunito', Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  padding: 0 5%;
+  padding: 5% 5% 0 5%;
 }
 
 .sessao_catalogo .conteudo_titulo {
@@ -316,7 +316,8 @@ header label span:nth-child(3) {
   -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
   user-select: none;
   display: flex;
-  cursor: grab;
+  align-items: center;
+  /* cursor: grab; */
   overflow: hidden;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -329,7 +330,7 @@ header label span:nth-child(3) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: fit-content;
   height: 100%;
   border-radius: 15px;
   margin: 1rem 1% 1rem 1%;
@@ -347,12 +348,20 @@ header label span:nth-child(3) {
   animation: spin 1s linear infinite;
   margin: auto;
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading {
@@ -375,6 +384,8 @@ header label span:nth-child(3) {
 }
 
 .sub_sessao .catalogo .conteudo_catalogo .desc_produto h2 {
+  display: flex;
+  justify-content: center;
   font-size: 14px;
   margin: 10px 0px;
 }

@@ -114,6 +114,16 @@ toggleSubirPageButtonVisibility();
 
 
 //GRAP AND DROP MENU E CATALOGO -------------------------------------------------------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const catalogo = document.querySelector('.sub_sessao .catalogo');
+    
+    if (catalogo.scrollWidth > catalogo.clientWidth) {
+        catalogo.style.cursor = "grab";
+    } else {
+        catalogo.style.cursor = "default";
+    }
+});
+
 const isMobileDevice = () => window.innerWidth <= 768;
 let isDragging = false;
 let dragDistance = 0;
