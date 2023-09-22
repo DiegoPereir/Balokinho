@@ -1,6 +1,6 @@
 const database = {
     bannerCatalogo: {
-        imagem: "banners/BannerCatalogo.png"
+        imagem: "banners/BannerCatalogo.jpg"
     },
     p1: {
         titulo: "Pijamas/Baby Doll",
