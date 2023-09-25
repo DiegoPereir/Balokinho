@@ -712,11 +712,53 @@ const database = {
 
 
 
+function createProductElement(produto) {
+    const divProduto = document.createElement('div');
+    divProduto.className = "conteudo_catalogo";
+
+    const divImagem = document.createElement('div');
+    divImagem.className = "produto_content";
+    divImagem.setAttribute("onclick", "fullscreen(this)");
+
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = "loading";
+
+    const spinner = document.createElement('div');
+    spinner.className = "spinner";
+    loadingDiv.appendChild(spinner);
+
+    divImagem.appendChild(loadingDiv);
+
+    const imgProduto = document.createElement('img');
+    imgProduto.className = "imagem_produto";
+    imgProduto.src = produto.imagem;
+    imgProduto.alt = "imagem produto";
+    imgProduto.draggable = false;
+    imgProduto.loading = "lazy";
+    imgProduto.onload = function () {
+        divImagem.removeChild(loadingDiv);
+    };
+
+    divImagem.appendChild(imgProduto);
+    divProduto.appendChild(divImagem);
+
+    const divDesc = document.createElement('div');
+    divDesc.className = "desc_produto";
+    const h1Nome = document.createElement('h1');
+    h1Nome.textContent = produto.nome;
+    const h2Desc = document.createElement('h2');
+    h2Desc.textContent = produto.descricao;
+    divDesc.appendChild(h1Nome);
+    divDesc.appendChild(h2Desc);
+    divProduto.appendChild(divDesc);
+
+    return divProduto;
+}
+
 function preencherSessao(idSessao) {
     const sessao = database[idSessao];
     if (!sessao) return;
 
-    // Se a sessão for o bannerCatalogo, defina a imagem de fundo e retorne
     if (idSessao === 'bannerCatalogo') {
         const bannerElement = document.getElementById('bannerCatalogo');
         if (bannerElement && sessao.imagem) {
@@ -726,7 +768,7 @@ function preencherSessao(idSessao) {
     }
 
     const divSessao = document.getElementById(idSessao);
-    divSessao.innerHTML = ''; // Limpar o conteúdo existente
+    divSessao.innerHTML = '';
 
     const tituloDiv = document.createElement('div');
     tituloDiv.className = "conteudo_titulo";
@@ -754,45 +796,7 @@ function preencherSessao(idSessao) {
         divCatalogo.className = "catalogo";
 
         subSessao.produtos.forEach(produto => {
-            const divProduto = document.createElement('div');
-            divProduto.className = "conteudo_catalogo";
-
-            const divImagem = document.createElement('div');
-            divImagem.className = "produto_content";
-            divImagem.setAttribute("onclick", "fullscreen(this)");
-
-            const loadingDiv = document.createElement('div');
-            loadingDiv.className = "loading";
-
-            const spinner = document.createElement('div');
-            spinner.className = "spinner";
-            loadingDiv.appendChild(spinner);
-
-            divImagem.appendChild(loadingDiv);
-
-            const imgProduto = document.createElement('img');
-            imgProduto.className = "imagem_produto";
-            imgProduto.src = produto.imagem;
-            imgProduto.alt = "imagem produto";
-            imgProduto.draggable = false;
-            imgProduto.loading = "lazy";
-            imgProduto.onload = function () {
-                divImagem.removeChild(loadingDiv);
-            };
-
-            divImagem.appendChild(imgProduto);
-            divProduto.appendChild(divImagem);
-
-            const divDesc = document.createElement('div');
-            divDesc.className = "desc_produto";
-            const h1Nome = document.createElement('h1');
-            h1Nome.textContent = produto.nome;
-            const h2Desc = document.createElement('h2');
-            h2Desc.textContent = produto.descricao;
-            divDesc.appendChild(h1Nome);
-            divDesc.appendChild(h2Desc);
-            divProduto.appendChild(divDesc);
-
+            const divProduto = createProductElement(produto);
             divCatalogo.appendChild(divProduto);
         });
 
@@ -801,28 +805,17 @@ function preencherSessao(idSessao) {
     });
 }
 
-
 function updateTitleColor(h1Element) {
-    let corTitulo;
-    switch (h1Element.textContent.trim()) {
-        case 'Masculinos':
-            corTitulo = '#4E9AE6';
-            break;
-        case 'Femininas':
-            corTitulo = '#FF5275';
-            break;
-        case 'Unissex':
-            corTitulo = '#FFB347';
-            break;
-        case 'Novos Produtos em Breve...':
-            corTitulo = '#7c7c7c';
-            break;
-        default:
-            corTitulo = '#FFB347';
-    }
-    h1Element.style.color = corTitulo;
+    const titleColors = {
+        'Masculinos': '#4E9AE6',
+        'Femininas': '#FF5275',
+        'Unissex': '#FFB347',
+        'Novos Produtos em Breve...': '#7c7c7c'
+    };
+    const defaultColor = '#FFB347';
+    h1Element.style.color = titleColors[h1Element.textContent.trim()] || defaultColor;
 }
 
-for (let idSessao in database) {
+for (const idSessao in database) {
     preencherSessao(idSessao);
 }
