@@ -737,6 +737,7 @@ function createProductElement(produto) {
     imgProduto.loading = "lazy";
     imgProduto.onload = function () {
         divImagem.removeChild(loadingDiv);
+        divImagem.style.transform = 'scale(1)';
     };
 
     divImagem.appendChild(imgProduto);
