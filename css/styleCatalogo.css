@@ -216,7 +216,7 @@ header label span:nth-child(3) {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-bottom: 5%;
+  margin-bottom: 1%;
 }
 
 
@@ -721,7 +721,7 @@ footer .icon--youtube:hover {
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1100px) {
 
   .conteudo_catalogo:hover,
   .conteudo_catalogo.simulated-hover {
@@ -735,7 +735,7 @@ footer .icon--youtube:hover {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1100px) {
   header nav .menu li {
     margin: 10px 0;
   }
