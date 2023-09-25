@@ -734,7 +734,6 @@ function createProductElement(produto) {
     imgProduto.src = produto.imagem;
     imgProduto.alt = "imagem produto";
     imgProduto.draggable = false;
-    imgProduto.loading = "lazy";
     imgProduto.onload = function () {
         divImagem.removeChild(loadingDiv);
         divImagem.style.transform = 'scale(1)';

@@ -29,29 +29,29 @@ setInterval(rotateBackgroundImage, 5000); // Muda a imagem a cada 5 segundos
 
 // FULLSCREM IMAGEM--------------------------------------------------------------------------------------------------------------------------------
 function fullscreen(element) {
-  const imgSrc = element.querySelector('.imagem_produto').src;
+    const imgSrc = element.querySelector('.imagem_produto').src;
 
-  // Cria um elemento de fundo
-  const fullscreenBackground = document.createElement('div');
-  fullscreenBackground.classList.add('fullscreen-background');
-  document.body.appendChild(fullscreenBackground);
+    const fullscreenBackground = document.createElement('div');
+    fullscreenBackground.classList.add('fullscreen-background');
+    document.body.appendChild(fullscreenBackground);
 
-  // Cria um elemento de imagem para exibir em tela cheia
-  const fullscreenImg = document.createElement('img');
-  fullscreenImg.src = imgSrc;
-  fullscreenImg.classList.add('fullscreen-img');
-  document.body.appendChild(fullscreenImg);
+    const fullscreenImg = document.createElement('img');
+    fullscreenImg.src = imgSrc;
+    fullscreenImg.classList.add('fullscreen-img');
+    document.body.appendChild(fullscreenImg);
 
-  // Função para remover a imagem e o fundo
-  const closeFullscreen = () => {
-      fullscreenImg.remove();
-      fullscreenBackground.remove();
-  };
+    document.body.style.overflow = 'hidden';
 
-  // Adiciona eventos para fechar a imagem e o fundo
-  fullscreenImg.addEventListener('click', closeFullscreen);
-  fullscreenBackground.addEventListener('click', closeFullscreen);
+    const closeFullscreen = () => {
+        fullscreenImg.remove();
+        fullscreenBackground.remove();
+        document.body.style.overflow = '';
+    };
+
+    fullscreenImg.addEventListener('click', closeFullscreen);
+    fullscreenBackground.addEventListener('click', closeFullscreen);
 }
+
 
 
 
