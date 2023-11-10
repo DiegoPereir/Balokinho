@@ -9,185 +9,186 @@ const database = {
                 titulo: "",
                 produtos: [
                     {
-                        imagem: "img/pijamasBabyDoll/B100 1.jpg",
+                        imagem: "img/pijamasBabyDoll/B102 1.jpg",
+                        nome: "teste para nome longo de produto",
+                    },
+                    {
+                        imagem: "img/pijamasBabyDoll/B102G 1.jpg",
                         nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
-                        imagem: "img/pijamasBabyDoll/B102 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B102G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
                         imagem: "img/pijamasBabyDoll/B103 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B104 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B104G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B105 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B105G, 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B106 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B106G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B107 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B107G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B108 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B109 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B109G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B110 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B111 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B111G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B112 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/pijamasBabyDoll/B112G 1 (1).jpg",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B112G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B113 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B114 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B115 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B116 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B117 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B118 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B119 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B120 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B123 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B124 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B124GG 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B125G 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B209 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B210 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B210-2 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
                     {
                         imagem: "img/pijamasBabyDoll/B266 1.jpg",
-                        nome: "Nome Conjunto1",
+                        nome: "teste para nome longo de produto",
                         descricao: "Desc ou preço produto"
                     },
+
+                    
                 ]
             },
         ]
@@ -196,20 +197,128 @@ const database = {
         titulo: "Conjuntos",
         subSessoes: [
             {
-                titulo: "Novos Produtos em Breve...",
+                titulo: "Masculinos",
                 produtos: [
-
+                    {
+                        imagem: "img/conjunto/masculiino/B102... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/masculiino/B122.... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/masculiino/B209.. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/masculiino/B266.. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/masculiino/B266....., - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/masculiino/B269............., - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                ]
+            },
+            {
+                titulo: "Femininas",
+                produtos: [
+                    {
+                        imagem: "img/conjunto/feminino/B100..... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B118. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B118.. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B119 - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B120 - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B120.. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B123 - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B124.. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B124GG... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B125G - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B210.. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B210... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B210..... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B210.............. - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B263...... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/conjunto/feminino/B268.... - Cópia.webp",
+                        nome: "teste para nome longo de produto",
+                        descricao: "Desc ou preço produto"
+                    },
 
                 ]
             },
             {
-                titulo: "",
-                produtos: [
-
-                ]
-            },
-            {
-                titulo: "",
+                titulo: "Unissex",
                 produtos: [
 
                 ]
@@ -223,7 +332,37 @@ const database = {
                 titulo: "Masculinos",
                 produtos: [
                     {
+                        imagem: "img/kits/masculino/B201. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B201.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B204.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
                         imagem: "img/kits/masculino/B206 1.jpg",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B206.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B208.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B211 - Cópia.webp",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -233,12 +372,47 @@ const database = {
                         descricao: "Desc ou preço produto"
                     },
                     {
+                        imagem: "img/kits/masculino/B211. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B211. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
                         imagem: "img/kits/masculino/B212 1.jpg",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                     {
+                        imagem: "img/kits/masculino/B212, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B213.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B213..... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B213....... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
                         imagem: "img/kits/masculino/B214G 1.jpg",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/masculino/B214G.. - Cópia.webp",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -262,6 +436,46 @@ const database = {
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
+                    {
+                        imagem: "img/kits/feminino/B202. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B203.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B203...... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B204..... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B205 - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B207. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B214.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/feminino/B214...... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
                 ]
             },
             {
@@ -274,6 +488,16 @@ const database = {
                     },
                     {
                         imagem: "img/kits/unissex/B208G 1.jpg",
+                        nome: "Nome Conjunto3",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/kits/unissex/B208G - Cópia.webp",
+                        nome: "Nome Conjunto3",
+                        descricao: "Desc ou preço produto"
+                    }
+                    ,{
+                        imagem: "img/kits/unissex/B208G... - Cópia.webp",
                         nome: "Nome Conjunto3",
                         descricao: "Desc ou preço produto"
                     },
@@ -316,6 +540,16 @@ const database = {
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
+                    {
+                        imagem: "img/macacao/masculino/B256, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/macacao/masculino/B256,, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
                 ]
             },
             {
@@ -326,7 +560,16 @@ const database = {
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
-                    // ... outros produtos
+                    {
+                        imagem: "img/macacao/feminino/B256.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/macacao/feminino/B256.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
                 ]
             },
             {
@@ -365,6 +608,36 @@ const database = {
                     },
                     {
                         imagem: "img/camisetas/masculina/B08 1.jpg",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/masculina/B003 - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/masculina/B003., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/masculina/B003...... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/masculina/B003G - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/masculina/B004G. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/masculina/B008.. - Cópia.webp",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
@@ -433,6 +706,46 @@ const database = {
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
+                    {
+                        imagem: "img/camisetas/feminina/B004...., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B005..., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B005....... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B006G - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B009... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B009.......... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B010..... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/feminina/B011.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
                 ]
             },
             {
@@ -446,6 +759,26 @@ const database = {
                     {
                         imagem: "img/camisetas/unissex/B011 1.jpg",
                         nome: "Nome Conjunto3",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/unissex/B006...., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/unissex/B007...... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/unissex/B008 - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/camisetas/unissex/B0009..... - Cópia.webp",
+                        nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                 ]
@@ -486,6 +819,36 @@ const database = {
                     {
                         imagem: "img/mijosShorts/feminino/B257G 1.jpg",
                         nome: "Nome Conjunto2",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/mijosShorts/feminino/B050... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/mijosShorts/feminino/B050G.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/mijosShorts/feminino/B257.......... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/mijosShorts/feminino/B257., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/mijosShorts/feminino/B257, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/mijosShorts/feminino/B050G.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                 ]
@@ -558,6 +921,87 @@ const database = {
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
+                    {
+                        imagem: "img/cuecasCalcinhas/B001, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B001..., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B002, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B002.., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B254, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B254. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B259. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B259.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B259...... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B259G.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B260 - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B260.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B260G.. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B261., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B267. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/cuecasCalcinhas/B267.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+
                 ]
             },
         ]
@@ -628,6 +1072,21 @@ const database = {
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
+                    {
+                        imagem: "img/acessorios/masculino/B252., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/masculino/B258... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/masculino/B258.... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
                 ]
             },
             {
@@ -653,7 +1112,26 @@ const database = {
                         nome: "Nome Conjunto2",
                         descricao: "Desc ou preço produto"
                     },
-                    // ... outros produtos
+                    {
+                        imagem: "img/acessorios/femininos/B252,,. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/femininos/B253, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/femininos/B253. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/femininos/B255..... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
                 ]
             },
             {
@@ -672,6 +1150,31 @@ const database = {
                     {
                         imagem: "img/acessorios/unissex/B262 1.jpg",
                         nome: "Nome Conjunto3",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/unissex/B252, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/unissex/B258, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/unissex/B258..., - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/unissex/B262, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/acessorios/unissex/B262,., - Cópia.webp",
+                        nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
                 ]
@@ -696,6 +1199,36 @@ const database = {
                     },
                     {
                         imagem: "img/chapeuBones/B265 1.jpg",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/chapeuBones/B251, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/chapeuBones/B251,, - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/chapeuBones/B264. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/chapeuBones/B264... - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/chapeuBones/B265. - Cópia.webp",
+                        nome: "Nome Conjunto1",
+                        descricao: "Desc ou preço produto"
+                    },
+                    {
+                        imagem: "img/chapeuBones/B265.. - Cópia.webp",
                         nome: "Nome Conjunto1",
                         descricao: "Desc ou preço produto"
                     },
