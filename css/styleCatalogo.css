@@ -205,6 +205,7 @@ header label span:nth-child(3) {
 
 
 #bannerCatalogo {
+  background-image: url(../banners/BannerCatalogo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
