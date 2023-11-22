@@ -1,253 +1,102 @@
+// Estrutura de dados atualizada
 const database = {
-    'principaisProdutos': {
-        titulo: 'Nossos Produtos',
-        subSessoes: [
-            {
-                titulo: '',
-                produtos: [
-                    {
-                        imagem: "img/pijamasBabyDoll/B100 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B102 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B102G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B103 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B104 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B104G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B105 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B105G, 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B106 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B106G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B107 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B107G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B108 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B109 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B109G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B110 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B111 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B111G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B112 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B112G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B113 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B114 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B115 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B116 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B117 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B118 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B119 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B120 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B123 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B124 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B124GG 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B125G 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B209 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B210 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B210-2 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                    {
-                        imagem: "img/pijamasBabyDoll/B266 1.jpg",
-                        nome: "Nome Conjunto1",
-                        descricao: "Desc ou preço produto"
-                    },
-                ]
-            },
-            // ... mais subSessoes
-        ]
-    },
-    // ... mais sessões
-};
-
-
-
-
-
-
-
-
-
-
-
-function preencherSessao(idSessao) {
-    const sessao = database[idSessao];
-    if (!sessao) return;
+    "produtos": [
+      {
+        "imagem": "catalogo/Nossos Produtos/B100..... - Cópia.webp",
+        "nome": "B100"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B118. - Cópia.webp",
+        "nome": "B118"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B118.. - Cópia.webp",
+        "nome": "B118"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B119 - Cópia.webp",
+        "nome": "B119 - Cópia"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B120 - Cópia.webp",
+        "nome": "B120 - Cópia"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B120.. - Cópia.webp",
+        "nome": "B120"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B123 - Cópia.webp",
+        "nome": "B123 - Cópia"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B124.. - Cópia.webp",
+        "nome": "B124"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B125G - Cópia.webp",
+        "nome": "B125G - Cópia"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B210.. - Cópia.webp",
+        "nome": "B210"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B210... - Cópia.webp",
+        "nome": "B210"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B210..... - Cópia.webp",
+        "nome": "B210"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B210.............. - Cópia.webp",
+        "nome": "B210"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B263...... - Cópia.webp",
+        "nome": "B263"
+      },
+      {
+        "imagem": "catalogo/Nossos Produtos/B268.... - Cópia.webp",
+        "nome": "B268"
+      }
+    ]
+  };
   
-    const divSessao = document.getElementById(idSessao);
-    const divCatalogo = divSessao.querySelector('.catalogo');
+  function preencherSessao() {
+      const divCatalogo = document.querySelector('.sessao_catalogo .catalogo');
+      if (!divCatalogo) return;
   
-    // Limpa o conteúdo existente
-    divCatalogo.innerHTML = '';
+      // Limpa o conteúdo existente
+      divCatalogo.innerHTML = '';
   
-    sessao.subSessoes.forEach(subSessao => {
-      const tituloSubDiv = divSessao.querySelector('.alinhar_titulo');
-      const h1SubTitulo = tituloSubDiv.querySelector('.titulo_catalogo');
-      h1SubTitulo.textContent = subSessao.titulo;
+      database.produtos.forEach(produto => {
+          const divProduto = document.createElement('div');
+          divProduto.className = "conteudo_catalogo";
   
-      subSessao.produtos.forEach(produto => {
-        const divProduto = document.createElement('div');
-        divProduto.className = "conteudo_catalogo";
+          const divImagem = document.createElement('div');
+          divImagem.className = "produto_content";
+          divImagem.setAttribute("onclick", "fullscreen(this)");
   
-        const divImagem = document.createElement('div');
-        divImagem.setAttribute("onclick", "fullscreen(this)");
-        divImagem.className = "produto_content";
-        const imgProduto = document.createElement('img');
-        imgProduto.className = "imagem_produto";
-        imgProduto.src = produto.imagem;
-        imgProduto.alt = "imagem produto";
-        divImagem.appendChild(imgProduto);
-        divProduto.appendChild(divImagem);
+          const imgProduto = document.createElement('img');
+          imgProduto.className = "imagem_produto";
+          imgProduto.src = produto.imagem;
+          imgProduto.alt = produto.nome;
+          divImagem.appendChild(imgProduto);
+          divProduto.appendChild(divImagem);
   
-        const divDesc = document.createElement('div');
-        divDesc.className = "desc_produto";
-        const h1Nome = document.createElement('h1');
-        h1Nome.textContent = produto.nome;
-        const h2Desc = document.createElement('h2');
-        h2Desc.textContent = produto.descricao;
-        divDesc.appendChild(h1Nome);
-        divDesc.appendChild(h2Desc);
-        divProduto.appendChild(divDesc);
+          const divDesc = document.createElement('div');
+          divDesc.className = "desc_produto";
+          const h1Nome = document.createElement('h1');
+          h1Nome.textContent = produto.nome;
+          divDesc.appendChild(h1Nome);
+          divProduto.appendChild(divDesc);
   
-        divCatalogo.appendChild(divProduto);
+          divCatalogo.appendChild(divProduto);
       });
-    });
   }
   
-  // Exemplo de uso:
-  for (let idSessao in database) {
-    preencherSessao(idSessao);
-  }
+  // Executa a função para preencher a sessão de produtos
+  preencherSessao();
+  

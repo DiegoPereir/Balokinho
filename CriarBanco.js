@@ -4,7 +4,13 @@ const path = require('path');
 const pastaDeImagens = path.join(__dirname, 'catalogo');
 console.log('Pasta de Imagens:', pastaDeImagens);
 
-const database = {};
+// Database para o primeiro script
+const database = {
+    produtos: []
+};
+
+// Database para o segundo script
+const indexDatabase = {};
 const mapeamentoCategorias = {
     "Pijamas e BabyDolls": "p1",
     "Conjuntos": "p2",
@@ -21,6 +27,21 @@ const mapeamentoCategorias = {
     "Bonés e Chapéu": "p13"
 };
 
+// Funções do primeiro script
+function lerArquivosDaPasta(pasta) {
+    fs.readdirSync(pasta, { withFileTypes: true }).forEach(arquivo => {
+        if (arquivo.isFile()) {
+            const caminhoRelativo = path.relative(__dirname, path.join(pasta, arquivo.name)).replace(/\\/g, '/');
+            console.log('Caminho Relativo:', caminhoRelativo);
+            database.produtos.push({
+                imagem: caminhoRelativo,
+                nome: arquivo.name.split('.')[0]
+            });
+        }
+    });
+}
+
+// Funções do segundo script
 function lerArquivosDeSubcategoria(caminhoSubcategoria, subsecao) {
     fs.readdirSync(caminhoSubcategoria, { withFileTypes: true }).forEach(arquivo => {
         if (arquivo.isFile()) {
@@ -42,7 +63,7 @@ function lerSubpastasDeCategoria(caminhoCategoria, chaveCategoria) {
                 titulo: nomeSubsecao,
                 produtos: []
             };
-            database[chaveCategoria].subSessoes.push(subsecao);
+            indexDatabase[chaveCategoria].subSessoes.push(subsecao);
             lerArquivosDeSubcategoria(path.join(caminhoCategoria, nomeSubsecao), subsecao);
         }
     });
@@ -52,7 +73,7 @@ function lerPastaPrincipal(pasta) {
     fs.readdirSync(pasta, { withFileTypes: true }).forEach(categoria => {
         if (categoria.isDirectory()) {
             const chaveCategoria = mapeamentoCategorias[categoria.name] || categoria.name;
-            database[chaveCategoria] = {
+            indexDatabase[chaveCategoria] = {
                 titulo: categoria.name,
                 subSessoes: []
             };
@@ -61,9 +82,17 @@ function lerPastaPrincipal(pasta) {
     });
 }
 
+// Executando as funções do primeiro script
+lerArquivosDaPasta(path.join(pastaDeImagens, 'Nossos Produtos'));
+
+// Executando as funções do segundo script
 lerPastaPrincipal(pastaDeImagens);
 
+// Salvando os resultados em arquivos JSON separados
 setTimeout(() => {
-    fs.writeFileSync(path.join(__dirname, 'database.json'), JSON.stringify(database, null, 2));
+    fs.writeFileSync(path.join(__dirname, 'IndexDatabase.json'), JSON.stringify(database, null, 2));
     console.log('O arquivo database.json foi criado com sucesso.');
+
+    fs.writeFileSync(path.join(__dirname, 'CatalogoDatabase.json'), JSON.stringify(indexDatabase, null, 2));
+    console.log('O arquivo indexdatabase.json foi criado com sucesso.');
 }, 1000);
